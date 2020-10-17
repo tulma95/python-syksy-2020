@@ -12,41 +12,35 @@ pip --version
 
 Komentoriville tulisi tulostua pip:in versio.
 
-Kirjastojen asennus onnistuu pip:in komennolla `pip install`. Jotta samalla tietokoneella olevien projektien riippuvuuksissa ei syntyisi ristiriitoja, on käytössä usein niin kutsuttaja projektikohtaisia _virtuaaliympäristöjä_. Näitä virtuaaliympäristöjä luodaan ja käytetään [venv](https://docs.python.org/3/library/venv.html) moduulin kautta. Jotta saisimme helposti käyttöömme pip:n ja virtuaalisten ympäristöjen tuomat edut, voimme käyttää [Pipenv](https://pipenv.pypa.io/en/latest/) komentorivityökalua.
+Kirjastojen asennus onnistuu pip:in komennolla `pip install`. Jotta samalla tietokoneella olevien projektien riippuvuuksissa ei syntyisi ristiriitoja, on käytössä usein niin kutsuttaja projektikohtaisia _virtuaaliympäristöjä_. Näitä virtuaaliympäristöjä luodaan ja käytetään [venv](https://docs.python.org/3/library/venv.html) moduulin kautta. Jotta saisimme helposti käyttöömme pip:n ja virtuaaliympäristön tuomat edut, voimme käyttää [pipenv](https://pipenv.pypa.io/en/latest/) komentorivityökalua.
 
 ## Asennus
 
-Ennen Pipenv:in asennusta, varmista, että Python asennus on kunnossa komennolla:
+Pipenv tarjoaa dokumentaatiossaan useita [asennusvaihtoehtoja](https://pipenv.pypa.io/en/latest/#install-pipenv-today). Tavoista ehkä helpoin on suorittaa asennus komentoriviltä pip:in avulla:
 
 ```bash
-python --version
+pip install --user pipenv
 ```
 
-Jos komentoa ei löydy, tutustu ensin Pythonin [asennusohjeisiin](./pythonin-asennus.md).
-
-Pipenv tarjoaa dokumentaatiossaan useita [asennusvaihtoehtoja](https://pipenv.pypa.io/en/latest/#install-pipenv-today). Tavoista ehkä helpoin on suorittaa asennus komentoriviltä asennus-skriptin avulla:
+Voimme varmistaa asennuksen onnistumisen suorittamalla komennon:
 
 ```bash
-curl https://raw.githubusercontent.com/pypa/pipenv/master/get-pipenv.py | python
+python -m pipenv --version
 ```
 
-Tämä on käytännössa sama asia, kuin [asennus-skriptin](https://raw.githubusercontent.com/pypa/pipenv/master/get-pipenv.py) lataaminen omalle tietokoneelle ja sen suorittaminen komentoriviltä komennolla `python get-pipenv.py` asennushakemistossa.
-
-Kun asennus on valmis, käynnistä terminaali-ikkuna uudestaan. Tämän jälkeen varmista, että asennus onnistui komennolla:
-
-```bash
-pipenv --version
-```
+Jos haluat suorittaa pipenv:in komentoja suoraan, ilman `python -m`-komennon suorittamista, tutustu [tarkempiin asennusohjeisiin](https://pipenv.pypa.io/en/latest/install/#pragmatic-installation-of-pipenv). 
 
 ## Projektin alustaminen
 
-Harjoitellaan Pipenv:in käyttöä tekemällä pieni esimerkkiprojekti. Luo hakemisto _pipenv-test_ haluamaasi hakemistoon. Avaa hakemisto komentoriviltä ja suorita siellä komento:
+Harjoitellaan pipenv:in käyttöä tekemällä pieni esimerkkiprojekti. Luo hakemisto _pipenv-test_ haluamaasi hakemistoon. Avaa hakemisto komentoriviltä ja suorita siellä komento:
 
 ```bash
-pipenv install
+python -m pipenv install
 ```
 
-Komennon suorittaminen mm. alustaa projektin virtuaaliympäristön. Hakemistoon pitäisi ilmestyä tiedostot _Pipfile_ ja _Pipfile.lock_. Tiedoston _Pipfile_ sisältö on kuta kuinkin seuraava:
+Komennon suorittaminen tekee projektille vaadittavat alustustoimenpiteet, kuten virtuaaliympäristön alustamisen. Jos projektille olisi määritelty riippuvuuksia, komennon suorittaminen asentaisi myös ne. Tämän vuoksi komento tulee suorittaa aina ennen kuin uutta projekti aletaan käyttämään.
+
+Hakemistoon pitäisi ilmestyä tiedostot _Pipfile_ ja _Pipfile.lock_. Tiedoston _Pipfile_ sisältö on kuta kuinkin seuraava:
 
 ```
 [[source]]
@@ -62,17 +56,30 @@ verify_ssl = true
 python_version = "3.9"
 ```
 
-Tiedostossa luetellaan mm. projektin _riippuvuudet_ `[packages]` osion alla. _Pipfile.lock_ tiedosto sen sijaan sisältää kaikkien riippuvuuksien versiotiedot niin, että voimme aina asentaa täsmälleen oikeat versiot. _Pipfile.lock_ tiedoston sisältöä ei tule _missään tapauksessa_ muuttaa, vaan se on täysin Pipenv:in ylläpitämä.
+Tiedostossa luetellaan mm. projektin _riippuvuudet_ `[packages]`-osion alla. Tiedoston `[requires]`-osion alla on määritelty vaadittava Python-version. Ongelmien välttämiseksi eri Python-versioiden kanssa, kannttaa `[requires]`-osio poistaa kokonaisuudessaan. Tiedoston sisältö on tämän jälkeen seuraava:
+
+```bash
+[[source]]
+name = "pypi"
+url = "https://pypi.org/simple"
+verify_ssl = true
+
+[dev-packages]
+
+[packages]
+```
+
+_Pipfile.lock_-tiedosto sen sijaan sisältää kaikkien riippuvuuksien versiotiedot niin, että voimme aina asentaa täsmälleen oikeat versiot. _Pipfile.lock_-tiedoston sisältöä ei tule _missään tapauksessa_ muuttaa, vaan se on täysin pipenv:in ylläpitämä.
 
 ## Riippuvuuksen asentaminen
 
-Asennetaan seuraavaksi esimerkkiprojektimme ensimmäisen riippuvuus. Riippuvuuksien löytäminen onnistuu helpoiten Googlettamalla ja etsimällä hakutuloksista sopivia GitHub-repositorioita, tai PyPI-sivuja. Asennetaan esimerkkinä projektiimme erittäin hyödyllinen [cowsay](https://pypi.org/project/cowsay/) kirjasto. Tämä onnistuu komennolla:
+Asennetaan seuraavaksi esimerkkiprojektimme ensimmäisen riippuvuus. Riippuvuuksien löytäminen onnistuu helpoiten Googlettamalla ja etsimällä hakutuloksista sopivia GitHub-repositorioita, tai PyPI-sivuja. Asennetaan esimerkkinä projektiimme erittäin hyödyllinen [cowsay](https://pypi.org/project/cowsay/)-kirjasto. Tämä onnistuu komennolla:
 
 ```bash
-pipenv install cowsay
+python -m pipenv install cowsay
 ```
 
-Asennuksen komento on siis muotoa `pipenv install <KIRJASTO>`. Komennon suorittamisen jälkeen huomaamme, että _Pipfile_ tiedoston `[packages]` osion alla on uutta sisältöä:
+Asennuksen komento on siis muotoa `python -m pipenv install <KIRJASTO>`. Komennon suorittamisen jälkeen huomaamme, että _Pipfile_-tiedoston `[packages]`-osion alla on uutta sisältöä:
 
 ```
 [packages]
@@ -82,14 +89,14 @@ cowsay = "*"
 Jos haluaisimme poistaa kirjaston projektimme riippuvuuksen joukosta, se onnistuisi komennolla:
 
 ```bash
-pipenv uninstall cowsay
+python -m pipenv uninstall cowsay
 ```
 
-Pidetään kuitenkin cowsay kirjasto toistaiseksi asennettuna.
+Pidetään kuitenkin cowsay-kirjasto toistaiseksi asennettuna.
 
-## Skriptien suorittaminen virtuaaliympäristössä
+## Komentojen suorittaminen virtuaaliympäristössä
 
-Luodaan seuraavaksi _pipenv-test_ hakemistoon hakemisto _src_ ja luodaan sinne tiedosto _index.py_. Tiedoston sisältö on seuraava:
+Luodaan seuraavaksi _pipenv-test_-hakemistoon hakemisto _src_ ja luodaan sinne tiedosto _index.py_. Tiedoston sisältö on seuraava:
 
 ```python
 import cowsay
@@ -112,13 +119,13 @@ ModuleNotFoundError: No module named 'cowsay'
 Tämä johtuu siitä, että emme ole projektin virtuaaliympäristön sisällä, eli Python ei löydä projektimme riippuvuuksia. Asia korjaantuu käyttämällä [run](https://pipenv.pypa.io/en/latest/cli/#pipenv-run) komentoa:
 
 ```bash
-pipenv run python src/index.py
+python -m pipenv run python src/index.py
 ```
 
-`pipenv run` komento siis suorittaa annetun komennon virtuaaliympäristössä, jonka sisällä Python löytää riippuvuutumme. Voimme myös siirtyä virtuaaliympäristön sisään kommennolla [shell](https://pipenv.pypa.io/en/latest/cli/#pipenv-shell):
+`python -m pipenv run`-komento siis suorittaa annetun komennon virtuaaliympäristössä, jonka sisällä Python löytää riippuvuutumme. Voimme myös siirtyä virtuaaliympäristön sisään kommennolla [shell](https://pipenv.pypa.io/en/latest/cli/#pipenv-shell):
 
 ```bash
-pipenv shell
+python -m pipenv shell
 ```
 
 Virtuaaliympäristön sisällä voimme suorittaa komennon "normaalisti":
@@ -131,7 +138,7 @@ Voimme lähteä virtuaaliympäristöstä komennolla `exit`.
 
 ## Omat skriptit
 
-Komento `pipenv run python src/index.py` on hieman pitkä ja ei oikeastaan kerro komennon suorittajalle, mitä se tekee. Pipenv:in avulla voimme määritellä [omia skriptejämme](https://pipenv.pypa.io/en/latest/advanced/#custom-script-shortcuts). Skriptit määritellään _Pipfile_ tiedostoon `[scripts]` osion alle. Lisätään _Pipfile_ tiedoston `[[source]]` osion alle osio `[scripts]` ja määritellään sinne skripti `start`:
+Komento `python -m pipenv run python src/index.py` on hieman pitkä ja ei oikeastaan kerro komennon suorittajalle, mitä se tekee. Pipenv:in avulla voimme määritellä [omia skriptejämme](https://pipenv.pypa.io/en/latest/advanced/#custom-script-shortcuts). Skriptit määritellään _Pipfile_ tiedostoon `[scripts]` osion alle. Lisätään _Pipfile_ tiedoston `[[source]]` osion alle osio `[scripts]` ja määritellään sinne skripti `start`:
 
 ```
 [[source]]
@@ -146,17 +153,14 @@ start = "python src/index.py"
 
 [packages]
 cowsay = "*"
-
-[requires]
-python_version = "3.9"
 ```
 
 Lisäämämme skriptin pystyy suorittamaan komennolla:
 
 ```bash
-pipenv run start
+python -m pipenv run start
 ```
 
-Komentoja voi olla useita, ja niiden suorittaminen onnistuu komennolla `pipenv run <SKRIPTI>`. Huomaa, että skriptit suoritetaan automaattisesti virtuaaliympäristössä.
+Komentoja voi olla useita, ja niiden suorittaminen onnistuu komennolla `python -m pipenv run <SKRIPTI>`. Huomaa, että skriptit suoritetaan automaattisesti virtuaaliympäristössä.
 
 Esimerkkiprojekti löytyy kokonaisuudessaan repositorion hakemistosta [esimerkit/pipenv-test](../esimerkit/pipenv-test).
