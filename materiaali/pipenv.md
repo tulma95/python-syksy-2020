@@ -22,7 +22,7 @@ Ennen Pipenv:in asennusta, varmista, että Python asennus on kunnossa komennolla
 python --version
 ```
 
-Jos komentoa ei löydy, tutustu ensin Python [asennusohjeisiin](./pythonin-asennus.md).
+Jos komentoa ei löydy, tutustu ensin Pythonin [asennusohjeisiin](./pythonin-asennus.md).
 
 Pipenv tarjoaa dokumentaatiossaan useita [asennusvaihtoehtoja](https://pipenv.pypa.io/en/latest/#install-pipenv-today). Tavoista ehkä helpoin on suorittaa asennus komentoriviltä asennus-skriptin avulla:
 
