@@ -4,7 +4,7 @@ Laajoissa ja monimutkaisissa ohjelmistoprojekteissa kaiken koodin tuottaminen it
 
 Kirjastojen lähdekoodi on usein luettavissa versionhallinta-alustoilla, kuten GitHubissa. Usein kirjastoja päivitetään jatkuvasti ja nämä päivitykset synnyttävät kirjastoista uusia _versioita_. Kirjastojen versioita julkaistaan erilaisiin rekistereihin, joista ne ovat helposti asennettavissa. [The Python Package Index](https://pypi.org/) (PyPI) on eräs tämän kaltainen, Python-kirjastoille tarkoitettu rekisteri.
 
-Jotta kirjastoja olisi helppo asentaa projektiin, on kehitetty erilaisia pakettin asennukseen tarkoitettuja työkaluja. Pythonin kohdalla suosituin työkalu tähän tarkoitukseen on [pip](https://pypi.org/project/pip/). Pip tulee valmiiksi asennettuna uusimpien Python asennusten mukana. Voit varmistaa sen löytymisen komentorivin komennolla:
+Jotta kirjastoja olisi helppo asentaa projektiin, on kehitetty erilaisia pakettin asennukseen tarkoitettuja komentorivityökaluja. Pythonin kohdalla suosituin komentorivityökaluja tähän tarkoitukseen on [pip](https://pypi.org/project/pip/). Pip tulee valmiiksi asennettuna uusimpien Python asennusten mukana. Voit varmistaa sen löytymisen komentorivin komennolla:
 
 ```bash
 pip --version
@@ -12,19 +12,19 @@ pip --version
 
 Komentoriville tulisi tulostua pip:in versio.
 
-Kirjastojen asennus onnistuu pip:in komennolla `pip install`. Jotta samalla tietokoneella olevien projektien riippuvuuksissa ei syntyisi ristiriitoja, on käytössä usein niin kutsuttaja projektikohtaisia _virtuaalisia ympäristöjä_. Näitä virtuaalisia ympäristöjä luodaan ja käytetään [venv](https://docs.python.org/3/library/venv.html) moduulin kautta. Jotta saisimme helposti käyttöömme pip:n ja virtuaalisten ympäristöjen tuomat edut, voimme käyttää [Pipenv](https://pipenv.pypa.io/en/latest/) työkalua.
+Kirjastojen asennus onnistuu pip:in komennolla `pip install`. Jotta samalla tietokoneella olevien projektien riippuvuuksissa ei syntyisi ristiriitoja, on käytössä usein niin kutsuttaja projektikohtaisia _virtuaaliympäristöjä_. Näitä virtuaaliympäristöjä luodaan ja käytetään [venv](https://docs.python.org/3/library/venv.html) moduulin kautta. Jotta saisimme helposti käyttöömme pip:n ja virtuaalisten ympäristöjen tuomat edut, voimme käyttää [Pipenv](https://pipenv.pypa.io/en/latest/) komentorivityökalua.
 
 ## Asennus
 
-Ennen asennusta, varmista, että Python asennus on kunnossa komennolla:
+Ennen Pipenv:in asennusta, varmista, että Python asennus on kunnossa komennolla:
 
 ```bash
 python --version
 ```
 
-Jos komentoa ei löydy, tutustu ensin Python [asennusohjeisiin](./python_asennus.md).
+Jos komentoa ei löydy, tutustu ensin Python [asennusohjeisiin](./pythonin-asennus.md).
 
-Pipenv tarjoaa dokumentaatiossaan useita [asennusvaihtoehtoja](https://pipenv.pypa.io/en/latest/#install-pipenv-today). Tavoista ehkä helpoin, on suorittaa asennus komentoriviltä asennus-skriptin avulla:
+Pipenv tarjoaa dokumentaatiossaan useita [asennusvaihtoehtoja](https://pipenv.pypa.io/en/latest/#install-pipenv-today). Tavoista ehkä helpoin on suorittaa asennus komentoriviltä asennus-skriptin avulla:
 
 ```bash
 curl https://raw.githubusercontent.com/pypa/pipenv/master/get-pipenv.py | python
@@ -100,7 +100,7 @@ cowsay.tux('Pipenv is awesome!')
 Jos suoritamme tiedoston komentoriviltä komennolla:
 
 ```bash
-python ./src/index.py
+python src/index.py
 ```
 
 On lopputuloksena seuravaa virheilmoitus:
@@ -112,7 +112,7 @@ ModuleNotFoundError: No module named 'cowsay'
 Tämä johtuu siitä, että emme ole projektin virtuaaliympäristön sisällä, eli Python ei löydä projektimme riippuvuuksia. Asia korjaantuu käyttämällä [run](https://pipenv.pypa.io/en/latest/cli/#pipenv-run) komentoa:
 
 ```bash
-pipenv run python ./src/index.py
+pipenv run python src/index.py
 ```
 
 `pipenv run` komento siis suorittaa annetun komennon virtuaaliympäristössä, jonka sisällä Python löytää riippuvuutumme. Voimme myös siirtyä virtuaaliympäristön sisään kommennolla [shell](https://pipenv.pypa.io/en/latest/cli/#pipenv-shell):
@@ -124,14 +124,14 @@ pipenv shell
 Virtuaaliympäristön sisällä voimme suorittaa komennon "normaalisti":
 
 ```bash
-python ./src/index.py
+python src/index.py
 ```
 
 Voimme lähteä virtuaaliympäristöstä komennolla `exit`.
 
 ## Omat skriptit
 
-Komento `pipenv run python ./src/index.py` on hieman pitkä ja ei oikeastaan kerro komennon suorittajalle, mitä se tekee. Pipenv:in avulla voimme määritellä [omia skriptejämme](https://pipenv.pypa.io/en/latest/advanced/#custom-script-shortcuts). Skriptit määritellään _Pipfile_ tiedostoon `[scripts]` osion alle. Lisätään _Pipfile_ tiedoston `[[source]]` osion alle osio `[scripts]` ja määritellään sinne skripti `start`:
+Komento `pipenv run python src/index.py` on hieman pitkä ja ei oikeastaan kerro komennon suorittajalle, mitä se tekee. Pipenv:in avulla voimme määritellä [omia skriptejämme](https://pipenv.pypa.io/en/latest/advanced/#custom-script-shortcuts). Skriptit määritellään _Pipfile_ tiedostoon `[scripts]` osion alle. Lisätään _Pipfile_ tiedoston `[[source]]` osion alle osio `[scripts]` ja määritellään sinne skripti `start`:
 
 ```
 [[source]]
@@ -140,7 +140,7 @@ url = "https://pypi.org/simple"
 verify_ssl = true
 
 [scripts]
-start = "python ./src/index.py"
+start = "python src/index.py"
 
 [dev-packages]
 
