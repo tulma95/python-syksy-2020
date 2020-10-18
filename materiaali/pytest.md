@@ -36,7 +36,7 @@ class Maksukortti:
 
 ## Alkutoimet
 
-Luo Labtooliin rekisteröimäsi repositorion hakemistoon _laskarit/viikko2_ uusi, _maksukortti_-niminen hakemisto. Suorita komentoriviltä hakemiston sisällä tuttu, projektin alustamiseen vaadittava komento:
+Luo Labtooliin rekisteröimäsi repositorion hakemistoon _laskarit/viikko2_ hakemisto _maksukortti_. Suorita komentoriviltä hakemiston sisällä tuttu, projektin alustamiseen vaadittava komento:
 
 ```bash
 python -m pipenv install
@@ -235,6 +235,28 @@ def test_kortille_voi_ladata_rahaa(self):
 def test_kortin_saldo_ei_ylita_maksimiarvoa(self):
     self.kortti.lataa_rahaa(200)
     self.assertEqual("Kortilla on rahaa 150 euroa", str(self.kortti))
+```
+
+## Testien suorittamiselle oma skripti
+
+[Pipenv-ohjeissa](./pipenv.md) ohjeistettiin, kuinka itse määriteltyä skriptejä voi suorittaa `python -m pipenv run`-komennolla. Tehdään testien suorittamista varten oma skripti, `test`. Tämä onnistuu määritellemällä se _Pipfile_-tiedoston `[scripts]`-osiossa:
+
+```
+[[source]]
+name = "pypi"
+url = "https://pypi.org/simple"
+verify_ssl = true
+
+[scripts]
+test = "python -m pytest"
+
+...
+```
+
+Nyt testien suorittaminen pitäisi onnistua komennolla:
+
+```bash
+python -m pipenv run test
 ```
 
 ## Testit ovat toisistaan riippumattomia
