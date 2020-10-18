@@ -66,7 +66,7 @@ Lisää tiedostoon _src/maksukortti.py_ edellä esitelty `Maksukortti`-luokan ko
 
 ## Aloitetaan testien kirjoittaminen
 
-Yritetään seuraavaksi suorittaa testejä. Siirrytään virtuaaliympäristöön komennolla `python -m pipenv shell`, jonka jälkeen suoritetaan komento `python -m pytest`. Komennon suorittaminen antaa ymmärtää, ettei yhtään testiä ole suoritettu. Syy on yksinkertaisesti siinä, ettemme ole vielä toteuttaneet yhtään testiä.
+Yritetään seuraavaksi suorittaa testejä. Siirrytään virtuaaliympäristöön komennolla `python -m pipenv shell`, jonka jälkeen suoritetaan komento `pytest`. Komennon suorittaminen antaa ymmärtää, ettei yhtään testiä ole suoritettu. Syy on yksinkertaisesti siinä, ettemme ole vielä toteuttaneet yhtään testiä.
 
 Toteutetaan _src/tests/maksukortti\_test.py_-tiedostoon projektimme ensimmäinen testi. Tiedoston sisältö tulee olla seuraava:
 
@@ -82,7 +82,7 @@ class TestMaksukortti(unittest.TestCase):
         self.assertEqual("Hello world", "Hello world")
 ```
 
-Suoritetaan virtuaaliympäristössä komento `python -m pytest` uudestaan ja huomaamme, että yksi testi on suoritettu onnistuneesti.
+Suoritetaan virtuaaliympäristössä komento `pytest` uudestaan ja huomaamme, että yksi testi on suoritettu onnistuneesti.
 
 Jotta pytest tietää, mitä testejä tulisi suorittaa, **tulee nimeämisessä noudattaa oikeita käytenteitä**. Nämä käytänteet ovat:
 
@@ -118,9 +118,9 @@ class TestMaksukortti(unittest.TestCase):
 
 Ensimmäinen rivi luo kortin, jonka saldoksi tulee 10 euroa. Testin on tarkoitus varmistaa, että konstruktorin parametrina oleva luku menee kortin alkusaldoksi. Tämä varmistetaan selvittämällä kortin saldo. Kortin saldo selviää kortin `__str__`-metodin muodostamasta merkkijonoesitysestä. Testin toinen rivi muodostaa `kortti`-muuttujan merkkijonoesityksen ja ottaa sen talteen muuttujaan `vastaus`. Viimeinen rivi tarkastaa onko vastaus sama kuin odotettu tulos, eli "Kortilla on rahaa 10 euroa".
 
-Tarkastus tapahtuu unittest:issä paljon käytettyä assert- eli väittämäkomentoa käyttäen. Komento testaa onko sille ensimmäisenä parametrina annettu odotettu tulos sama kuin toisena parametrina oleva testissä saatu tulos. Erilaisia [assert](https://docs.python.org/3/library/unittest.html#assert-methods)-metodeja on monia.
+Tarkastus tapahtuu unittestissä paljon käytettyä assert- eli väittämäkomentoa käyttäen. Komento testaa onko sille ensimmäisenä parametrina annettu odotettu tulos sama kuin toisena parametrina oleva testissä saatu tulos. Erilaisia [assert](https://docs.python.org/3/library/unittest.html#assert-methods)-metodeja on monia.
 
-Suoritetaan seuraavaksi testi komenolla `python -m pytest` ja toivotaan, että testi menee läpi.
+Suoritetaan seuraavaksi testi komenolla `pytest` ja toivotaan, että testi menee läpi.
 
 Vaihtoehtoinen tapa määritellä sama testi olisi seuraava:
 
@@ -248,7 +248,7 @@ url = "https://pypi.org/simple"
 verify_ssl = true
 
 [scripts]
-test = "python -m pytest"
+test = "pytest"
 
 ...
 ```

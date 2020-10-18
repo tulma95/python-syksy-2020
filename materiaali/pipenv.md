@@ -10,13 +10,13 @@ Jotta kirjastoja olisi helppo asentaa projektiin, on kehitetty erilaisia paketti
 pip --version
 ```
 
-Komentoriville tulisi tulostua pip:in versio.
+Komentoriville tulisi tulostua pipin versio.
 
-Kirjastojen asennus onnistuu pip:in komennolla `pip install`. Jotta samalla tietokoneella olevien projektien riippuvuuksissa ei syntyisi ristiriitoja, on käytössä usein niin kutsuttaja projektikohtaisia _virtuaaliympäristöjä_. Näitä virtuaaliympäristöjä luodaan ja käytetään [venv](https://docs.python.org/3/library/venv.html) moduulin kautta. Jotta saisimme helposti käyttöömme pip:n ja virtuaaliympäristön tuomat edut, voimme käyttää [pipenv](https://pipenv.pypa.io/en/latest/) komentorivityökalua.
+Kirjastojen asennus onnistuu pipin komennolla `pip install`. Jotta samalla tietokoneella olevien projektien riippuvuuksissa ei syntyisi ristiriitoja, on käytössä usein niin kutsuttaja projektikohtaisia _virtuaaliympäristöjä_. Näitä virtuaaliympäristöjä luodaan ja käytetään [venv](https://docs.python.org/3/library/venv.html) moduulin kautta. Jotta saisimme helposti käyttöömme pip:n ja virtuaaliympäristön tuomat edut, voimme käyttää [pipenv](https://pipenv.pypa.io/en/latest/) komentorivityökalua.
 
 ## Asennus
 
-Pipenv tarjoaa dokumentaatiossaan useita [asennusvaihtoehtoja](https://pipenv.pypa.io/en/latest/#install-pipenv-today). Tavoista ehkä helpoin on suorittaa asennus komentoriviltä pip:in avulla:
+Pipenv tarjoaa dokumentaatiossaan useita [asennusvaihtoehtoja](https://pipenv.pypa.io/en/latest/#install-pipenv-today). Tavoista ehkä helpoin on suorittaa asennus komentoriviltä pipin avulla:
 
 ```bash
 pip install --user pipenv
@@ -28,11 +28,11 @@ Voimme varmistaa asennuksen onnistumisen suorittamalla komennon:
 python -m pipenv --version
 ```
 
-Jos haluat suorittaa pipenv:in komentoja suoraan, ilman `python -m`-komennon suorittamista, tutustu [tarkempiin asennusohjeisiin](https://pipenv.pypa.io/en/latest/install/#pragmatic-installation-of-pipenv). 
+Jos haluat suorittaa pipenvin komentoja suoraan, ilman `python -m`-komennon suorittamista, tutustu [tarkempiin asennusohjeisiin](https://pipenv.pypa.io/en/latest/install/#pragmatic-installation-of-pipenv). 
 
 ## Projektin alustaminen
 
-Harjoitellaan pipenv:in käyttöä tekemällä pieni esimerkkiprojekti. Luo hakemisto _pipenv-test_ haluamaasi hakemistoon. Avaa hakemisto komentoriviltä ja suorita siellä komento:
+Harjoitellaan pipenvin käyttöä tekemällä pieni esimerkkiprojekti. Luo hakemisto _pipenv-test_ haluamaasi hakemistoon. Avaa hakemisto komentoriviltä ja suorita siellä komento:
 
 ```bash
 python -m pipenv install
@@ -69,7 +69,7 @@ verify_ssl = true
 [packages]
 ```
 
-_Pipfile.lock_-tiedosto sen sijaan sisältää kaikkien riippuvuuksien versiotiedot niin, että voimme aina asentaa täsmälleen oikeat versiot. _Pipfile.lock_-tiedoston sisältöä ei tule _missään tapauksessa_ muuttaa, vaan se on täysin pipenv:in ylläpitämä.
+_Pipfile.lock_-tiedosto sen sijaan sisältää kaikkien riippuvuuksien versiotiedot niin, että voimme aina asentaa täsmälleen oikeat versiot. _Pipfile.lock_-tiedoston sisältöä ei tule _missään tapauksessa_ muuttaa, vaan se on täysin pipenvin ylläpitämä.
 
 ## Riippuvuuksen asentaminen
 
@@ -138,7 +138,7 @@ Voimme lähteä virtuaaliympäristöstä komennolla `exit`.
 
 ## Omat skriptit
 
-Komento `python -m pipenv run python src/index.py` on hieman pitkä ja ei oikeastaan kerro komennon suorittajalle, mitä se tekee. Pipenv:in avulla voimme määritellä [omia skriptejämme](https://pipenv.pypa.io/en/latest/advanced/#custom-script-shortcuts). Skriptit määritellään _Pipfile_ tiedostoon `[scripts]` osion alle. Lisätään _Pipfile_ tiedoston `[[source]]` osion alle osio `[scripts]` ja määritellään sinne skripti `start`:
+Komento `python -m pipenv run python src/index.py` on hieman pitkä ja ei oikeastaan kerro komennon suorittajalle, mitä se tekee. Pipenvin avulla voimme määritellä [omia skriptejämme](https://pipenv.pypa.io/en/latest/advanced/#custom-script-shortcuts). Skriptit määritellään _Pipfile_ tiedostoon `[scripts]` osion alle. Lisätään _Pipfile_ tiedoston `[[source]]` osion alle osio `[scripts]` ja määritellään sinne skripti `start`:
 
 ```
 [[source]]
