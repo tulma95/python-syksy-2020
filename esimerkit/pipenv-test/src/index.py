@@ -1,3 +1,3 @@
 import cowsay
 
-cowsay.tux('Pipenv is awesome!')
+cowsay.tux("Pipenv is awesome!")

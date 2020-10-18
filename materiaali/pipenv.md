@@ -1,6 +1,6 @@
-# Pipenv
+# Pipenv ja riippuvuuksien hallinta
 
-Laajoissa ja monimutkaisissa ohjelmistoprojekteissa kaiken koodin tuottaminen itse ei ole enää käytännöllistä. Ei ole esimerkiksi järkevää, että jokaisessa ohjelmistoprojektissa toteutetaan oma ohjelmointirajapinta tietokantaoperaatioille, tai viitekehys koodin testaamiseen. Jotta pyörää ei tarvitsisi aina keksiä uudelleen, ovat ohjelmistokehittäjät kehittäneet valtavan määrän avoimen lähdekoodin _kirjastoja_, joita jokainen voi hyödyntää projekteissaan.
+Laajoissa ja monimutkaisissa ohjelmistoprojekteissa kaiken koodin tuottaminen itse ei ole enää käytännöllistä. Ei ole esimerkiksi järkevää, että jokaisessa ohjelmistoprojektissa toteutetaan oma ohjelmointirajapinta tietokantaoperaatioille, tai sovelluskehys koodin testaamiseen. Jotta pyörää ei tarvitsisi aina keksiä uudelleen, ovat ohjelmistokehittäjät kehittäneet valtavan määrän avoimen lähdekoodin _kirjastoja_, joita jokainen voi hyödyntää projekteissaan.
 
 Kirjastojen lähdekoodi on usein luettavissa versionhallinta-alustoilla, kuten GitHubissa. Usein kirjastoja päivitetään jatkuvasti ja nämä päivitykset synnyttävät kirjastoista uusia _versioita_. Kirjastojen versioita julkaistaan erilaisiin rekistereihin, joista ne ovat helposti asennettavissa. [The Python Package Index](https://pypi.org/) (PyPI) on eräs tämän kaltainen, Python-kirjastoille tarkoitettu rekisteri.
 
@@ -101,7 +101,7 @@ Luodaan seuraavaksi _pipenv-test_-hakemistoon hakemisto _src_ ja luodaan sinne t
 ```python
 import cowsay
 
-cowsay.tux('Pipenv is awesome!')
+cowsay.tux("Pipenv is awesome!")
 ```
 
 Jos suoritamme tiedoston komentoriviltä komennolla:
@@ -162,5 +162,3 @@ python -m pipenv run start
 ```
 
 Komentoja voi olla useita, ja niiden suorittaminen onnistuu komennolla `python -m pipenv run <SKRIPTI>`. Huomaa, että skriptit suoritetaan automaattisesti virtuaaliympäristössä.
-
-Esimerkkiprojekti löytyy kokonaisuudessaan repositorion hakemistosta [esimerkit/pipenv-test](../esimerkit/pipenv-test).
