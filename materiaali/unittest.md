@@ -66,9 +66,9 @@ Lisää tiedostoon _src/maksukortti.py_ edellä esitelty `Maksukortti`-luokan ko
 
 ## Aloitetaan testien kirjoittaminen
 
-Yritetään seuraavaksi suorittaa testejä. Siirrytään virtuaaliympäristöön komennolla `python -m pipenv shell`, jonka jälkeen suoritetaan komento `python -m pytest`. Komennon suorittaminen antaa ymmärtää, ettei yhtään testiä ole suoritettu. Syy on yksinkertaisesti siinä, että ole vielä toteuttaneet yhtään testiä.
+Yritetään seuraavaksi suorittaa testejä. Siirrytään virtuaaliympäristöön komennolla `python -m pipenv shell`, jonka jälkeen suoritetaan komento `python -m pytest`. Komennon suorittaminen antaa ymmärtää, ettei yhtään testiä ole suoritettu. Syy on yksinkertaisesti siinä, ettemme ole vielä toteuttaneet yhtään testiä.
 
-Toteutetaan _src/tests/maksukortti_test.py_-tiedostoon projektimme ensimmäinen testi. Tiedoston sisältö tulee olla seuraava:
+Toteutetaan _src/tests/maksukortti\_test.py_-tiedostoon projektimme ensimmäinen testi. Tiedoston sisältö tulee olla seuraava:
 
 ```python
 import unittest
@@ -86,7 +86,7 @@ Suoritetaan virtuaaliympäristössä komento `python -m pytest` uudestaan ja huo
 
 Jotta pytest tietää, mitä testejä tulisi suorittaa, **tulee nimeämisessä noudattaa oikeita käytenteitä**. Nämä käytänteet ovat:
 
-- Testien tiedostojen nimen tulee päättyä _\_test_-päätteeseen, esim. _maksukortti_test.py_
+- Testien tiedostojen nimen tulee päättyä _\_test_-päätteeseen, esim. _maksukortti\_test.py_
 - Testattavan luokan nimen tulee alkaa _Test_-etuliitteellä, esim. `TestMaksukortti`
 - Testtavan luokan metodin nimen tulee alkaa _test\__-etuliitteellä, esim. `test_hello_world`
 
