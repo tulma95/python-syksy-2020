@@ -32,7 +32,7 @@ Jos haluat suorittaa pipenvin komentoja suoraan, ilman `python -m`-komennon suor
 
 ## Projektin alustaminen
 
-Harjoitellaan pipenvin käyttöä tekemällä pieni esimerkkiprojekti. Luo hakemisto _pipenv-test_ haluamaasi hakemistoon. Avaa hakemisto komentoriviltä ja suorita siellä komento:
+Harjoitellaan pipenvin käyttöä tekemällä pieni esimerkkiprojekti. Luo hakemisto _pipenv-testi_ haluamaasi hakemistoon. Hakemiston ei tarvitse löytyä Labtooliin rekisteröimästäsi repositoriosta. Avaa hakemisto komentoriviltä ja suorita siellä komento:
 
 ```bash
 python -m pipenv install
@@ -96,7 +96,7 @@ Pidetään kuitenkin cowsay-kirjasto toistaiseksi asennettuna.
 
 ## Komentojen suorittaminen virtuaaliympäristössä
 
-Luodaan seuraavaksi _pipenv-test_-hakemistoon hakemisto _src_ ja luodaan sinne tiedosto _index.py_. Tiedoston sisältö on seuraava:
+Luodaan seuraavaksi _pipenv-testi_-hakemistoon hakemisto _src_ ja luodaan sinne tiedosto _index.py_. Tiedoston sisältö on seuraava:
 
 ```python
 import cowsay
