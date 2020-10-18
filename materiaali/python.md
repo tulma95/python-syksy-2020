@@ -29,26 +29,26 @@ Jos ympäristömuuttajalle ei ole annettu arvoa, `getenv`-funktio palauttaa `Non
 ```python
 import os
 
-# jos os.getenv('FOO') saa arvon None, FOO saa arvokseen "default bar"
+# jos os.getenv("FOO") palauttaa arvon None, FOO saa arvokseen "default bar"
 FOO = os.getenv("FOO") or "default bar"
-BAR = os.getenv("LOREM") or "default ipsum"
+LOREM = os.getenv("LOREM") or "default ipsum"
 ```
 
 Muuttujille on hyvä antaa oletusarvot, jos ympäristömuuttujalle ei ole annettu arvoa. Moduulin muuttujat `FOO` ja `LOREM` voidaan importata projektin toisessa tiedostossa seuraavasti:
 
 ```python
-from config import FOO, BAR
+from config import FOO, LOREM
 
 print(FOO)
-print(BAR)
+print(LOREM)
 ```
 
 Testeille on usein käytössä eri konfiguraatio, kuin muulla koodilla. Esimerkiksi testien kannattaa käyttää SQLite-tietokannan kanssa eri tiedostoa. Tätä varten voimme tehdä projektin juurihakemistoon erillisen _.env.test_-tiedoston, jonne määritellään testien käyttämät ympäristömuuttujat.
 
 Näiden ympäristömuuttujien lataaminen onnistuu [pytest-dotenv](https://pypi.org/project/pytest-dotenv/)-lisäosalla. Sen asentaminen onnistuu seuraavalla komennolla:
 
-```
-bash python -m pipenv install pytest-dotenv
+```bash
+python -m pipenv install pytest-dotenv
 ```
 
 Asentamisen lisäksi tulee projektin juurihakemistoon luoda _pytest.ini_-tiedosto, jossa kerrotaan, mistä tiedostosta ympäristömuuttujat ladataan. Tiedoston sisältö tulee olla seuraava:
