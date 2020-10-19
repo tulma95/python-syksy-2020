@@ -313,6 +313,19 @@ def pytest_configure():
     initialize_database()
 ```
 
+### Huomioita testaamisesta
+
+[Testausohjeissa](./unnittest.md) ohjeistettiin, että _kaikki testit tulee olla toisistaan riippumattomia_. Tämä tarkoittaa sitä, että tallennusta testaavan metodin tulee olettaa, ettei edellisiä tallennustietoja ole. Tämä onnistuu testiluokan `setUp`-metodissa kutsumalla repositorion metodia, joka tyhjentää tallennustiedot. Esimerkiksi referenssisovelluksessa toteutus on seuraava:
+
+```python
+class TestTodoRepository(unittest.TestCase):
+    def setUp(self):
+        todo_repository.delete_all()
+        user_repository.delete_all()
+
+    # ...
+```
+
 ## Sovelluksen konfiguraatiot
 
 Sovelluksen koodiin ei ole syytä kovakoodata mitään konfiguraatioita, kuten sen käyttämien tiedostojen tai tietokantojen nimiä. Eräs syy tähän on se, että jos konfiguraatiot ovat koodissa, ei ohjelman normaalin käyttäjän (jolla ei ole pääsyä koodiin) ole mahdollista tehdä muutoksia konfiguraatioihin.
