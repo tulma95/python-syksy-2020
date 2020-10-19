@@ -20,13 +20,13 @@ Ennen tehtävien aloitusta, tutustu [pipenv-ohjeisiin](../materiaali/pipenv). Va
 
 ## 1
 
-- tutustu [unittest-ohjeeseen](../materiaali/unittest.md)
-- lukiessasi tee testit myös itse
-- lisää lopuksi maksukortille seuraavat testit:
-  - maukkaan lounaan syöminen ei vie saldoa negatiiviseksi, ota tähän mallia testistä `test_syo_edullisesti_ei_vie_saldoa_negatiiviseksi`
-  - negatiivisen summan lataaminen ei muuta kortin saldoa
-  - kortilla pystyy ostamaan edullisen lounaan, kun kortilla rahaa vain edullisen lounaan verran (eli 2.5e)
-  - kortilla pystyy ostamaan maukkaan lounaan, kun kortilla rahaa vain maukkaan lounaan verran (eli 4e)
+- Tutustu [unittest-ohjeeseen](../materiaali/unittest.md)
+- Lukiessasi tee testit myös itse
+- Lisää lopuksi maksukortille seuraavat testit:
+  - Maukkaan lounaan syöminen ei vie saldoa negatiiviseksi, ota tähän mallia testistä `test_syo_edullisesti_ei_vie_saldoa_negatiiviseksi`
+  - Negatiivisen summan lataaminen ei muuta kortin saldoa
+  - Kortilla pystyy ostamaan edullisen lounaan, kun kortilla rahaa vain edullisen lounaan verran (eli 2.5e)
+  - Kortilla pystyy ostamaan maukkaan lounaan, kun kortilla rahaa vain maukkaan lounaan verran (eli 4e)
 
 **HUOM1** on suositeltavaa, että yksi testi testaa vain "yhtä asiaa" kerrallaan. Tee siis jokaisesta ylläolevasta oma testinsä.
 
@@ -201,12 +201,12 @@ Avaa nyt projekti valitsemallasi editorilla, kuten Visual Studio Codella.
 
 Tee valmiiseen testiluokkaan `TestMaksukortti` testit, jotka testaavat ainakin seuraavia asioita:
 
-- kortin saldo alussa oikein
-- rahan lataaminen kasvattaa saldoa oikein
-- rahan ottaminen toimii
-  - saldo vähenee oikein, jos rahaa on tarpeeksi
-  - saldo ei muutu, jos rahaa ei ole tarpeeksi
-  - metodi palauttaa _True_, jos rahat riittivät ja muuten _False_
+- Kortin saldo alussa oikein
+- Rahan lataaminen kasvattaa saldoa oikein
+- Rahan ottaminen toimii
+  - Saldo vähenee oikein, jos rahaa on tarpeeksi
+  - Saldo ei muutu, jos rahaa ei ole tarpeeksi
+  - Metodi palauttaa _True_, jos rahat riittivät ja muuten _False_
 
 Suorita testit komentoriviltä virtuaaliympäristössä `pytest`-komennolla.
 
@@ -249,18 +249,18 @@ Laajennetaan unicafe-projektin testaus kattamaan myös kassapääte.
 
 Tee testihakemistoon testitiedosto _kassapaate\_test.py_ ja sinne testiluokka `TestKassapaate`. Tee testit jotka testaavat ainakin seuraavia asioita:
 
-- luodun kassapäätteen rahamäärä ja myytyjen lounaiden määrä on oikea (rahaa 1000, lounaita myyty 0)
-- käteisosto toimii sekä edullisten että maukkaiden lounaiden osalta
-  - jos maksu riittävä: kassassa oleva rahamäärä kasvaa lounaan hinnalla ja vaihtorahan suuruus on oikea
-  - jos maksu on riittävä: myytyjen lounaiden määrä kasvaa
-  - jos maksu ei ole riittävä: kassassa oleva rahamäärä ei muutu, kaikki rahat palautetaan vaihtorahana ja myytyjen lounaiden määrässä ei muutosta
+- Luodun kassapäätteen rahamäärä ja myytyjen lounaiden määrä on oikea (rahaa 1000, lounaita myyty 0)
+- Käteisosto toimii sekä edullisten että maukkaiden lounaiden osalta
+  - Jos maksu riittävä: kassassa oleva rahamäärä kasvaa lounaan hinnalla ja vaihtorahan suuruus on oikea
+  - Jos maksu on riittävä: myytyjen lounaiden määrä kasvaa
+  - Jos maksu ei ole riittävä: kassassa oleva rahamäärä ei muutu, kaikki rahat palautetaan vaihtorahana ja myytyjen lounaiden määrässä ei muutosta
 - _seuraavissa testeissä tarvitaan myös Maksukorttia jonka oletetaan toimivan oikein_
-- korttiosto toimii sekä edullisten että maukkaiden lounaiden osalta
-  - jos kortilla on tarpeeksi rahaa, veloitetaan summa kortilta ja palautetaan true
-  - jos kortilla on tarpeeksi rahaa, myytyjen lounaiden määrä kasvaa
-  - jos kortilla ei ole tarpeeksi rahaa, kortin rahamäärä ei muutu, myytyjen lounaiden määrä muuttumaton ja palautetaan false
-  - kassassa oleva rahamäärä ei muutu kortilla ostettaessa
-- kortille rahaa ladattaessa kortin saldo muuttuu ja kassassa oleva rahamäärä kasvaa ladatulla summalla
+- Korttiosto toimii sekä edullisten että maukkaiden lounaiden osalta
+  - Jos kortilla on tarpeeksi rahaa, veloitetaan summa kortilta ja palautetaan true
+  - Jos kortilla on tarpeeksi rahaa, myytyjen lounaiden määrä kasvaa
+  - Jos kortilla ei ole tarpeeksi rahaa, kortin rahamäärä ei muutu, myytyjen lounaiden määrä muuttumaton ja palautetaan false
+  - Kassassa oleva rahamäärä ei muutu kortilla ostettaessa
+- Kortille rahaa ladattaessa kortin saldo muuttuu ja kassassa oleva rahamäärä kasvaa ladatulla summalla
 
 Huomaat että kassapääte sisältää melkoisen määrän "copypastea". Nyt kun kassapäätteellä on automaattiset testit, on sen rakennetta helppo muokata eli refaktoroida siistimmäksi koko ajan kuitenkin varmistaen, että testit menevät läpi. Tulemme tekemään refaktoroinnin myöhemmin kurssilla.
 
