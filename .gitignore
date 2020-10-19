@@ -1,2 +1,5 @@
 .pytest_cache
 .DS_Store
+.vscode
+.coverage
+htmlcov

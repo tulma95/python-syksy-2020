@@ -128,7 +128,7 @@ class TestNumerotiedustelu(unittest.TestCase):
         numerotiedustelu = Numerotiedustelu(lue, tulosta, palvelu)
         numerotiedustelu.kaynnista()
 
-        # varmista assert-lauseella että ohjelman tulostus oli se halutun kaltainen
+        # varmista assert-lauseella että ohjelman tulostus oli halutun kaltainen
 ```
 
 ## Tietojen tallennus
@@ -139,7 +139,7 @@ Arvosteluperusteet [kannustavat](./arvosteluperusteet.md) siihen, että ohjelmas
 
 Riippumatta mihin tiedon tallennat, kannattaa tiedon haku ja tallentaminen eristää sovelluksen muista osista. Kun piilotamme näihin operaatioihin liittyvän koodin yksityiskohdat sovelluksen muulta koodilta, on esimerkiksi tiedon tallennustapaan helppo tehdä muutoksia ilman, että sillä on vaikutuksia muualla. Tämä onnistuu noudattamalla [repository](https://docs.microsoft.com/en-us/dotnet/architecture/microservices/microservice-ddd-cqrs-patterns/infrastructure-persistence-layer-design)-suunnittelumallia.
 
-Repository-suunnittelumallin perusidea on se, että jokaisella tietokohteella (kuten todo-sovelluksen tehävä) on oma repositorionsa (ei tule sekoittaa Git:in repositorioihin). Repositorio tarjoaa tietokohteeseen erilaisia luku- ja kirjoitusoperaatioita. Käytetään esimerkkinä referenssisovelluksen `TodoRepository`-luokkaa:
+Repository-suunnittelumallin perusidea on se, että jokaisella tietokohteella (kuten todo-sovelluksen tehävä) on oma repositorionsa (ei tule sekoittaa gitin repositorioihin). Repositorio tarjoaa tietokohteeseen erilaisia luku- ja kirjoitusoperaatioita. Käytetään esimerkkinä referenssisovelluksen `TodoRepository`-luokkaa:
 
 ```python
 class TodoRepository:
@@ -315,7 +315,7 @@ def pytest_configure():
 
 ### Huomioita testaamisesta
 
-[Testausohjeissa](./unnittest.md) ohjeistettiin, että _kaikki testit tulee olla toisistaan riippumattomia_. Tämä tarkoittaa sitä, että tallennusta testaavan metodin tulee olettaa, ettei edellisiä tallennustietoja ole. Tämä onnistuu testiluokan `setUp`-metodissa kutsumalla repositorion metodia, joka tyhjentää tallennustiedot. Esimerkiksi referenssisovelluksessa toteutus on seuraava:
+[Testausohjeissa](./unittest.md) ohjeistettiin, että _kaikki testit tulee olla toisistaan riippumattomia_. Tämä tarkoittaa sitä, että tallennusta testaavan metodin tulee olettaa, ettei edellisiä tallennustietoja ole. Tämä onnistuu testiluokan `setUp`-metodissa kutsumalla repositorion metodia, joka tyhjentää tallennustiedot. Esimerkiksi referenssisovelluksessa toteutus on seuraava:
 
 ```python
 class TestTodoRepository(unittest.TestCase):
