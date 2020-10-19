@@ -8,7 +8,7 @@
 
 Sovelluksen koodiin ei ole syytä kovakoodata mitään konfiguraatioita, kuten sen käyttämien tiedostojen tai tietokantojen nimiä. Eräs syy tähän on se, että jos konfiguraatiot ovat koodissa, ei ohjelman normaalin käyttäjän (jolla ei ole pääsyä koodiin) ole mahdollista tehdä muutoksia konfiguraatioihin.
 
-Konfiguraatiot on syytä määritellä ohjelman ulkopuolella, esim. erillisissä konfiguraatiotiedostoissa. Pipenv [lataa automaattisesti](https://pipenv-fork.readthedocs.io/en/latest/advanced.html#automatic-loading-of-env) projektin juurihakemiston _.env_ tiedostosta niin kutsuttuja _ympäristömuuttujia_. Näihin ympäristömuuttujiin pääsee koodissa käsiksi `os`-moduulin [getenv](https://docs.python.org/3/library/os.html#os.getenv)-funktion avulla. Tiedoston _.env_ sisältö voisi olla esimerkiksi seuraava:
+Konfiguraatiot on syytä määritellä ohjelman ulkopuolella, esim. erillisissä konfiguraatiotiedostoissa. Pipenv [lataa automaattisesti](https://pipenv-fork.readthedocs.io/en/latest/advanced.html#automatic-loading-of-env) projektin juurihakemiston _.env_ tiedostosta niin kutsuttuja _ympäristömuuttujia_. Näihin ympäristömuuttujiin pääsee koodissa käsiksi mm. [os](https://docs.python.org/3/library/os.html)-moduulin [getenv](https://docs.python.org/3/library/os.html#os.getenv)-funktion avulla. Tiedoston _.env_ sisältö voisi olla esimerkiksi seuraava:
 
 ```
 FOO=bar
@@ -24,7 +24,7 @@ print(os.getenv("FOO"))
 print(os.getenv("LOREM"))
 ```
 
-Jos ympäristömuuttajalle ei ole annettu arvoa, `getenv`-funktio palauttaa `None`. Jotta koodi pysyisi selkeänä, kannattaa ympäristömuuttujien arvot lukea erillisessä moduulissa, joka toteutetaan esimerkiksi _src/config.py_ tiedostoon:
+Jos ympäristömuuttajalle ei ole annettu arvoa, `getenv`-funktio palauttaa arvon `None`. Jotta koodi pysyisi selkeänä, kannattaa ympäristömuuttujien arvot lukea erillisessä moduulissa, joka toteutetaan esimerkiksi _src/config.py_ tiedostoon:
 
 ```python
 import os
@@ -34,7 +34,7 @@ FOO = os.getenv("FOO") or "default bar"
 LOREM = os.getenv("LOREM") or "default ipsum"
 ```
 
-Muuttujille on hyvä antaa oletusarvot, jos ympäristömuuttujalle ei ole annettu arvoa. Moduulin muuttujat `FOO` ja `LOREM` voidaan importata projektin toisessa tiedostossa seuraavasti:
+Muuttujille on hyvä antaa oletusarvot, jos ympäristömuuttujalle ei ole annettu arvoa. Moduulissa alustetut muuttujat `FOO` ja `LOREM` voidaan importata projektin toisessa tiedostossa seuraavasti:
 
 ```python
 from config import FOO, LOREM
@@ -45,13 +45,13 @@ print(LOREM)
 
 Testeille on usein käytössä eri konfiguraatio, kuin muulla koodilla. Esimerkiksi testien kannattaa käyttää SQLite-tietokannan kanssa eri tiedostoa. Tätä varten voimme tehdä projektin juurihakemistoon erillisen _.env.test_-tiedoston, jonne määritellään testien käyttämät ympäristömuuttujat.
 
-Näiden ympäristömuuttujien lataaminen onnistuu [pytest-dotenv](https://pypi.org/project/pytest-dotenv/)-lisäosalla. Sen asentaminen onnistuu seuraavalla komennolla:
+Näiden ympäristömuuttujien lataaminen onnistuu pytestin [pytest-dotenv](https://pypi.org/project/pytest-dotenv/)-lisäosalla. Sen asentaminen onnistuu seuraavalla komennolla:
 
 ```bash
 python -m pipenv install pytest-dotenv
 ```
 
-Asentamisen lisäksi tulee projektin juurihakemistoon luoda _pytest.ini_-tiedosto, jossa kerrotaan, mistä tiedostosta ympäristömuuttujat ladataan. Tiedoston sisältö tulee olla seuraava:
+Asentamisen lisäksi tulee projektin juurihakemistoon luoda _pytest.ini_-tiedosto, jossa kerrotaan, mistä tiedostosta ympäristömuuttujat ladataan. Tiedoston sisältö on seuraava:
 
 ```
 [pytest]

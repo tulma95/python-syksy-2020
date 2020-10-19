@@ -76,9 +76,21 @@ Nyt laatutarkituksien suorittaminen pitäisi onnistua komennolla:
 python -m pipenv run lint
 ```
 
+## Integrointi editoriin
+
+Monissa editoreissa on lisäosia, jotka huomauttavat laatuvirheistä suoraan koodissa. Tämä tekee niiden huomaamisesta ja korjaamisesta nopeampaa. Jos käytössäsi on [Visual Studio Code](https://code.visualstudio.com/), riittää että varmistat, että [Python](https://marketplace.visualstudio.com/items?itemName=ms-python.python) lisäosa on asennettu:
+
+![Visual Studio Code Python lisäosa](./kuvat/vscode-python-lisaosa.png)
+
+Tämän jälkeen Visual Studio Coden tulisi huomauttaa laatuvirheistä suoraan koodissa punaisella alleviivauksessa. Viemällä hiiren ongelmallisen koodin päälle pitäisi aueta tarkempaa tietoa virheestä:
+
+![Visual Studio Code pylint](./kuvat/vscode-pylint.png)
+
+Jos integroinnin kanssa ilmenee ongelmia, tutustu Visual Studio Coden [ohjeisiin](https://code.visualstudio.com/docs/python/linting).
+
 ## Automaattinen formatointi
 
-Tiettyjen laatukorjausten, kuten sisennysten ja liian pitkien koodirivien korjaaminen tuottaa välillä turhaa manuaalista työtä. Koodin automaattisessa formatoinnissa auttaa [autopep8](https://pypi.org/project/autopep8/)-kirjasto. Aloitetaan sen käyttö asentamalle se projektin riippuvuudeksi:
+Tiettyjen laatukorjausten, kuten sisennysten ja liian pitkien koodirivien korjaaminen tuottaa välillä turhaa manuaalista työtä. Koodin automaattisessa formatoinnissa auttaa [autopep8](https://pypi.org/project/autopep8/)-kirjasto. Kirjasto formatoi koodin automaattisesti [PEP 8](https://www.python.org/dev/peps/pep-0008/)-tyyliohjeiden mukaisesti. Aloitetaan sen käyttö asentamalle se projektin riippuvuudeksi:
 
 ```bash
 python -m pipenv install autopep8
