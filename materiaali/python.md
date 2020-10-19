@@ -2,9 +2,138 @@
 
 ## Sovelluksen käyttöliittymä
 
+Voit siis tehdä sovelluksellesi tekstikäyttöliittymän tai graafisen käyttöliittymän. Tekstikäyttöliittymän tekeminen on toki useimmiten huomattavasti helpompaa, mutta se voi olla hieman tylsää ja graafisen käyttöliittymän tekemättömyys saattaa [vaikuttaa arvosanaan](./arvosteluperusteet.md).
+
+Pääasia on joka tapauksessa, että pyrit _eriyttämään mahdollisimman hyvin sovelluslogiikan käyttöliittymästä_. Käyttöliittymän roolin tulee siis olla ainoastaan käyttäjän kanssa tapahtuva interaktio, varsinaisen logiikan tulee tapahtua muissa oliossa.
+
+### Eräs malli tekstikäyttöliittymälle
+
+```python
+KOMENNOT = {
+    "x": "x lopeta",
+    "1": "1 lisää numero",
+    "2": "2 hae numerot",
+    "3": "3 hae puhelinnumeroa vastaava henkilö",
+    "4": "4 lisää osoite",
+    "5": "5 hae henkilön tiedot",
+    "6": "6 poista henkilön tiedot",
+    "7": "7 filtteröity listaus",
+}
+
+class Numerotiedustelu:
+    def __init__():
+        self.lue = input
+        self.tulosta = print
+        self.palvelu = NumeroJaOsoitepalvelu()
+
+    def kaynnista(self):
+        self.tulosta("numerotiedustelu")
+        self.tulosta_ohje()
+
+        while True:
+            self.tulosta("")
+            komento = self.lue("komento: ")
+
+            if not komento in KOMENNOT:
+                self.tulosta("virheellinen komento")
+                self.tulosta_ohje()
+
+            if komento == "x":
+                break
+            else if komento == "1":
+                self.lisaa_numero()
+            else if komento == "2":
+                self.hae_numerot()
+            else if komento == "3":
+                self.hae_henkilo()
+            else if komento == "4":
+                self.lisaa_osoite()
+            else if komento == "5":
+                self.hae_tiedot()
+            else if komento == "6":
+                self.poista_henkilo()
+            else if komento == "7":
+                self.listaus()
+
+    def hae_numerot(self):
+        nimi = self.tulosta("kenen: ")
+        numerot = self.palvelu.hae_numerot(nimi)
+
+        if len(numerot) == 0:
+            self.tulosta("ei löytynyt");
+            return
+
+        for numero in numerot:
+            self.tulosta(numero)
+
+     def lisaa_numero() {
+        nimi = self.lue("kenelle: ")
+        numero = self.lue("numero: ")
+
+        self.palvelu.lisaa_numero(nimi, numero)
+
+    # lisää käyttöliittymäfunktioita...
+```
+
+## Riippuvuuksien injektointi
+
+```python
+# ...
+
+class Numerotiedustelu:
+    def __init__(lue, tulosta, palvelu):
+        self.lue = lue
+        self.tulosta = tulosta
+        self.palvelu = palvelu
+
+    # ...
+```
+
+```python
+palvelu = NumeroJaOsoitepalvelu()
+numerotiedustelu = Numerotiedustelu(input, print, palvelu)
+numerotiedustelu.kaynnista()
+```
+
+```python
+class TietokantaNumeroJaOsoitePalvelu:
+    def hae_numerot(self):
+        # ...
+
+    def lisaa_numero(self, nimi, numero):
+        # ...
+
+    # ...
+```
+
+```python
+palvelu = TietokantaNumeroJaOsoitePalvelu()
+numerotiedustelu = Numerotiedustelu(input, print, palvelu)
+numerotiedustelu.kaynnista()
+```
+
+```python
+import unittest
+from numerotiedustelu import Numerotiedustelu
+
+
+class TestNumerotiedustelu(unittest.TestCase):
+    def test_numeron_lisays_lisaa_tiedot_oikein(self):
+        syotteet = ["1", "Kalle Ilves", "040-123456", "x"]
+        tulosteet = []
+
+        lue = lambda viesti: syotteet.pop(0)
+        tulosta = lambda viesti: tulosteet.append(viesti)
+        palvelu = NumeroJaOsoitePalvelu()
+        numerotiedustelu = Numerotiedustelu(lue, tulosta, palvelu)
+        numerotiedustelu.kaynnista()
+
+        # varmista assert-lauseella että ohjelman tulostus oli se halutun kaltainen
+```
+
 ## Tietojen tallennus
 
-Arvosteluperusteet kannustavat siihen, että ohjelmasi käsittelisi johonkin muotoon pysyväistalletettua tietoa. Kannattaa kuitenkin pitää talletettavan tiedon määrä kohtuullisena, eeppisimmät tietoa käsittelevät aiheet sopivat paremmin kurssille Tietokantasovellus.
+Arvosteluperusteet [kannustavat](./arvosteluperusteet.md) siihen, että ohjelmasi käsittelisi johonkin muotoon pysyväistalletettua tietoa. Kannattaa kuitenkin pitää talletettavan tiedon määrä kohtuullisena, eeppisimmät tietoa käsittelevät aiheet sopivat paremmin kurssille Tietokantasovellus.
 
 ### Repository-suunnittelumalli
 
@@ -104,7 +233,7 @@ print(todos)
 
 SQLite-tietokantaa kannattaa käyttää sovelluksessa [sqlite3](https://docs.python.org/3/library/sqlite3.html)-moduulin kautta. Mikä tekee SQLite-tietokannan käytöstä hieman hankalampaa perinteiseen tiedostoon verrattuna on se, että sen käyttö vaatii tietokantaulujen alustuksen.
 
-Tietokantayhteys kannattaa muodostaa omassa moduulissaan esimerkiksi _src/database\_connection.py_-tiedostossa:
+Tietokantayhteys kannattaa muodostaa omassa moduulissaan esimerkiksi _src/database_connection.py_-tiedostossa:
 
 ```python
 import os
@@ -120,7 +249,7 @@ def get_database_connection():
     return connection
 ```
 
-Ennen tietokantaulujen alustusta kannattaa entiset tietokantaulut poistaa. Näin esimerkiksi uuden sarakkeen lisääminen tauluun onnistuu helposti. Tietokannan alustustoimenpiteitä varten kannattaa toteuttaa oma moduulinsa esimerkiksi _src/initiailize\_database.py_ tiedostoon:
+Ennen tietokantaulujen alustusta kannattaa entiset tietokantaulut poistaa. Näin esimerkiksi uuden sarakkeen lisääminen tauluun onnistuu helposti. Tietokannan alustustoimenpiteitä varten kannattaa toteuttaa oma moduulinsa esimerkiksi _src/initiailize_database.py_ tiedostoon:
 
 ```python
 from database_connection import get_database_connection
@@ -174,7 +303,7 @@ Tai komentoriviltä:
 python src/initialize_database.py
 ```
 
-Etenkin tietokantaoperaatioita testaavien testien kanssa funktiokutsun avulla tapahtuva alustaminen on erittäin hyödyllinen. Ennen kuin testit suoritetaan `pytest`-komennolla, pytest tarkistaa, onko testihakemistossa _conftest.py_-tiedostoa. Jos tämä löytyy, se kutsuu tiedostossa määriteltyä `pytest_configure`-funktiota ennen testien suorittamista. Tästä syystä funktion sisällä onkin hyödyllistä tehdä tietokannan alustus:
+Etenkin tietokantaoperaatioita testaavien testien kanssa funktiokutsun avulla tapahtuva alustaminen on erittäin hyödyllinen. Ennen kuin testit suoritetaan `pytest`-komennolla, pytest tarkistaa, onko testihakemistossa _conftest.py_-tiedostoa. Jos kyseinen tiedosto löytyy, se kutsuu tiedostossa määriteltyä `pytest_configure`-funktiota ennen testien suorittamista. Tästä syystä funktion sisällä onkin hyödyllistä tehdä tietokannan alustus:
 
 ```python
 from initialize_database import initialize_database
