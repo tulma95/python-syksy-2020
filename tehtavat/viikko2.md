@@ -117,10 +117,8 @@ class Kassapaate:
 
 Avaa terminaali, mene palautusrepositoriosi hakemistoon _laskarit/viikko2_ ja suorita seuraavat komennot:
 
-<!-- TODO: fix zip link -->
-
 ```bash
-wget https://raw.githubusercontent.com/mluukkai/ohjelmistotekniikka-syksy-2020/main/misc/Unicafe.zip
+wget https://raw.githubusercontent.com/Kaltsoon/ohjelmistotekniikka-python/master/tehtavat/unicafe.zip
 unzip unicafe.zip
 rm unicafe.zip
 ```
@@ -214,12 +212,12 @@ Suorita testit komentoriviltä virtuaaliympäristössä `pytest`-komennolla.
 
 Tutustu testikattavuuden mittaamiseen lukemalla materiaalin [testikattavuutta](../materiaali/coverage.md) käsittelevä osio.
 
-Projektiin on valmiiksi konfiguroitu käytettäväksi [coverage](https://coverage.readthedocs.io/en/coverage-5.3/)-työkalu, joka mittaa sekä lause- että haarautumakattavuuden. Määrittely on tiedoston _Pipfile_ osiossa `[packages]`:
+Projektiin on valmiiksi konfiguroitu käytettäväksi [coverage](https://coverage.readthedocs.io/en/coverage-5.3/)-työkalu, joka mittaa sekä lause- että haarautumakattavuuden. Testikattavuuden konfiguraatiossa käytettävä, _.coveragerc_-tiedoston sisältö on projektissa seuraava:
 
 ```
-[packages]
-pytest = "*"
-coverage = "*"
+[run]
+source = src
+omit = src/tests/**,src/index.py
 ```
 
 Testikattavuuden kerääminen testeistä onnistuu virtuaaliympäristössä komennolla `coverage run --branch -m pytest`. Komennon suorittamisen jälkeen kattavuusraportin voi muodostaa komennolla `coverage html`. Komennon suorittaminen luo projektin juurihakemistoon hakemiston _htmlcov_. Avamaalla hakemiston tiedoston _index.html_ selaimessa aukeaa seuraavan näköinen raportti:
@@ -227,6 +225,8 @@ Testikattavuuden kerääminen testeistä onnistuu virtuaaliympäristössä komen
 ![Testikattavuusraportti](../materiaali/kuvat/unicafe-coverage.png)
 
 Huomaa, että oma raporttisi tuskin näyttää täysin tältä (etenkin kattavuusprosenttien osalta) edellisen tehtävien testien toteutuksen jälkeen. Yksittäistä moduulia klikkaamalla näet punaisella korostuksella rivit, joita testit eivät vielä kata.
+
+**Jos maksukortin koodissa on vielä rivejä tai haarautumia (merkitty punaisella) joille ei ole testiä, kirjoita sopivat testit.**
 
 Jotta `coverage`-komennon generoimat tiedostot eivät päättyisi versionhallintaan, lisää _.gitignore_-tiedostoon vielä seuraavat rivit:
 

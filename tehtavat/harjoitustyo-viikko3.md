@@ -8,7 +8,7 @@ Muista pushata harjoitustyöhön liittyvät asiat GitHubiin ennen viikkodeadline
 
 **HUOM! Saadaksesi harjoitustyöstä viikkokohtaiset pisteet, sovelluksen tulee toimia laitoksen koneella ja ohjaajien pitää pystyä se niiltä aukaisemaan!!** Voit testata tätä esim. [virtuaalityöasemassa](https://vdi.helsinki.fi).
 
-**HUOM! Ainoa sallittu kieli on Java 11.** Ohjeet sen asentamiseen ovat [täällä](https://www.mooc.fi/fi/installation/netbeans).
+**HUOM! Ainoa sallittu kieli on Python ja siinä käytettävä versio tulee olla vähintään 3.7.0.**.
 
 Palautuksesta on tarjolla 2 kurssipistettä.
 
@@ -25,8 +25,8 @@ Arvostelussa kiinnitetään huomiota seuraaviin seikkoihin
 - Sovellukselle tulee pystyä keräämään testikattavuus komennolla `python -m pipenv run coverage` ja generoimaan testikattavuusraportti komennolla `python -m pipenv run coverage-report`. Kertaa [testikattavuuden ohjeet](../materiaali/coverage.md), jos tämä tuottaa hankaluuksia
 - Tuntikirjanpito on ajantasalla
   - Tuntikirjanpitoon ei merkitä laskareihin käytettyä aikaa
-- Repositorion README.md kunnossa
-  - Tiedosto on kurssin tämän vaiheen osalta relevantin sisällön suhteen samankaltainen kuin [referenssisovelluksen](https://github.com/Kaltsoon/ot-todo-app) README.md
+- Repositorion _README.md_-tiedosto kunnossa
+  - Tiedosto on kurssin tämän vaiheen osalta relevantin sisällön suhteen samankaltainen kuin [referenssisovelluksen](https://github.com/Kaltsoon/ot-todo-app) _README.md_-tiedosto
   - Kaikki ylimääräinen, mm. linkit laskareihin on poistettu
 - Repositorio siisti
   - Ei ylimääräistä tavaraa (esim. `pytest`-, tai `coverage`-komentojen generoimia hakemistoja ja tiedostoja)

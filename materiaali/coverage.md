@@ -26,11 +26,18 @@ Tulostuksesta huomaamme, että raportissa on suuri määrä projektin kannalta t
 
 ```
 [run]
-include =
-  src/**
+source = src
 ```
 
-Nyt komentojen `coverage run --branch -m pytest` ja `coverage report -m` suorittaminen sisällyttää vain _src_-hakemiston tiedostot.
+Voimme myös jättää testikattavuuden ulkopuolelle tiedostoja ja hakemistoja. Järkevää voisi olla esimerkiksi jättää testihakemisto, käyttöliittymän koodin hakemisto ja _src/index.py_-tiedosto testikattavuuden ulkopuolle. Tämä onnistuu seuraavalla muutoksella _.coveragerc_-tiedostoon:
+
+```
+[run]
+source = src
+omit = src/tests/**,src/ui/**,src/index.py
+```
+
+Nyt komentojen `coverage run --branch -m pytest` ja `coverage report -m` suorittaminen sisällyttää vain haluamamme _src_-hakemiston tiedostot.
 
 Komentoriviltä luettavaa raporttia selkeämmän esitysmuodon voi generoida komennolla:
 
