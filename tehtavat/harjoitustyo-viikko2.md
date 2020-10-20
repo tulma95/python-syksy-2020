@@ -20,9 +20,9 @@ Mikään ei tietenkään estä sitä, että aloitat jo ohjelmoinnin tai vaikkapa
 
 Palautus tapahtuu lisäämällä oman aiheen _alustava määrittelydokumentti_ ensimmäisen viikon [laskareiden](https://github.com/mluukkai/ohjelmistotekniikka-syksy-2020/blob/main/tehtavat/viikko1.md#labtool) päätteeksi [labtooliin](https://study.cs.helsinki.fi/labtool/courses/TKT20002.2020.S.K.1) rekisteröimääsi palautusrepositorioon.
 
-Määrittelydokumentti tehdään samaan tapaan kuin [referenssiprojektista](https://github.com/mluukkai/OtmTodoApp) eli [markdown](https://guides.github.com/features/mastering-markdown/)-muodossa, sijoitetaan repositorion hakemistoon _dokumentaatio_ ja siihen tulee olla linkki repositorion README.md:stä.
+Määrittelydokumentti tehdään samaan tapaan kuin [referenssisovelluksessa](https://github.com/ohjelmistotekniikka-hy/python-todo-app) eli [markdown](https://guides.github.com/features/mastering-markdown/)-muodossa, sijoitetaan repositorion hakemistoon _dokumentaatio_ ja siihen tulee olla linkki repositorion README.md:stä.
 
-Määrittelydokumenttiin kannattaa ottaa mallia [referenssiprojektista](https://github.com/mluukkai/OtmTodoApp), eli sen tulee sisältää:
+Määrittelydokumenttiin kannattaa ottaa mallia [referenssisovelluksessa](https://github.com/ohjelmistotekniikka-hy/python-todo-app), eli sen tulee sisältää:
 
 - _Sovelluksen tarkoitus_ eli pieni tekstuaalinen yleiskuvaus sovelluksesta
 - _Käyttäjät_ eli tieto erilaisista _käyttäjärooleista_, joita järjestelmässä on
@@ -40,4 +40,4 @@ Pidä säännöllisesti kirjaa käyttämistäsi työtunneista. Käytettyjen työ
 
 - Tuntikirjanpitoon ei merkitä laskareihin käytettyä aikaa
 
-Lisää repositorion README.md-tiedostoon linkki [työaikakirjanpitoon](https://github.com/mluukkai/OtmTodoApp/blob/master/dokumentaatio/tuntikirjanpito.md).
+Lisää repositorion README.md-tiedostoon linkki [työaikakirjanpitoon](https://github.com/ohjelmistotekniikka-hy/python-todo-app/blob/master/dokumentaatio/tuntikirjanpito.md).

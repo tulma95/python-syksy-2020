@@ -208,7 +208,7 @@ Tee valmiiseen testiluokkaan `TestMaksukortti` testit, jotka testaavat ainakin s
 
 Suorita testit komentoriviltä virtuaaliympäristössä `pytest`-komennolla.
 
-## 3 Testauskattavuus
+## 3 Testikattavuus
 
 Tutustu testikattavuuden mittaamiseen lukemalla materiaalin [testikattavuutta](../materiaali/coverage.md) käsittelevä osio.
 
@@ -270,6 +270,6 @@ Varmista testikattavuuskomentojen avulla, että kassapäätteen testeillä on 10
 
 ## 6
 
-Talleta kohdassa [testikattavuus](#3-testauskattavuus) olevan kuvan tyylinen [screenshot](https://www.take-a-screenshot.org/) projektisi kattavuusraportista palautusrepositoriosi hakemistoon _laskarit/viikko2_.
+Talleta kohdassa [testikattavuus](#3-testikattavuus) olevan kuvan tyylinen [screenshot](https://www.take-a-screenshot.org/) projektisi kattavuusraportista palautusrepositoriosi hakemistoon _laskarit/viikko2_.
 
 **Muista tallentaa tekemäsi muutokset gitiin ja työntää ne GitHubiin (`git push`).**
