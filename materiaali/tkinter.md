@@ -32,29 +32,29 @@ TkInter tarjoaa käyttöömme monia graafisia komponentteja, kuten tekstiä, nap
 from tkinter import Tk, ttk
 
 class UI:
-  def __init__(self, root):
-    self.root = root
+    def __init__(self, root):
+        self.root = root
 
-  def initialize(self):
-    label = ttk.Label(master = self.root, text = "Hello world!")
+    def start(self):
+        label = ttk.Label(master = self.root, text = "Hello world!")
 
-    label.pack()
+        label.pack()
 
 window = Tk()
 window.title("TkInter example")
 
 ui = UI(window)
-ui.initialize()
+ui.start()
 
 window.mainloop()
 ```
 
-Koodi sai hieman paremman rakenteen. `UI`-luokka saa konstruktorin kautta juurikomponentin, johon se liittää lisäämänsä komponentit. Metodissa `initialize` alustaa `Label`-olion ja kerromme sille parametrin `master` kautta, että se liitetään juurikomponenttiin, `root`. `text`-parametri sen sijaan määrittelee itse näytettävän tekstin.
+Koodi sai hieman paremman rakenteen. `UI`-luokka saa konstruktorin kautta juurikomponentin, johon se liittää lisäämänsä komponentit. Metodissa `start` alustaa `Label`-olion ja kerromme sille parametrin `master` kautta, että se liitetään juurikomponenttiin, `root`. `text`-parametri sen sijaan määrittelee itse näytettävän tekstin.
 
 Huomaa, ettei komponettia näytetä ennen `pack`-metodin kutsua. Tutustumme metodin merkitykseen pian. Lisätään sitä ennen vielä lisää komponentteja käyttöliittymäämme.
 
 ```python
-def initialize(self):
+def start(self):
     label = ttk.Label(master = self.root, text = "Hello world!")
     button = ttk.Button(master = self.root, text = "Button")
     entry = ttk.Entry(master = self.root)
@@ -84,7 +84,7 @@ class UI:
     def __init__(self, root):
         self.root = root
 
-    def initialize(self):
+    def start(self):
         label = ttk.Label(master=self.root, text="Hello world!")
         button = ttk.Button(master=self.root, text="Button")
         entry = ttk.Entry(master=self.root)
@@ -103,7 +103,7 @@ class UI:
 Komponenttien asettelussa `pack`-metodin käyttöä käytännöllisempää on käyttää `grid`-metodia. Gridissä on rivejä ja sarakkeita, joihin voimme sijottaa komponentteja:
 
 ```python
-def initialize(self):
+def start(self):
     heading_label = ttk.Label(master=self.root, text="Login")
 
     username_label = ttk.Label(master=self.root, text="Username")
@@ -138,7 +138,7 @@ Lopuksi `button` asettuu gridin viimeiselle, kolmannelle riville. Samoin kuten `
 Olemme käyttöliittymään melko tyytyväisiä, mutta pari pientä yksityiskohtaa pitäisi vielä korjata. Kun kasvatamme ikkunan kokoa, huomaamme, ettei komponenttien koko muutu tämän seurauksena. Haluaisimme, että tekstikentät ja kirjautumis-painike ottaisi kaiken jäljellä jäävän tilan leveyssuunnassa. Tämä onnistuu konfiguroimalla juurikomponentin gridin sarakkeita:
 
 ```python
-def initialize(self):
+def start(self):
     heading_label = ttk.Label(master=self.root, text="Login")
 
     username_label = ttk.Label(master=self.root, text="Username")
@@ -168,7 +168,7 @@ def initialize(self):
 Käyttöliittymä ei tämänkään muutokseen jälkeen näytä siltä, miltä pitäisi. Tämä johtuu siitä, että meidän täytyy vielä kertoa `username_entry`-, `password_entry`- ja `button`-komponenteille, mihin suuntiin ne sijoittuvat. Tämä onnistuu `sticky`-parametrin avulla:
 
 ```python
-def initialize(self):
+def start(self):
     heading_label = ttk.Label(master=self.root, text="Login")
 
     username_label = ttk.Label(master=self.root, text="Username")
@@ -212,22 +212,22 @@ TkInter mahdollistaa erilaisten tapahtumien, kuten napin painamisen, "kuuntelemi
 from tkinter import Tk, ttk
 
 class UI:
-  def __init__(self, root):
-    self.root = root
-    self.entry = None
+    def __init__(self, root):
+        self.root = root
+        self.entry = None
 
-  def initialize(self):
-    self.entry = ttk.Entry(master=self.root)
-    button = ttk.Button(master=self.root, text="Button")
-    
-    entry.grid(row=0, column=0)
-    button.grid(row=1, column=0)
+    def start(self):
+        self.entry = ttk.Entry(master=self.root)
+        button = ttk.Button(master=self.root, text="Button")
+
+        entry.grid(row=0, column=0)
+        button.grid(row=1, column=0)
 
 window = Tk()
 window.title("TkInter example")
 
 ui = UI(window)
-ui.initialize()
+ui.start()
 
 window.mainloop()
 ```
@@ -236,15 +236,15 @@ Lisätään koodiin toiminallisuus, joka tulostaa tekstikentän arvon, kun paini
 
 ```python
 class UI:
-  def __init__(self, root):
-    self.root = root
-    self.entry = None
+    def __init__(self, root):
+        self.root = root
+        self.entry = None
 
     def handle_button_click(self):
         entry_value = self.entry.get()
         print(f"Value of entry is: {entry_value}")
 
-    def initialize(self):
+    def start(self):
         self.entry = ttk.Entry(master=self.root)
 
         button = ttk.Button(
@@ -252,26 +252,26 @@ class UI:
           text="Button",
           command=self.handle_button_click
         )
-        
+
         entry.grid(row=0, column=0)
         button.grid(row=1, column=0)
 
 # ...
 ```
 
-`UI`-luokan metodi `handle_button_click` lukee tekstikentän arvon `get`-metodilla ja tulostaa sen. Metodin kutsuminen napin painalluksen yhteydessä tapahtuu `initialize`-metodissa, jossa `button`-komponentille on määritelty `command`-parametri. Parametrin arvo tulee olla kutsuttavissa, joten se voi olla esimerkiksi metodi, funktio, tai [lambda](https://docs.python.org/3/tutorial/controlflow.html#lambda-expressions). Lambdan käyttö olisi erityisen hyödyllistä esimerkiksi, jos haluaisimme antaa `handle_button_click`-metodille argumentin:
+`UI`-luokan metodi `handle_button_click` lukee tekstikentän arvon `get`-metodilla ja tulostaa sen. Metodin kutsuminen napin painalluksen yhteydessä tapahtuu `start`-metodissa, jossa `button`-komponentille on määritelty `command`-parametri. Parametrin arvo tulee olla kutsuttavissa, joten se voi olla esimerkiksi metodi, funktio, tai [lambda](https://docs.python.org/3/tutorial/controlflow.html#lambda-expressions). Lambdan käyttö olisi erityisen hyödyllistä esimerkiksi, jos haluaisimme antaa `handle_button_click`-metodille argumentin:
 
 ```python
 button_a = ttk.Button(
-  master=self.root,
-  text="Button A",
-  command=lambda: self.handle_button_click('button a')
+    master=self.root,
+    text="Button A",
+    command=lambda: self.handle_button_click('button a')
 )
 
 button_a = ttk.Button(
-  master=self.root,
-  text="Button B",
-  command=lambda: self.handle_button_click('button b')
+    master=self.root,
+    text="Button B",
+    command=lambda: self.handle_button_click('button b')
 )
 ```
 
@@ -285,26 +285,26 @@ Sovelluksissa on usein tarve useammalle näkymälle. Näkymät voidaan toteuttaa
 from tkinter import ttk, constants
 
 class HelloView:
-  def __init__(self, root, handle_good_bye):
-    self.root = root
-    self.handle_good_bye = handle_good_bye
-    self.frame = None
+    def __init__(self, root, handle_good_bye):
+        self.root = root
+        self.handle_good_bye = handle_good_bye
+        self.frame = None
 
-    self.initialize()
+        self.initialize()
 
-  def initialize(self):
-    self.frame = ttk.Frame(master=self.root)
-    label = ttk.Label(master=self.frame, text="Hello!")
-    button = ttk.Button(master=self.frame, text="Say good bye", command=self.handle_good_bye)
-    
-    label.grid(row=0, column=0)
-    button.grid(row=1, column=0)
+    def initialize(self):
+        self.frame = ttk.Frame(master=self.root)
+        label = ttk.Label(master=self.frame, text="Hello!")
+        button = ttk.Button(master=self.frame, text="Say good bye", command=self.handle_good_bye)
 
-  def pack(self):
-      self.frame.pack(fill=constants.X)
+        label.grid(row=0, column=0)
+        button.grid(row=1, column=0)
 
-  def destroy(self):
-      self.frame.destroy()
+    def pack(self):
+        self.frame.pack(fill=constants.X)
+
+    def destroy(self):
+        self.frame.destroy()
 ```
 
 Luokan `initialize`-metodissa määritellään meille ennestään tuntematon, `Frame`-komponentti. `Frame`-komponentilla ei ole visuaalisesti mitään erityispiirteitä, mutta sitä on erittäin kätevä käyttää komponenttien ryhmittelyyn. Haluamme eristää näkymän komponentit muiden näkymien komponenteista, joten liitämme ne `master`-parametrin kautta `frame`-komponenttiin. Tämä mahdollistaa sen, että voimme näyttää kaikki näkymän komponentit kerralla lukan `pack`-metodin avulla. Lisäksi voimme tuhota kaikki näkymän komponentit luokan `destroy`-metodilla. Kun komponentti tuhotaan, myös sen lapsikomponentit, eli `master`-parametrin avulla liitetyt komponentit tuhotaan.
@@ -331,15 +331,14 @@ class UI:
 
         self.current_view.pack()
 
-    def initialize(self):
+    def start(self):
         self.show_hello_view()
-
 
 window = Tk()
 window.title("TkInter example")
 
 ui = UI(window)
-ui.initialize()
+ui.start()
 
 window.mainloop()
 ```
@@ -350,29 +349,29 @@ Käyttöliittymän "Say good bye"-painikkeen painaminen pitäisi tulostaa `handl
 from tkinter import ttk, constants
 
 class GoodByeView:
-  def __init__(self, root, handle_hello):
-    self.root = root
-    self.handle_hello = handle_hello
-    self.frame = None
+    def __init__(self, root, handle_hello):
+        self.root = root
+        self.handle_hello = handle_hello
+        self.frame = None
 
-    self.initialize()
+        self.initialize()
 
-  def initialize(self):
-    self.frame = ttk.Frame(master=self.root)
-    label = ttk.Label(master=self.frame, text="Good bye!")
-    button = ttk.Button(master=self.frame, text="Say hello", command=self.handle_hello)
-    
-    label.grid(row=0, column=0)
-    button.grid(row=1, column=0)
+    def initialize(self):
+        self.frame = ttk.Frame(master=self.root)
+        label = ttk.Label(master=self.frame, text="Good bye!")
+        button = ttk.Button(master=self.frame, text="Say hello", command=self.handle_hello)
 
-  def pack(self):
-      self.frame.pack(fill=constants.X)
+        label.grid(row=0, column=0)
+        button.grid(row=1, column=0)
 
-  def destroy(self):
-      self.frame.destroy()
+    def pack(self):
+        self.frame.pack(fill=constants.X)
+
+    def destroy(self):
+        self.frame.destroy()
 ```
 
-Muokataan `UI`-luokkaa niin, että käyttäjä voi siirtyä näiden kahden näkymän välillä:
+Muokataan `UI`-luokkaa niin, että käyttäjä voi siirtyä näiden kahden näkymän välillä painamalla näkymien painikkeita:
 
 ```python
 from tkinter import Tk
@@ -416,7 +415,7 @@ class UI:
 
         self.current_view.pack()
 
-    def initialize(self):
+    def start(self):
         self.show_hello_view()
 
 # ...
@@ -427,3 +426,52 @@ Nyt luokasta löytyy metodi `hide_current_view`, joka piilottaa nykyisen näkym�
 Käyttäjän pitäisi nyt pystyä siirtymään näkymien välillä painamalla "Say hello"- ja "Say good bye"-painikkeita.
 
 ## Muuttujat
+
+Joskus haluamme liittää komponentissa jonkin ominaisuuden muuttuvaan arvoon. Esimerkiksi haluamme vaihtaa `Label`-komponentin tekstiä, kun nappia painetaan. TkInter tarjoaa erilaisia [muuttujaluokkia](https://effbot.org/tkinterbook/variable.htm), joilla on `get`- ja `set`-metodit niiden arvon lukemista ja asettamista varten. Muuttajaluokkia löytyy eri tyyppisten arvojen tallentamiseen: `StringVar`, `BooleanVar`, `DoubleVar` ja `IntVar`.
+
+`StringVar`-luokkaa voimme hyödyntää esimerkiksi toiminnallisuudessa, jossa painikkeen painaminen vaihtaa tekstin sisältöä:
+
+```python
+from tkinter import Tk, ttk, StringVar
+
+class UI:
+    def __init__(self, root):
+        self.root = root
+        self.label_var = None
+
+    def increase(self):
+        value = self.label_var.get()
+        increased_value = str(int(value) + 1)
+
+        self.label_var.set(increased_value)
+
+    def decrease(self):
+        value = self.label_var.get()
+        decreased_value = str(int(value) - 1)
+
+        self.label_var.set(decreased_value)
+
+    def start(self):
+        self.label_var = StringVar()
+        self.label_var.set("0")
+
+        label = ttk.Label(master=self.root, textvariable=self.label_var)
+        increase_button = ttk.Button(master=self.root, text="Increase", command=self.increase)
+        decrease_button = ttk.Button(master=self.root, text="Decrease", command=self.decrease)
+
+        increase_button.grid(row=0, column=0)
+        label.grid(row=0, column=1)
+        decrease_button.grid(row=0, column=2)
+
+window = Tk()
+window.title("TkInter example")
+
+ui = UI(window)
+ui.start()
+
+window.mainloop()
+```
+
+`UI`-luokan `start`-metodissa talletamme `StringVar`-luokan olion `label_var`-attribuuttiin ja asetamme sille alkuarvoksi `"0"` kutsumalla `set`-metodia. Luokan metodit `increase` ja `decrease` lukevat muuttujan arvon `get`-metodin avulla ja asettavat sille uuden arvon `set`-metodilla. Muuttuja liitetään `label`-komponentin tekstiksi `textvariable`-parametrin kautta.
+
+Toinen yleinen käyttökohde muuttujaluokille on [CheckButton](http://effbot.org/tkinterbook/checkbutton.html)- ja [RadioButton](http://effbot.org/tkinterbook/radiobutton.htm)-komponentit. Näiden arvoina voi käyttää `IntVar`-luokan olioita `variable`-parametrin kautta.
