@@ -6,9 +6,13 @@ Voit siis tehdä sovelluksellesi tekstikäyttöliittymän tai graafisen käyttö
 
 Pääasia on joka tapauksessa, että pyrit _eriyttämään mahdollisimman hyvin sovelluslogiikan käyttöliittymästä_. Käyttöliittymän roolin tulee siis olla ainoastaan käyttäjän kanssa tapahtuva interaktio, varsinaisen logiikan tulee tapahtua muissa oliossa.
 
-### Eräs malli tekstikäyttöliittymälle
+### Tekstikäyttöliittymä
+
+Tarkastellaan erästä mallia tekstikäyttöliittymän toteuttamiselle. Otetaan esimerkkisovellukseksi numerotiedostelu sovellus, jonka avulla käyttäjä voi mm. lisätä, poistaa ja hakea henkilöiden puhelinnumeroita. Näitä toimintoja varten on toteutettu joukko komentoriviltä annettavia komentoja. Tässä on käyttöliittymälle yksi potentiaalinen toteutustapa:
 
 ```python
+from numero_ja_osoite_palvelu import NumeroJaOsoitePalvelu
+
 KOMENNOT = {
     "x": "x lopeta",
     "1": "1 lisää numero",
@@ -20,11 +24,12 @@ KOMENNOT = {
     "7": "7 filtteröity listaus",
 }
 
+
 class Numerotiedustelu:
-    def __init__():
+    def __init__(self):
         self.lue = input
         self.tulosta = print
-        self.palvelu = NumeroJaOsoitepalvelu()
+        self.palvelu = NumeroJaOsoitePalvelu()
 
     def kaynnista(self):
         self.tulosta("numerotiedustelu")
@@ -37,22 +42,23 @@ class Numerotiedustelu:
             if not komento in KOMENNOT:
                 self.tulosta("virheellinen komento")
                 self.tulosta_ohje()
+                continue
 
             if komento == "x":
                 break
-            else if komento == "1":
+            elif komento == "1":
                 self.lisaa_numero()
-            else if komento == "2":
+            elif komento == "2":
                 self.hae_numerot()
-            else if komento == "3":
+            elif komento == "3":
                 self.hae_henkilo()
-            else if komento == "4":
+            elif komento == "4":
                 self.lisaa_osoite()
-            else if komento == "5":
+            elif komento == "5":
                 self.hae_tiedot()
-            else if komento == "6":
+            elif komento == "6":
                 self.poista_henkilo()
-            else if komento == "7":
+            elif komento == "7":
                 self.listaus()
 
     def hae_numerot(self):
@@ -60,13 +66,13 @@ class Numerotiedustelu:
         numerot = self.palvelu.hae_numerot(nimi)
 
         if len(numerot) == 0:
-            self.tulosta("ei löytynyt");
+            self.tulosta("ei löytynyt")
             return
 
         for numero in numerot:
             self.tulosta(numero)
 
-     def lisaa_numero() {
+    def lisaa_numero(self):
         nimi = self.lue("kenelle: ")
         numero = self.lue("numero: ")
 
@@ -74,6 +80,75 @@ class Numerotiedustelu:
 
     # lisää käyttöliittymäfunktioita...
 ```
+
+Käytössäolevat komennot on tallennettu `KOMENNOT`-nimiseen [dictionaryyn](https://docs.python.org/3/tutorial/datastructures.html#dictionaries), jonka avaimina toimivat komentojen nimet ja arvoina niiden kuvaukset. Käyttöliittymää varten on toteutettu `Numerotiedustelu`-luokka. Luokan konstruktori alustaa oliomuuttujat `lue`, `tulosta` ja `palvelu`. Metodit `lue` ja `tulosta` tallennetaan viittaukset tuttuihin [print](https://docs.python.org/3/library/functions.html#print)- ja [input](https://docs.python.org/3/library/functions.html#input)-funktioihin. Metodiin `palvelu` sen sijaan tallenetaan `NumeroJaOsoitePalvelu`-luokan olio, jonka avulla voimme tehdä puhelinnumeroihin liittyviä operaatioita. Luokan käyttö on tapa erottaa sovelluslogiikka käyttöliittymästä, joka on periaatteena erittäin tärkeä.
+
+`Numerotiedustelu`-luokan `kaynnista`-metodi käynnistää käyttöliittymän. Metodi `tulosta_ohje` tulostaa käyttäjälle käytössäolevat komennot. Tämän jälkeen käyttäjältä aletaan pyytää komentoja `while True`-silmukassa.
+
+Jos komentojen määrä kasvaa, voi harkita esimerkiksi [Command](https://en.wikipedia.org/wiki/Command_pattern)-suunnittelumallin käyttöä. Toteutuksessa komennot voisivat olla omia luokkiaan, kuten:
+
+```python
+class LisaaNumeroKomento:
+    def __init__():
+        self.lue = input
+        self.tulosta = print
+        self.palvelu = NumeroJaOsoitePalvelu()
+
+    def tulosta_ohje():
+        return "1 lisää numero"
+
+    def suorita():
+        nimi = self.lue("kenelle: ")
+        numero = self.lue("numero: ")
+
+        self.palvelu.lisaa_numero(nimi, numero)
+```
+
+Kaikilla komentoluokilla on siis metodit `tulosta_ohje` ja `suorita`. Komennot voi tallentaa dictionaryyn `Numerotiedustelu`-luokan konstruktorissa:
+
+```python
+class Numerotiedustelu:
+    def __init__(self):
+        self.lue = input
+        self.tulosta = print
+
+        self.komennot = {
+            "x": LopetaKomento()
+            "1": LisaaNumeroKomento()
+            # ...
+        }
+
+    # ...
+```
+
+Tämä yksinkertaistaa `Numerotiedustelu`-luokan `kaynnista`-metodia:
+
+```python
+def kaynnista(self):
+    self.tulosta("numerotiedustelu")
+    self.tulosta_ohje()
+
+    while True:
+        self.tulosta("")
+        komento = self.lue("komento: ")
+
+        if not komento in self.komennot:
+            self.tulosta("virheellinen komento")
+            self.tulosta_ohje()
+            continue
+
+        if komento == "x":
+            break
+        
+        komento_olio = self.komennot[komento]
+        komento.olio.suorita()
+```
+
+### Graafinen käyttöliittymä
+
+Graafinen käyttöliittymä eroaa tekstikäyttöliittymästä siinä, että komentoriviltä annettavien tekstimuotoisten komentojen sijaan käyttäjä voi antaa sovellukselle syötteitä erilaisten graafisten komponenttien kautta. Tämä voi tarkoittaa esimerkiksi tekstikenttiin kirjoittamista, tai painikkeiden painelua.
+
+[TkInter](https://wiki.python.org/moin/TkInter)-kirjasto on Pythonissa jo standardiksi muodostonut tapa toteuttaa graaffisia käyttöliittymä. Koska aihe on jonkin verran tekstikäyttöliittymä laajempi, on sille kirjoitettu oma [ohjeensa](./tkinter.md).
 
 ## Riippuvuuksien injektointi
 
@@ -90,7 +165,7 @@ class Numerotiedustelu:
 ```
 
 ```python
-palvelu = NumeroJaOsoitepalvelu()
+palvelu = NumeroJaOsoitePalvelu()
 numerotiedustelu = Numerotiedustelu(input, print, palvelu)
 numerotiedustelu.kaynnista()
 ```

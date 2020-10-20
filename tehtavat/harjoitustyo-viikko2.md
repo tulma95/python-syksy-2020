@@ -16,7 +16,7 @@ Aihetta miettiessäsi kannattaa ehdottomasti lukea [ohjeet työn aloittamiseen](
 
 Mikään ei tietenkään estä sitä, että aloitat jo ohjelmoinnin tai vaikkapa koodaat koko työn valmiiksi. Viikon 2 deadlinen pisteytyksessä ollaan kiinnostuneita ainoastaan määrittelydokumentista.
 
-**HUOM** jos aloitat jo ohjelmoinnin, muista että ohjelmakoodi tulee kirjoittaa englanniksi! Ohjelman käyttöliittymä ja dokumentaatio voivat olla suomeksi tai englanniksi. Ainoa sallittu ohjelmointikieli on Java
+**HUOM** jos aloitat jo ohjelmoinnin, muista että ohjelmakoodi tulee kirjoittaa englanniksi! Ohjelman käyttöliittymä ja dokumentaatio voivat olla suomeksi tai englanniksi. Ainoa sallittu ohjelmointikieli on Python.
 
 Palautus tapahtuu lisäämällä oman aiheen _alustava määrittelydokumentti_ ensimmäisen viikon [laskareiden](https://github.com/mluukkai/ohjelmistotekniikka-syksy-2020/blob/main/tehtavat/viikko1.md#labtool) päätteeksi [labtooliin](https://study.cs.helsinki.fi/labtool/courses/TKT20002.2020.S.K.1) rekisteröimääsi palautusrepositorioon.
 

@@ -26,12 +26,12 @@ Arvostelussa kiinnitetään huomiota seuraaviin seikkoihin
 - Tuntikirjanpito on ajantasalla
   - Tuntikirjanpitoon ei merkitä laskareihin käytettyä aikaa
 - Repositorion _README.md_-tiedosto kunnossa
-  - Tiedosto on kurssin tämän vaiheen osalta relevantin sisällön suhteen samankaltainen kuin [referenssisovelluksen](https://github.com/Kaltsoon/ot-todo-app) _README.md_-tiedosto
+  - Tiedosto on kurssin tämän vaiheen osalta relevantin sisällön suhteen samankaltainen kuin [referenssisovelluksen](https://github.com/ohjelmistotekniikka-hy/python-todo-app) _README.md_-tiedosto
   - Kaikki ylimääräinen, mm. linkit laskareihin on poistettu
 - Repositorio siisti
   - Ei ylimääräistä tavaraa (esim. `pytest`-, tai `coverage`-komentojen generoimia hakemistoja ja tiedostoja)
   - Laskarit jätetään hakemiston _laskarit_ alle
-  - Järkevä _.gitignore_-tiedosto olemassa. Mallia voi ottaa [referenssisovelluksesta](https://github.com/Kaltsoon/ot-todo-app)
+  - Järkevä _.gitignore_-tiedosto olemassa. Mallia voi ottaa [referenssisovelluksesta](https://github.com/ohjelmistotekniikka-hy/python-todo-app)
 
 Ohjelman tulee edistyä jokaisella viikolla tasaisesti. Jos ohjelma tulee valmiiksi jo ennen loppupalautusta valmistaudu laajentamaan sitä saadaksesi ohjelman edistymisestä pisteet. Tarkoitus on edistää projektia tasaisesti kurssiviikkojen aikana.
 
