@@ -139,7 +139,7 @@ def kaynnista(self):
 
         if komento == "x":
             break
-        
+
         komento_olio = self.komennot[komento]
         komento.olio.suorita()
 ```
@@ -152,9 +152,23 @@ Graafinen käyttöliittymä eroaa tekstikäyttöliittymästä siinä, että kome
 
 ## Riippuvuuksien injektointi
 
-```python
-# ...
+Edellä esitetyn `Numerotiedustelu`-luokan attribuutit `lue`, `tulosta` ja `palvelu` alustettiin suoraan konstruktorissa:
 
+```python
+class Numerotiedustelu:
+    def __init__(self):
+        self.lue = input
+        self.tulosta = print
+        self.palvelu = NumeroJaOsoitePalvelu()
+
+# ...
+```
+
+Näitä attribuutteja voidaan pitää luokan _riippuvuuksina_, eli toiminnallisuuksina, joita luokka käyttää. Nämä riippuvuudet ovat tällä hetkellä varsin _konkreettisia_, koska tiedämme esimerkiksi täsmälleen, miten syötteet luetaan. Jos haluaisimme lukea syötteitä esimerkiksi tiedostosta, vaatisi se muutoksia luokan koodiin.
+
+_Riippuvuuksien injektointi_ on ohjelmointitekniikka, jonka avulla pyritään eroon konkreettisista riippuvuuksista. Tekniikan perusideana on, että riippuvuudet annetaan konstruktorille, metodille, tai funktiolle sen kutsun yhteydessä. Tällöin riippuvuuksien käyttäjä ei tiedä riippuvuuksien toteutuksesta mitään, eli ne ovat _abstrakteja_. `Numerotiedustelu`-luokan tapauksessa `lue`-, `tulosta`- ja `palvelu`-attribuutit saisivat arvonsa konstruktorin parametrien kautta:
+
+```python
 class Numerotiedustelu:
     def __init__(lue, tulosta, palvelu):
         self.lue = lue
@@ -164,11 +178,15 @@ class Numerotiedustelu:
     # ...
 ```
 
+Voimme alustaa `Numerotiedustelu`-olion seuraavasti:
+
 ```python
 palvelu = NumeroJaOsoitePalvelu()
 numerotiedustelu = Numerotiedustelu(input, print, palvelu)
 numerotiedustelu.kaynnista()
 ```
+
+Koska riippuvuudet eivät ole enää konkreettisia, voimme helposti vaihtaa riippuvuutena saadun palvelun toteutusta ilman, että se vaatisi muutoksia `Numerotiedustelu`-luokkaan. Sanotaan, että numerot tallennettaisiin ja luettaisiin tietokannasta seuraavan luokan avulla:
 
 ```python
 class TietokantaNumeroJaOsoitePalvelu:
@@ -181,11 +199,16 @@ class TietokantaNumeroJaOsoitePalvelu:
     # ...
 ```
 
+Voimme yksinkertaisesti antaa `Numerotiedustelu`-luokalle riippuvuutena `TietokantaNumeroJaOsoitePalvelu`-luokan olion
+`NumeroJaOsoitePalvelu`-luokan olion sijaan:
+
 ```python
 palvelu = TietokantaNumeroJaOsoitePalvelu()
 numerotiedustelu = Numerotiedustelu(input, print, palvelu)
 numerotiedustelu.kaynnista()
 ```
+
+Riippuvuuksien injenktointi osoittaa myös erittäin hyödylliseksi testaamisessa. Pythonin `input`- ja `output`-funktioiden käyttö tekee testaamisesta erittäin hankalaa. Koska injektoimme riippuvuudet, voimme toteuttaa niille toteutukset, jotka ovat käyttökelpoisia testeissä:
 
 ```python
 import unittest
