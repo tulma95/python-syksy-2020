@@ -475,3 +475,7 @@ window.mainloop()
 `UI`-luokan `start`-metodissa talletamme `StringVar`-luokan olion `label_var`-attribuuttiin ja asetamme sille alkuarvoksi `"0"` kutsumalla `set`-metodia. Luokan metodit `increase` ja `decrease` lukevat muuttujan arvon `get`-metodin avulla ja asettavat sille uuden arvon `set`-metodilla. Muuttuja liitetään `label`-komponentin tekstiksi `textvariable`-parametrin kautta.
 
 Toinen yleinen käyttökohde muuttujaluokille on [CheckButton](http://effbot.org/tkinterbook/checkbutton.html)- ja [RadioButton](http://effbot.org/tkinterbook/radiobutton.htm)-komponentit. Näiden arvoina voi käyttää `IntVar`-luokan olioita `variable`-parametrin kautta.
+
+## Lisäluettavaa
+
+[An Introduction to Tkinter](http://effbot.org/tkinterbook/)-dokumentaatio sisältää mm. yleisiä TkInter-ohjeita ja esimerkkejä yksittäisien komponenttien käytöstä.
