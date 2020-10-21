@@ -21,11 +21,11 @@ Tälle sivulle on koottu erinäistä asiaa liittyen kurssin "teoriaan" sekä eri
 
 Ohjeita työn aloittamiseen [täällä](https://github.com/mluukkai/ohjelmistotekniikka-syksy-2020/blob/main/web/tyon_aloitus.md)
 
-## Kirjoitusvirheitä
+# Kirjoitusvirheitä
 
-Jos huomaat tehtävissä tai muussa materiaalissa kirjoitusvirheitä, kirjaudu GitHubiin ja toimi [täällä](https://github.com/mluukkai/ohjelmistotekniikka-syksy-2020/blob/main/web/typokorjaukset.md) olevan ohjeen mukaan.
+Jos huomaat tehtävissä tai muussa materiaalissa kirjoitusvirheitä, kirjaudu GitHubiin ja toimi [täällä](./typokorjaukset.md) olevan ohjeen mukaan.
 
-## Ohjelmistotuotanto
+# Ohjelmistotuotanto
 
 Kun tehdään pientä ohjelmaa omaan käyttöön, ei työskentelymenetelmillä ole suurta merkitystä. Kun ohjelmiston koko on suurempi ja erityisesti, jos sitä tehdään useamman ihmisen toimesta ulkoiselle käyttäjälle tai tilaajalle, ei pelkkä häkkeröinti enää tuota optimaalista tulosta. Tarvitaankin jonkinlainen systemaattinen menetelmä ohjaamaan ohjelmistokehittäjien toimintaa ja varmistamaan, että ohjelmistosta tulee käyttäjien käyttötarkoitukseen sopiva.
 
@@ -147,27 +147,27 @@ Ketterät menetelmät ovat nykyään vallitseva tapa tehdä ohjelmistoja. Ketter
 
 Tämän kurssin harjoitustyö pyritään tekemään osittain ketterien menetelmien hengessä, eli vaatimusmäärittely ja suunnittelu pidetään kevyenä ja ohjelmaa aletaan toteuttaa jo heti alkuvaiheessa. Ohjelmasta pyritään mahdollisuuksien mukaan tekemään jokaisen iteraation eli viikon päätteeksi toimiva versio jota sitten viikko viikolta laajennetaan. Kurssin vaatimaa dokumentaatiota tehdään osin matkan varrella.
 
-## Työkaluja
+# Työkaluja
 
 Tarvitsemme ohjelmisokehityksessä suuren joukon käytännön työkaluja.
 
-### Komentorivi ja Versionhallinta
+## Komentorivi ja versionhallinta
 
 Olet jo ehkä käyttänyt muilla kursseilla komentoriviä ja versionhallintaa, molemmat ovat tärkeässä roolissa ohjelmistokehityksessä ja niiden harjoittelu on aiheena viikon 1 [tehtävissä](../tehtavat/viikko1.md).
 
-### Pipenv
+## Pipenv
 
 Olet todennäköisesti ohjelmoinut Pythonia tähän asti ilman ulkoisia ulkoisten riippuvuuksien asennusta ja käyttöä. Alamme tämän kurssin myötä hieman tutkimaan, miten Pythonilla tehdyn ohjelmiston riippuvuuksien hallinta tapahtuu ja minkälaisia ovat siihen työskentelytavat.
 
 Python-projektien riippuvuuksien hallintaan on olemassa muutamiakin vaihtoehtoja, joista _pip_ saattaa olla jo ennestään tuttu. Kurssilla tutustumme _pipenv_-työkaluun, jolla on paljon samankaltaisuuksia pipin kanssa ja helpottaa työskentelyämme huomattavasti. Ohje pipenvin käytön aloittamiseen löytyy [täältä](./pipenv.md).
 
-### Unittest
+## Unittest
 
 Ohjelmistojen testaus tapahtuu nykyään ainakin yksikkö- ja integraatiotestien osalta automatisoitujen testityökalujen toimesta. Python-maailmassa testien toteuttamisessa on muodostonut jo standardiksi [unittest](https://docs.python.org/3/library/unittest.html)-moduulin käyttö. Tulet kurssin ja myöhempienkin opintojesi aikana kirjoittamaan paljon unittest-testejä.
 
 Unittestiin tutustumme viikon 2 [tehtävissä](../tehtavat/viikko2.md).
 
-### Docstringit
+## Docstring
 
 Osa ohjelmiston dokumentointia on lähdekoodin API:n eli käytännössä luokkien, metodien ja fuktioiden kuvaamista. Pythonissa lähdekoodi dokumentoidaan käyttäen docstring-kommentteja. Dokumentointi tapahtuu kirjoittamalla koodin yhteyteen sopivasti muotoiltuja kommentteja.
 
@@ -527,7 +527,7 @@ Sovelluslogiikan alapuolella on _datan tallennuksesta vastaava kerros_, jonka k�
 
 [Kerrosarkkitehtuuri](https://en.wikipedia.org/wiki/Multitier_architecture) (engl. layered architecture tai multitier architecture) on ehkä eniten käytetty ohjelmistojen [arkkitehtuurimalli](https://en.wikipedia.org/wiki/Software_Architecture_styles_and_patterns), eli yleisesti käytetty tapa ohjelmiston rakenteen strukturointiin. Käytännössä lähes jokainen ohjelmisto noudattaa ainakin jossain määrin kerroksellisuuden periaatetta. On olemassa lukuisia arkkitehtuurimalleja, joihin tutustutaan tarkemmin kursseilla Ohjelmistotuotanto ja Ohjelmistoarkkitehtuurit.
 
-## Hyvän ohjelmoinnin periaatteita
+## Hyvän ohjelmiston periaatteita
 
 Ohjelmistojen suunnitteluun on aikojen saatossa muodostunut joukko periaatteita, joiden noudattamisen on todettu parantavan koodin laatua.
 
