@@ -2,6 +2,8 @@
 
 Koodin testauksen lisäksi koodin luettavuuden ylläpitäminen on tärkeää. Tässä hyvänä apuvälineenä on staattisen analyysin työkalu [pylint](https://www.pylint.org/). Pylintin avulla pystytään määrittelemään joukko sääntöjä, joita koodin tulisi noudattaa, ja automaisoidusti tarkastaa noudatetaanko näitä sääntöjä.
 
+> Pylint is a tool that checks for errors in Python code, tries to enforce a coding standard and looks for code smells. It can also look for certain type errors, it can recommend suggestions about how particular blocks can be refactored and can offer you details about the code's complexity.
+
 ## Pylintin käyttöönotto projektissa
 
 Pylint on helppo ottaa käyttöön pipenvillä alustetussa projektissa. Aloitetaan asentamalla pylint riippuvuutena haluamassamme projektissa:
