@@ -1,4 +1,3 @@
-<!-- TODO -->
 # Harjoitustyö, viikko 4
 
 Palautuksen deadline ti 07.04. klo 23:59
@@ -33,8 +32,8 @@ Arvostelussa kiinnitetään huomiota seuraaviin seikkoihin
 - Ohjelman alustava rakenne luokka/pakkauskaaviona (0.75p)
   vastaavalla mekanismilla
   - Kaavion ei tarvitse merkitä kuin sovelluslogiikan kannalta oleelliset luokat
-  - Voit tarvittaessa tehdä kaavion, josta ilmenee myös sovelluksen [pakkausrakenne](https://github.com/mluukkai/ohjelmistotekniikka-syksy-2020/blob/main/web/materiaali.md#pakkauskaavio)
-  - Mallia voi ottaa [referenssisovelluksesta](https://github.com/mluukkai/OtmTodoApp/blob/master/dokumentaatio/arkkitehtuuri.md#sovelluslogiikka)
+  - Voit tarvittaessa tehdä kaavion, josta ilmenee myös sovelluksen [pakkausrakenne](../materiaali/materiaali.md#pakkauskaavio)
+  - Mallia voi ottaa [referenssisovelluksesta](https://github.com/ohjelmistotekniikka-hy/python-todo-app/blob/master/dokumentaatio/arkkitehtuuri.md#sovelluslogiikka)
   - Tee repositorioosi hakemisto _dokumentaatio_ ja sen sisälle tiedosto _arkkitehtuuri.md_ ja upota kuva tiedostoon, tiedoston sisältö voi olla muilta osin tyhjä
   - Tiedostoon _arkkitehtuuri.md_ tulee olla linkki repositorion README:stä [referenssisovelluksen](https://github.com/ohjelmistotekniikka-hy/python-todo-app) tavoin
 

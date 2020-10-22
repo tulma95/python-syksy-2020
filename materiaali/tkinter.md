@@ -204,9 +204,9 @@ Kaikki kolme komponenttia sijoittuvat siis, sekä itä- (E), että länsi-suunna
 
 `sticky`-parametrille mahdollisia arvoja ovat `constants.W` (vasen), `constants.E` (oikea), `constants.N` (ylä), `constants.S` (ala) ja näiden kombinaatit [tuplena](https://docs.python.org/3.3/library/stdtypes.html?highlight=tuple#tuple). Arvoista voi käyttää myös suoraan merkkijonoesitystä, kuten `"w"` vakion `constants.W` sijaan. Vakioiden käyttö on kuiten suotavaa.
 
-## Tapahtumien kuuntelu
+## Tapahtumankäsittelijät
 
-TkInter mahdollistaa erilaisten tapahtumien, kuten napin painamisen, "kuuntelemisen". Kuuntelemisella tässä yhteydessä tarkoitetaan, että voimme määrittää funktion, jota kutsutaan, kun esimerkiksi painiketta painetaan. Käytetään esimerkkinä seuraavaa koodia, jossa määritellään yksi tekstikenttä ja yksi painike:
+TkInter mahdollistaa erilaisten tapahtumien, kuten napin painamisen, käsittelyn. Käsittelyllä tässä yhteydessä tarkoitetaan, että voimme määrittää funktion, jota kutsutaan, kun esimerkiksi painiketta painetaan. Käytetään esimerkkinä seuraavaa koodia, jossa määritellään yksi tekstikenttä ja yksi painike:
 
 ```python
 from tkinter import Tk, ttk
