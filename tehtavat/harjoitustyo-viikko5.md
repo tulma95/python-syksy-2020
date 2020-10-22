@@ -6,7 +6,7 @@ Palautuksen deadline tiistai 21.04. klo 23:59
 
 - viikon 5 deadlinen jälkeen tulee palautusrepositoriosta löytyä osan määrittelydokumentin käyttäjälle näkyvää toiminnallisuutta toteuttava toimiva versio harjoitustyöstä
 - viikon 5 palautuksesta tulee saada enemmän kuin 0 pistettä
-- palautusrepositorioistasi on GitHub-issuet saalittuna, ks. [ohje](https://github.com/mluukkai/ohjelmistotekniikka-syksy-2020/blob/main/tehtavat/harjoitustyo_viikko5.md#issueiden-salliminen)
+- palautusrepositorioistasi on GitHub-issuet saalittuna, katso [ohje](#issueiden-salliminen)
 
 Muista pushata harjoitustyöhön liittyvät asiat GitHubiin ennen viikkodeadlinea.
 
@@ -16,9 +16,9 @@ Muista pushata harjoitustyöhön liittyvät asiat GitHubiin ennen viikkodeadline
 
 Palautuksesta on tarjolla 3 kurssipistettä.
 
-Arvostelussa kiinnitetään huomiota seuraaviin seikkoihin
+Arvostelussa kiinnitetään huomiota seuraaviin seikkoihin:
 
-- Ohjelmasta pystyy tekemään suorituskelpoisen [jar](https://github.com/mluukkai/ohjelmistotekniikka-syksy-2020/blob/main/web/maven.md#jarin-generointi)-tiedoston komennolla _mvn package_ (0.5p)
+- Ohjelmasta pystyy pystyy suorittamaan komentoriviltä komennolla `python -m pipenv run start` (0.5p)
 - Projektista on tehty _GitHub release_ (0.25p)
   - Release sisältää ohjelman uusimman version lähdekoodin (GitHub-lisää tämän automaattisesti releasin tehdessä)
   - [Ohje](../materiaali/release.md) releasen tekemiseen
@@ -46,17 +46,17 @@ Arvostelussa kiinnitetään huomiota seuraaviin seikkoihin
   - Lisää kaavio [edellisellä viikolla](./harjoitustyo-viikko4.md) tehtyyn dokumenttiin _arkkitehtuuri.md_
   - Tiedostoon _arkkitehtuuri.md_ tulee olla linkki repositorion README:stä [referenssisovelluksen](https://github.com/ohjelmistotekniikka-hy/python-todo-app) tavoin
 
-**Seuraavien kohtien puutteet vähentävät pisteitä**
+**Seuraavien kohtien puutteet vähentävät pisteitä:**
 
 - Koodin laatu
-  - Pakkausrakenne ei ole järkevä (esim. kaikki koodi on samassa hakemistossa)
-  - Sovelluslogiikkaa ei ole eriytetty riittävästi käyttöliittymästä
+  - Rakenne on järkevä (esim. kaikki koodi on samassa hakemistossa)
+  - Sovelluslogiikkaa on eriytetty riittävästi käyttöliittymästä
 - Tuntikirjanpito on ajantasalla
   - **Tuntien summan tulee olla merkittynä**
   - Tuntikirjanpitoon ei merkitä laskareihin käytettyä aikaa
 - Palautusrepositorioosi voi tehdä GitHub-issuieta, katso [ohje](#issueiden-salliminen)
-- Repositorion README.md kunnossa
-  - tiedosto on kurssin tämän vaiheen osalta relevantin sisällön suhteen samankaltainen kuin [referenssisovelluksen](https://github.com/ohjelmistotekniikka-hy/python-todo-app) README.md, eli siellä on ainakin seuraavat
+- Repositorion README.md on kunnossa
+  - Tiedosto on kurssin tämän vaiheen osalta relevantin sisällön suhteen samankaltainen kuin [referenssisovelluksen](https://github.com/ohjelmistotekniikka-hy/python-todo-app) README.md, eli siellä on ainakin seuraavat
     - Harjoitustyön aiheen lyhyt kuvas
     - Linkit vaatimusmäärittelyyn, arkkitehtuuridokumenttiin ja tuntikirjanpitoon
     - Linkki releaseen

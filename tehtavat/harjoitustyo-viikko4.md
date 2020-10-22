@@ -10,7 +10,7 @@ Muista pushata harjoitustyöhön liittyvät asiat GitHubiin ennen viikkodeadline
 
 Palautuksesta on tarjolla 3 kurssipistettä.
 
-Arvostelussa kiinnitetään huomiota seuraaviin seikkoihin
+Arvostelussa kiinnitetään huomiota seuraaviin seikkoihin:
 
 - Ohjelma on kasvanut edellisestä viikosta (0.75p)
   - Projektin koodin pystyy suorittamaan komentoriviltä komennolla `python -m pipenv run start`

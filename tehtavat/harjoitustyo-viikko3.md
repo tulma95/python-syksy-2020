@@ -12,7 +12,7 @@ Muista pushata harjoitustyöhön liittyvät asiat GitHubiin ennen viikkodeadline
 
 Palautuksesta on tarjolla 2 kurssipistettä.
 
-Arvostelussa kiinnitetään huomiota seuraaviin seikkoihin
+Arvostelussa kiinnitetään huomiota seuraaviin seikkoihin:
 
 - Repositorion juuresta löytyy _src_-hakemisto projektin koodille
 - Projekti on alustettu [pipenv-ohjeiden](../materiaali/pipenv.md) mukaisesti. _Pipfile_-tiedossa _ei saa olla_ `[requires]`-osiota, joka määrittelee vaadittavan Python-version

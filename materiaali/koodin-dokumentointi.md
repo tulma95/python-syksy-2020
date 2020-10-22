@@ -54,6 +54,7 @@ class Maksukortti:
         Args:
             lisays: Maksukortille ladattava summa.
         """
+
         self.saldo += lisays
 
     def ota_rahaa(self, maara):
@@ -76,10 +77,11 @@ class Maksukortti:
 
     def __str__(self):
         """Muodostaa maksukortista merkkijonomuotoisen esityksen.
-        
+
         Returns:
             Merkkijono, joka kertoo maksukortin saldon euroissa.
         """
+
         saldo_euroissa = round(self.saldo / 100, 2)
 
         return f"saldo: {saldo_euroissa}"
@@ -88,4 +90,4 @@ class Maksukortti:
 Dokumentaatio on luokkien, metodin ja funktioiden tapauksessa heti määritelmän jälkeisellä rivillä. Dokumentaatio alkaa `"""`-merkeillä ja päättyy samoihin merkkeihin. Ensimmäinen dokumentoitava asia on yleinen kuvaus. Luokan tapauksessa kuvausta seuraa luokan attribuutit, jotka luetellaan allekkain `Attributes`-osion alle.
 Attribuutit dokumentoidaan formaatissa `attribuutin_nimi: Attribuutin kuvaus`. Metodien ja funktioiden argumentit dokumentoidaan samankaltaisesti, mutta osion nimi on [Args](https://github.com/google/styleguide/blob/gh-pages/pyguide.md#doc-function-args). Metodien ja funktioiden paluuarvot kuvaillaan `Returns`-osion alle.
 
-Visual Studio Codessa docstringien kirjoittamista nopeuttaa [Python Docstring Generator](https://marketplace.visualstudio.com/items?itemName=njpwerner.autodocstring)-lisäosan käyttö. Riittää, että kirjoitat `"""` ja painat tab-näppäintä, niin docstringille generoituu pohja.
+Visual Studio Codessa docstringien kirjoittamista nopeuttaa huomattavasti [Python Docstring Generator](https://marketplace.visualstudio.com/items?itemName=njpwerner.autodocstring)-lisäosan käyttö. Lisäosan asennuksen jälkeen riittää, että kirjoitat `"""` ja painat tab-näppäintä, niin docstringille generoituu pohja.
