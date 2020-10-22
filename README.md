@@ -99,4 +99,4 @@ Palautuksen deadline pe 26.4. klo 23:59
 
 Lopullisen palautuksen deadline su 5.5. klo 23:59
 
-- [loppupalautuksen ohjeet](./tehtavat/harjoitustyo-viikko7.md) 
+- [Loppupalautuksen ohjeet](./tehtavat/harjoitustyo-viikko7.md) 

@@ -220,7 +220,7 @@ class Todo:
 
 Jokaiseen todoon liittyy yksi käyttäjä, ja yksittäiseen käyttäjään liittyviä todoja voi olla useita. Tilannetta kuvaa seuraava luokkakaavio
 
-<img src="https://raw.githubusercontent.com/mluukkai/ohjelmistotekniikka-syksy-2020/main/web/images/l-3a.png" width="500">
+![Luokkakaavio](./kuvat/materiaali-luokkakaavio-1)
 
 Luokkakaavioon on nyt merkitty molempien luokkien oliomuuttujat sekä metodit.
 
@@ -325,7 +325,7 @@ Sovelluslogiikkaa hoitava olio tuntee kirjautuneen käyttäjän, mutta pääsee 
 
 Merkitään luokkakaavioon seuraavasti:
 
-<img src="https://raw.githubusercontent.com/mluukkai/ohjelmistotekniikka-syksy-2020/main/web/images/l-5.png" width="600">
+![Luokkakaavio](./kuvat/materiaali-luokkakaavio-2)
 
 Riippuvuuksien merkitseminen luokkakaavioihin ei ole välttämättä kovin oleellinen asia, niitä kannattaa merkitä jos ne tuovat esille tilanteen kannalta jotain oleellista.
 
@@ -371,25 +371,23 @@ Tietokantojen perusteiden [viikolla 4](https://materiaalit.github.io/tikape-k18/
 
 Sekvenssikaaviot on alunperin kehitetty kuvaamaan verkossa olevien ohjelmien keskinäisen kommunikoinnin etenemistä. Sekvenssikaaviot sopivat kohtuullisen hyvin kuvaamaan myös sitä, miten ohjelman oliot kutsuvat toistensa metodeja suorituksen aikana.
 
-Koodia katsomalla näemme, että lounaan maksaminen tapahtuu siten, että ensin kassapääte kysyy kortin saldoa ja jos se on riittävä, vähentää kassapääte lounaan hinnan kortilta ja palauttaa _true_:
+Koodia katsomalla näemme, että lounaan maksaminen tapahtuu siten, että ensin kassapääte kysyy kortin saldoa ja jos se on riittävä, vähentää kassapääte lounaan hinnan kortilta ja palauttaa _True_:
 
-```java
-public class Kassapaate {
-    private static final double EDULLISEN_HINTA = 2.5;
-    // ...
+```python
+EDULLISEN_HINTA = 2.5
 
-    public boolean syoEdullisesti(Maksukortti kortti) {
-        if (kortti.saldo() < EDULLISEN_HINTA) {
-            return false;
-        }
+class Kassapaate:
+    # ...
 
-        kortti.otaRahaa(EDULLISEN_HINTA);
-        this.edulliset++;
-        return true;
-    }
-
-    //...
-}
+    def syo_edullisesti(self, kortti):
+        if kortti.saldo < EDULLISEN_HINTA:
+            return False
+        
+        kortti.ota_rahaa(EDULLISEN_HINTA)
+        self.edulliset += 1
+        return True
+    
+    # ...
 ```
 
 Sekvenssikaaviona kuvattuna tilanne näyttää seuraavalta:
@@ -404,83 +402,53 @@ Jos saldo ei riitä, etenee suoritus seuraavan sekvenssikaavion tapaan:
 
 Tarkastellaan hieman monimutkaisempaa tapausta, yrityksen palkanhallinnasta vastaavaa ohjelmaa:
 
-```java
-public class Henkilo {
-    private String nimi;
-    private int palkka;
-    private String tilinumero;
+```python
+class Henkilo:
+    def __init__(self, nimi, palkka, tilinumero):
+        self.nimi = nimi
+        self.palkka = palkka
+        self.tilinumero = tilinumero
 
-    public Henkilo(String nimi, int palkka, String tilinumero) {
-        this.nimi = nimi;
-        this.palkka = palkka;
-        this.tilinumero = tilinumero;
-    }
+class Henkilostorekisteri:
+    def __init__(self):
+        self.henkilot = {}
+        self.pankki = PankkiRajapinta()
+    
+    def lisaa(self, henkilo):
+        self.henkilot[henkilo.nimi] = henkilo
+    
+    def suorita_palkanmaksu(self):
+        for nimi in self.henkilot:
+            henkilo = self.henkilot[nimi]
+            self.pankki.maksa_palkka(henkilo.tilinumero, henkilo.palkka)
+    
+    def aseta_palkka(self, nimi, uusi_palkka):
+        henkilo = self.henkilot[nimi]
+        henkilo.palkka = uusi_palkka
 
-    public void setPalkka(int palkka) {
-        this.palkka = palkka;
-    }
+class PankkiRajapinta:
+    # ...
 
-    public int getPalkka() {
-        return palkka;
-    }
-
-    public String getTilinumero() {
-        return tilinumero;
-    }
-}
-
-public class Henkilostorekisteri {
-    private Map<String, Henkilo> henkilot;
-    private PankkiRajapinta pankki;
-
-    public Henkilostorekisteri() {
-        henkilot = new HashMap<String, Henkilo>();
-        pankki = new PankkiRajapinta();
-    }
-
-    public void lisaa(Henkilo henkilo){
-        henkilot.set(henkilo, henkilo);
-    }
-
-    public void suoritaPalkanmaksu(){
-        for (Henkilo henkilo : henkilot.values()) {
-            String tiliNro = henkilo.getTilinumero();
-            int palkka = henkilo.getPalkka();
-            pankki.maksaPalkka(tiliNro, palkka);
-        }
-    }
-
-    public void asetaPalkka(String nimi, int uusiPalkka){
-        Henkilo h = hekilot.get(nimi);
-        h.setPalkka(uusiPalkka);
-    }
-}
-
-
-public class PankkiRajapinta {
-
-    public void maksaPalkka(String tilinumero, int summa) {
-        // suorittaa maksun verkkopankin internet-rajapinnan avulla
-        // yksityiskohdat piilotettu
-    }
-}
+    def maksa_palkka(tilinumero, summa):
+        # suorittaa maksun verkkopankin internet-rajapinnan avulla
+        # yksityiskohdat piilotettu
 ```
 
 Sekvenssikaaviot siis kuvaavat yksittäisten suoritusskenaarioiden aikana tapahtuvia asioita. Kuvataan nyt seuraavan pääohjelman aikaansaamat tapahtumat:
 
-```java
-public static void main(String[] args) {
-    Henkilostorekisteri rekisteri = new Henkilostorekisteri();
+```python
+def main():
+    rekisteri = Henkilostorekisteri()
 
-    Henkilo arto = new Henkilo("Hellas", 1500, "1234-12345");
-    rekisteri.lisaa(arto);
-    Henkilo sasu = new Henkilo("Tarkoma", 6500, "4455-123123");
-    rekisteri.lisaa(sasu);
+    kalle = Henkilo("Ilves", 1200, "1234-12345")
+    rekisteri.lisaa(arto)
 
-    rekisteri.asetaPalkka("Hellas", 3500);
+    sasu = Henkilo("Tarkoma", 6500, "4455-123123")
+    rekisteri.lisaa(sasu)
 
-    rekisteri.suoritaPalkanmaksu();
-}
+    rekisteri.aseta_palkka("Ilves", 3500)
+
+    rekisteri.suorita_palkanmaksu()
 ```
 
 Sekvenssikaavio on seuraavassa:
@@ -507,6 +475,7 @@ Voit halutessasi lukea lisää sekvenssikaavioista kurssin vanhan version [mater
 
 Katsotaan seuraavassa muutamia sovelluksen suunnittelussa noudatettuja periaatteita.
 
+<!-- TODO -->
 ## Kerrosarkkitehtuuri
 
 Kuten jo mainittiin, todo-sovellus noudattaa kerrosarkkitehtuuria. Koodin tasolla kerrosrakenne näkyy siinä, miten sovelluksen koodi jakautuu pakkauksiin

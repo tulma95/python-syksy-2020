@@ -12,7 +12,7 @@ Pylint on helppo ottaa käyttöön pipenvillä alustetussa projektissa. Aloiteta
 python -m pipenv install pylint
 ```
 
-Pylintille tulee määritellä joukko tarkistettavia sääntöjä. Säännöt määritellään projektin juurihakemiston _.pylintrc_-tiedostossa. Luo kyseinen tiedosto ja kopioi sinne [tämän](./.pylintrc) tiedoston sisältö.
+Pylintille tulee määritellä joukko tarkistettavia sääntöjä. Säännöt määritellään projektin juurihakemiston _.pylintrc_-tiedostossa. Luo kyseinen tiedosto ja kopioi sinne [tämän](../misc/.pylintrc) tiedoston sisältö.
 
 Pylintin laatutarkitukset voi suorittaa komentoriviltä siirtymällä ensin virtuaaliympäristöön komennolla `python -m pipenv shell` ja sen jälkeen suorittamalla komennon `pylint src`. Kyseinen komento suorittaa laatutarkitukset _src_ hakemistossa. Pylint antaa koodille "arvosanan" sen laadun mukaan, joka löytyy tulosteen lopusta:
 
