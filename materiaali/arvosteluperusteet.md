@@ -42,7 +42,7 @@ Pisteet (yht 24) jakautuvat seuraavasti
 - Koodin laatu 4+1p
   - Kooste [laatuvaatimuksista](https://github.com/mluukkai/ohjelmistotekniikka-syksy-2020/blob/main/web/koodin_laatuvaatimukset.md)
   - 4p hyvät abstraktiot (esim. suunnitellumallien, kuten Repository-suunnittelumallin hyödynnys), selkeä tiedosto- ja hakemistorakenne, helposti testattava ja laajennettava, ei ilmeistä copypastea
-  - +1p pylint-sääntöjen noudattaminen kunnossa (muutama sääntörikkomus saatetaan katsoa läpi sormien, jos tyylirikon poisto esim. huonontaisi muuten koodin laatua)
+  - +1p pylint-sääntöjen noudattaminen kunnossa (muutama sääntörikkomus saatetaan katsoa läpi sormien, kunhan pylintin antama arvosana koodille on vähintään 9.00/10)
 - Virheiden käsittely 2p
   - 2p Sovellus toimii konsistentisti, ei kaadu virheellisillä syötteillä, ei heitä poikkeuksia ja antaa järkevät virheilmoitukset
 - **Älä jätä sovellukseesi poiskommentoitua koodia**, tai koodia jota sovellus ei käytä (esim. refaktoroinnin myötä turhaksi muuttuneet metodit, luokat, tai funktiot)

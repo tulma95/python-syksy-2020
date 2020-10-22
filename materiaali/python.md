@@ -327,6 +327,8 @@ todos = todo_repository.find_all()
 print(todos)
 ```
 
+Huomaa, että luokan käyttäjä ei ole tietoinen, miten tieto haetaan. Tämä mahdollistaa tallennustapaan tehtävät muutokset vaivattomasti ilman muutoksia muuhun koodiin.
+
 ### SQLite-tietokannan käyttö
 
 SQLite-tietokantaa kannattaa käyttää sovelluksessa [sqlite3](https://docs.python.org/3/library/sqlite3.html)-moduulin kautta. Mikä tekee SQLite-tietokannan käytöstä hieman hankalampaa perinteiseen tiedostoon verrattuna on se, että sen käyttö vaatii tietokantaulujen alustuksen.

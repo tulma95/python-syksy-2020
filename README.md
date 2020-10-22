@@ -30,38 +30,38 @@ Jos huomaat tehtävissä tai muussa materiaalissa kirjoitusvirheitä, kirjaudu G
 ## Pajaohjauksen aikatauluja
 
 
-#### Pajaohjauksen poikkeukset
+### Pajaohjauksen poikkeukset
 
 ## Aikataulu 
 
-### viikko 1
+### Viikko 1
 
 Palautuksen deadline ti 19.3. klo 23:59
 
 - Maanantaina 11.3. klo 14-16 kurssin aloitustilaisuus salissa A111
 - Komentorivi- ja Git-harjoittelu (2p)
   - Pajassa tehtävät tai omatoimiset [tehtävät](./tehtavat/viikko1.md)
-- Tehtävien palautus tapahtuu tekemällä repositorio githubiin ja rekisteröitymällä labtooliin
+- Tehtävien palautus tapahtuu tekemällä repositorio GitHubiin ja rekisteröitymällä Labtooliin
 
-### viikko 2
+### Viikko 2
 
 Palautuksen deadline ti 26.3. klo 23:59
 
 - Harjoitustyön aiheen alustava määrittelydokumentti (1p)
-  - katso tarkemmin [täältä](./tehtavat/harjoitustyo-viikko2.md) 
-- JUnit-harjoittelu (2p)
+  - Katso tarkemmin [täältä](./tehtavat/harjoitustyo-viikko2.md) 
+- Unittest-harjoittelu (2p)
   - Pajassa tehtävät tai omatoimiset [tehtävät](./tehtavat/viikko2.md)
 - Oman projektin koodaus alkaa
 
-### viikko 3
+### Viikko 3
 
 Palautuksen deadline ti 2.4. klo 23:59
 
 - Harjoitustyön koodin runko valmiina (2p)
-  - katso tarkemmin [täältä](./tehtavat/harjoitustyo-viikko3.md) 
+  - Katso tarkemmin [täältä](./tehtavat/harjoitustyo-viikko3.md) 
 - Pajassa tehtävät tai omatoimiset [tehtävät](./tehtavat/viikko3.md) Luokka- ja sekvenssikaaviosta (1p)
 
-### viikko 4
+### Viikko 4
 
 Palautuksen deadline ti 9.4. klo 23:59
 
@@ -69,10 +69,10 @@ Palautuksen deadline ti 9.4. klo 23:59
   - Ohjelman perustoiminnallisuus 
   - Testien aloitus 
   - Alustava rakenne luokkakaaviona 
-  - Checkstyle otettu käyttöön
+  - Pylint otettu käyttöön
 - Tarkemmat ohjeet [täältä](./tehtavat/harjoitustyo-viikko4.md) 
 
-### viikko 5
+### Viikko 5
 
 Palautuksen deadline ti 16.4. klo 23:59
 
@@ -84,18 +84,18 @@ Palautuksen deadline ti 16.4. klo 23:59
 - Koodikatselmointi (2p)
   - [Koodikatselmointi](./materiaali/koodikatselmointi.md)
 
-### viikko 6
+### Viikko 6
 
 Palautuksen deadline pe 26.4. klo 23:59
 
 - Harjoitustyö (3p)
   - Release 2
   - Testikattavuus nousee 
-  - JavaDoc aloitettu 
+  - Docstring aloitettu 
   - Alustava versio arkkitehtuuridokumentista 
 - Tarkemmat ohjeet [täältä](./tehtavat/harjoitustyo-viikko6.md) 
 
-### viikko 7
+### Viikko 7
 
 Lopullisen palautuksen deadline su 5.5. klo 23:59
 
