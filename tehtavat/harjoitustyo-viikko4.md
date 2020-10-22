@@ -37,18 +37,18 @@ Arvostelussa kiinnitetään huomiota seuraaviin seikkoihin:
   - Tee repositorioosi hakemisto _dokumentaatio_ ja sen sisälle tiedosto _arkkitehtuuri.md_ ja upota kuva tiedostoon, tiedoston sisältö voi olla muilta osin tyhjä
   - Tiedostoon _arkkitehtuuri.md_ tulee olla linkki repositorion README:stä [referenssisovelluksen](https://github.com/ohjelmistotekniikka-hy/python-todo-app) tavoin
 
-Seuraavien kohtien puutteet vähentävät pisteitä
+**Seuraavien kohtien puutteet vähentävät pisteitä:**
 
 - Tuntikirjanpito on ajantasalla
   - Tuntien summan tulee olla merkittynä
   - Tuntikirjanpitoon ei merkitä laskareihin käytettyä aikaa
-- Repositorion README.md kunnossa
+- Repositorion _README.md_-tiedosto kunnossa
   - Tiedosto on kurssin tämän vaiheen osalta relevantin sisällön suhteen samankaltainen kuin [referenssisovelluksen](https://github.com/ohjelmistotekniikka-hy/python-todo-app) README.md
   - Kaikki ylimääräinen, mm. linkit laskareihin on poistettu
 - Repositorio siisti
-  - Ei ylimääräistä tavaraa (mm. hakemistoa target/ tai tietokantatiedoistoja)
+  - Ei ylimääräistä tavaraa (mm. `pytest`- ja `coverage`-komentojen generoimia tiedostoja)
   - Laskarit jätetään hakemiston _laskarit_ alle
-  - Järkevä .gitignore-tiedosto olemassa
+  - Järkevä _.gitignore_-tiedosto olemassa
 
 ## Harjoitustyön toimivuus
 

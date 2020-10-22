@@ -1,5 +1,3 @@
-<!-- TODO -->
-
 # Harjoitustyö, viikko 6
 
 Palautuksen deadline **ti 28.04. klo 23:59**.
@@ -33,7 +31,7 @@ Arvostelussa kiinnitetään huomiota seuraaviin seikkoihin:
     - Jos testit on tehty pelkästään rivikattavuuden saavuttamiseksi, ei testeistä saa pisteitä
 - Docstring-dokumentointi aloitettu (0.5p)
   - Ainakin osalle ohjelman luokista, metodeista ja funktioista on tehty docstring-dokumentaatio
-    - Edellytyksenä pisteille on, että vähintään puolella luokista, metodeista ja funktioista on docstring-dokumentaatio
+    - Edellytyksenä pisteille on, että suurin piirtein puolella luokista, metodeista ja funktioista on docstring-dokumentaatio
   - [Ohje](../materiaali/koodin-dokumentointi.md) docstring-dokumentointiin
 - Alustava arkkitehtuurikuvaus (0.5p)
   - Dokumentti sisältää sovelluksen korkean tason (esim. hakemistojen tasolla) rakenteen kuvauksen, sekä alustavan kuvauksen sovelluslogiikasta
@@ -56,7 +54,7 @@ Arvostelussa kiinnitetään huomiota seuraaviin seikkoihin:
 - Tuntikirjanpito on ajantasalla
   - **Tuntien summan tulee olla merkittynä**
   - Tuntikirjanpitoon ei merkitä laskareihin käytettyä aikaa
-- Repositorion README.md on kunnossa
+- Repositorion _README.md_-tiedosto on kunnossa
   - Tiedosto on kurssin tämän vaiheen osalta relevantin sisällön suhteen samankaltainen kuin [referenssisovelluksen](https://github.com/ohjelmistotekniikka-hy/python-todo-appp) README.md, eli se sisältää ainakin seuraavat
     - Harjoitustyön aiheen lyhyt kuvas
     - Linkit vaatimusmäärittelyyn, arkkitehtuuridokumenttiin, käyttöohjeeseen ja tuntikirjanpitoon
@@ -65,7 +63,7 @@ Arvostelussa kiinnitetään huomiota seuraaviin seikkoihin:
 - Repositorio siisti
   - Ei ylimääräistä tavaraa (mm. `pytest`- ja `coverage`-komentojen generoimia tiedostoja)
   - Laskarit jätetään hakemiston _laskarit_ alle
-  - Järkevä .gitignore-tiedosto olemassa
+  - Järkevä _.gitignore_-tiedosto olemassa
 
 ## Harjoitustyön toimivuus
 

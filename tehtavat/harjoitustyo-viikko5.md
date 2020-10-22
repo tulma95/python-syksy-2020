@@ -55,7 +55,7 @@ Arvostelussa kiinnitetään huomiota seuraaviin seikkoihin:
   - **Tuntien summan tulee olla merkittynä**
   - Tuntikirjanpitoon ei merkitä laskareihin käytettyä aikaa
 - Palautusrepositorioosi voi tehdä GitHub-issuieta, katso [ohje](#issueiden-salliminen)
-- Repositorion README.md on kunnossa
+- Repositorion _README.md_-tiedosto on kunnossa
   - Tiedosto on kurssin tämän vaiheen osalta relevantin sisällön suhteen samankaltainen kuin [referenssisovelluksen](https://github.com/ohjelmistotekniikka-hy/python-todo-app) README.md, eli siellä on ainakin seuraavat
     - Harjoitustyön aiheen lyhyt kuvas
     - Linkit vaatimusmäärittelyyn, arkkitehtuuridokumenttiin ja tuntikirjanpitoon
@@ -64,7 +64,7 @@ Arvostelussa kiinnitetään huomiota seuraaviin seikkoihin:
 - Repositorio siisti
   - Ei ylimääräistä tavaraa (mm. `pytest`- ja `coverage`-komentojen generoimia tiedostoja)
   - Laskarit jätetään hakemiston _laskarit_ alle
-  - Järkevä .gitignore-tiedosto olemassa
+  - Järkevä _.gitignore_-tiedosto olemassa
 
 <!-- TODO -->
 # Issueiden salliminen

@@ -3,22 +3,20 @@
 
 **Loppupalautuksen deadline sunnuntaina 10.05. klo 23:59. Älä palauta myöhässä, deadline on ehdoton!**
 
-- Jos sinulla on joku erittäin hyvä syy palautuksen myöhästymiseen, ota yhteyttä viimeistään tiistaina niin voit saada lisäaikaa.
-
-Loppupalautuksen oletetaan sisältävän toimivan ohjelman, testien, konfiguraatioiden ja JavaDocin lisäksi myös dokumentaation, eli
-
-- käyttöohjeen
-- vaatimusmäärittelyn
-- arkkitehtuurikuvauksen
-- testausdokumentin
+- Jos sinulla on joku erittäin hyvä syy palautuksen myöhästymiseen, ota yhteyttä viimeistään tiistaina niin voit saada lisäaikaa
+- Loppupalautuksen oletetaan sisältävän toimivan ohjelman, testien, konfiguraatioiden ja docstring-dokumentoinnin lisäksi myös dokumentaation, eli:
+  - Käyttöohjeen
+  - Vaatimusmäärittelyn
+  - Arkkitehtuurikuvauksen
+  - Testausdokumentin
 
 **Päivitä viikolla 2 tehty alustava vaatimusmäärittely vastaamaan ohjelman lopullisen version toiminnallisuutta.**
 
 **Päivitä myös viimeistään tässä vaiheessa Labtooliin projektisi nimi vastaamaan projektin aihetta.**
 
-Lue huolellisesti [arvosteluperusteista](https://github.com/mluukkai/ohjelmistotekniikka-syksy-2020/blob/main/web/arvosteluperusteet.md) mitä loppupalautuksen oletetaan sisältävän dokumentaation ja ohjelmiston osalta!
+Lue huolellisesti [arvosteluperusteista](../materiaali/arvosteluperusteet.md) mitä loppupalautuksen oletetaan sisältävän dokumentaation ja ohjelmiston osalta!
 
-Dokumentteihin kannattaa ottaa mallia [referenssisovelluksen](https://github.com/mluukkai/OtmTodoApp) dokumenteista.
+Dokumentteihin kannattaa ottaa mallia [referenssisovelluksen](https://github.com/ohjelmistotekniikka-hy/python-todo-app) dokumenteista.
 
 ## Harjoitustyön toimivuus
 
