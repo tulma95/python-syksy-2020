@@ -1,4 +1,3 @@
-<!-- TODO -->
 # Harjoitustyö, viikko 5
 
 Palautuksen deadline tiistai 21.04. klo 23:59
@@ -20,51 +19,54 @@ Palautuksesta on tarjolla 3 kurssipistettä.
 Arvostelussa kiinnitetään huomiota seuraaviin seikkoihin
 
 - Ohjelmasta pystyy tekemään suorituskelpoisen [jar](https://github.com/mluukkai/ohjelmistotekniikka-syksy-2020/blob/main/web/maven.md#jarin-generointi)-tiedoston komennolla _mvn package_ (0.5p)
-- Projektista on tehty _github release_ (0.25p)
-  - Release sisältää ohjelman uusimman version suorituskelpoisen jar-tiedoston
-  - [Ohje](https://github.com/mluukkai/ohjelmistotekniikka-syksy-2020/blob/main/web/release.md) releasen tekemiseen
+- Projektista on tehty _GitHub release_ (0.25p)
+  - Release sisältää ohjelman uusimman version lähdekoodin (GitHub-lisää tämän automaattisesti releasin tehdessä)
+  - [Ohje](../materiaali/release.md) releasen tekemiseen
   - Releaseen on linkki projektin README:stä
 - Ohjelma on kasvanut edellisestä viikosta (0.75p)
   - Ohjelman suoritettavissa oleva versio on kasvanut edellisestä viikosta _ja_ toteuttaa edellisen viikon versiota suuremman osan määrittelydokumentin toiminnallisuudesta eli jotain käyttäjälle näkyvää hyödyllistä toiminnallisuutta.
     Merkitse lisäksi tarkastusta varten määrittelydokumenttiin tällä viikolla tekemäsi toiminnallisuudet "tehty" merkinnällä.
 - Testaus on edennyt (0.5p)
-  - Sovellukselle tulee pystyä generoimaan testikattavuusraportti komennolla <code>mvn test jacoco:report</code>
-  - Käyttöliittymän rakentava koodi [jätetään pois](https://github.com/mluukkai/ohjelmistotekniikka-syksy-2020/blob/main/web/maven.md#koodin-huomiotta-jättäminen-kattavuusraportissa) testikattavuusraportista
+  -  Sovellukselle tulee pystyä keräämään testikattavuus komennolla `python -m pipenv run coverage` ja generoimaan testikattavuusraportti komennolla `python -m pipenv run coverage-report`
+  - Käyttöliittymään ja testeihin liittyvä koodi [jätetään pois](../materiaali/coverage.md#tiedostojen-jättäminen-raportin-ulkopuolelle) testikattavuusraportista
   - Sovelluksen testien rivikattavuuden tulee olla vähintään 40%
   - Testien tulee olla mielekkäitä, eli niiden on testattava jotain ohjelman kannalta merkityksellistä asiaa
 - Koodin laatu (0.5p)
-  - Sovelluslogiikka on eriytetty käyttöliittymästä
-    - Vihjeitä [täällä](https://github.com/mluukkai/ohjelmistotekniikka-syksy-2020/blob/main/web/java.md) ja [referenssisovelluksessa](https://github.com/mluukkai/OtmTodoApp/blob/master/dokumentaatio/arkkitehtuuri.md)
-  - Ohjelman [pakkausrakenne](https://github.com/mluukkai/ohjelmistotekniikka-syksy-2020/blob/main/web/koodin_laatuvaatimukset.md#5-pakkaukset) heijastaa ohjelman loogista rakennetta ja on nimennältään järkevä
-  - Checkstyle on käytössä
-    - Täydet pisteet Checkstylestä ainoastaan jos ohjelmassa on alle 5 Checkstyle-virhettä
-    - Käyttöliittymän rakentavan koodin ei tarvitse olla Checkstyle-tarkastelun alla
+  - Sovelluslogiikka on riittävissä määrin eriytetty käyttöliittymästä
+    - Vihjeitä [täällä](../materiaali/python.md) ja [referenssisovelluksessa](https://github.com/ohjelmistotekniikka-hy/python-todo-app/blob/master/dokumentaatio/arkkitehtuuri.md)
+  - Ohjelman [rakenne](../materiaali/koodin-laatuvaatimukset.md#5-rakenne) heijastaa ohjelman loogista rakennetta ja on nimennältään järkevä
+  - Pylint on otettu käyttöön
+    - Ohje pylintin käyttöönottoon [täällä](../materiaali/pylint.md)
+    - Täydet pisteet pylintistä ainoastaan jos pylintin antama arvosana koodille on vähintään 8.00/10
+    - Käyttöliittymään tai testeihin liittyvän koodin ei tarvitse olla pylint-tarkastelun alla
+    - `pylint: disable`-kommenttien käyttö on kiellettyä ilman erittäin perusteltua syytä
   - Ohjelma ei sisällä suurta määrää toisteista koodia
 - Ohjelman dokumentaatiossa on ainakin yksi sen jotain oleellista toiminnallisuutta kuvaava sekvenssikaavio (0.5p)
-  - Mallia voi ottaa [referenssisovelluksesta](https://github.com/mluukkai/OtmTodoApp/blob/master/dokumentaatio/arkkitehtuuri.md#sovelluslogiikka)
-  - Lisää kaavio [edellisellä viikolla](https://github.com/mluukkai/ohjelmistotekniikka-syksy-2020/blob/main/tehtavat/harjoitustyo_viikko4.md) tehtyyn dokumenttiin _arkkitehtuuri.md_
-  - Tiedostoon _arkkitehtuuri.md_ tulee olla linkki repositorion README:stä [referenssisovelluksen](https://github.com/mluukkai/OtmTodoApp) tavoin
+  - Mallia voi ottaa [referenssisovelluksesta](https://github.com/ohjelmistotekniikka-hy/python-todo-app/blob/master/dokumentaatio/arkkitehtuuri.md#sovelluslogiikka)
+  - Lisää kaavio [edellisellä viikolla](./harjoitustyo-viikko4.md) tehtyyn dokumenttiin _arkkitehtuuri.md_
+  - Tiedostoon _arkkitehtuuri.md_ tulee olla linkki repositorion README:stä [referenssisovelluksen](https://github.com/ohjelmistotekniikka-hy/python-todo-app) tavoin
 
 **Seuraavien kohtien puutteet vähentävät pisteitä**
 
 - Koodin laatu
-  - Pakkausrakenne ei ole järkevä (esim. kaikki koodi oletuspakkauksessa)
+  - Pakkausrakenne ei ole järkevä (esim. kaikki koodi on samassa hakemistossa)
   - Sovelluslogiikkaa ei ole eriytetty riittävästi käyttöliittymästä
 - Tuntikirjanpito on ajantasalla
   - **Tuntien summan tulee olla merkittynä**
   - Tuntikirjanpitoon ei merkitä laskareihin käytettyä aikaa
-- Palautusrepositorioosi voi tehdä GitHub-issuieta, ks [ohje](https://github.com/mluukkai/ohjelmistotekniikka-syksy-2020/blob/main/tehtavat/harjoitustyo_viikko5.md#issueiden-salliminen)
+- Palautusrepositorioosi voi tehdä GitHub-issuieta, katso [ohje](#issueiden-salliminen)
 - Repositorion README.md kunnossa
-  - tiedosto on kurssin tämän vaiheen osalta relevantin sisällön suhteen samankaltainen kuin [referenssisovelluksen](https://github.com/mluukkai/OtmTodoApp) README.md, eli siellä on ainakin seuraavat
-    - harjoitustyön aiheen lyhyt kuvas
-    - linkit vaatimusmäärittelyyn, arkkitehtuuridokumenttiin ja tuntikirjanpitoon
-    - linkki releaseen
-    - ohjeet komentoriviltä suoritettaviin toimenpiteisiin (testaus, testiraportin suoritus, suoritettavan jarin generointi, checkstyletarkastuksen suorittaminen)
+  - tiedosto on kurssin tämän vaiheen osalta relevantin sisällön suhteen samankaltainen kuin [referenssisovelluksen](https://github.com/ohjelmistotekniikka-hy/python-todo-app) README.md, eli siellä on ainakin seuraavat
+    - Harjoitustyön aiheen lyhyt kuvas
+    - Linkit vaatimusmäärittelyyn, arkkitehtuuridokumenttiin ja tuntikirjanpitoon
+    - Linkki releaseen
+    - Ohjeet komentoriviltä suoritettaviin toimenpiteisiin (ohjelman käynnistys, testaus, testikattavuusraportin suoritus, pylint-tarkistuksien suorittaminen)
 - Repositorio siisti
-  - ei ylimääräistä tavaraa (mm. hakemistoa target)
-  - laskarit jätetään hakemiston _laskarit_ alle
-  - järkevä .gitignore-tiedosto olemassa
+  - Ei ylimääräistä tavaraa (mm. `pytest`- ja `coverage`-komentojen generoimia tiedostoja)
+  - Laskarit jätetään hakemiston _laskarit_ alle
+  - Järkevä .gitignore-tiedosto olemassa
 
+<!-- TODO -->
 # Issueiden salliminen
 
 Varmista, että palautusrepositorioosi on mahdollista tehdä issueita, eli repositorion _Settings_ näyttää seuraavalta
@@ -74,7 +76,5 @@ Varmista, että palautusrepositorioosi on mahdollista tehdä issueita, eli repos
 ## Harjoitustyön toimivuus
 
 - Koneiden konfiguraatioissa on eroja, ja tällä kurssilla ei riitä että hajoitustyössä tekemäsi sovellus toimii vain omalla koneellasi
-
 - Harjoitustyösi pitää pystyä joka viikko suorittamaan, kääntämään ja testaamaan komentoriviltä käsin laitoksen Linux-koneilla (tai uusimmat päivitykset sisältävällä cubbli-linuxilla), muussa tapauksessa työtä ei tarkasteta ja menetät viikonpalautuksen pisteet.
-
 - Pääset testaamaan ohjelmaasi laitoksen koneella myös kotoa käsin käyttämällä etätyöpöytää https://helpdesk.it.helsinki.fi/ohjeet/tietokone-ja-tulostaminen/tyoasemapalvelu/etakaytettavat-tyopoydat-vdi-ja-vmware tai kirjautumalla ssh:lla palvelimelle melkki.cs.helsinki.fi

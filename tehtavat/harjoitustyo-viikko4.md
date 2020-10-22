@@ -23,10 +23,10 @@ Arvostelussa kiinnitetään huomiota seuraaviin seikkoihin
 - Koodin laatu (1p)
   - Sovelluslogiikka on riittävissä määrin eriytetty käyttöliittymästä
     - Vihjeitä [täällä](../materiaali/python.md) ja [referenssisovelluksessa](https://github.com/ohjelmistotekniikka-hy/python-todo-app/blob/master/dokumentaatio/arkkitehtuuri.md)
-  - Ohjelman [rakenne](https://github.com/mluukkai/ohjelmistotekniikka-syksy-2020/blob/main/web/koodin_laatuvaatimukset.md#5-pakkaukset) heijastaa ohjelman loogista rakennetta ja on nimennältään järkevä
+  - Ohjelman [rakenne](../materiaali/koodin-laatuvaatimukset.md#5-rakenne) heijastaa ohjelman loogista rakennetta ja on nimennältään järkevä
   - Pylint on otettu käyttöön
     - Ohje pylintin käyttöönottoon [täällä](../materiaali/pylint.md)
-    - Täydet pisteet pylintistä ainoastaan jos pylintin antama arvosana koodille on vähintään 8.00/10
+    - Täydet pisteet pylintistä ainoastaan jos pylintin antama arvosana koodille on vähintään 7.00/10
     - Käyttöliittymään tai testeihin liittyvän koodin ei tarvitse olla pylint-tarkastelun alla
     - `pylint: disable`-kommenttien käyttö on kiellettyä ilman erittäin perusteltua syytä
 - Ohjelman alustava rakenne luokka/pakkauskaaviona (0.75p)
