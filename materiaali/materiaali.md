@@ -220,7 +220,7 @@ class Todo:
 
 Jokaiseen todoon liittyy yksi käyttäjä, ja yksittäiseen käyttäjään liittyviä todoja voi olla useita. Tilannetta kuvaa seuraava luokkakaavio
 
-![Luokkakaavio](./kuvat/materiaali-luokkakaavio-1)
+![Luokkakaavio](./kuvat/materiaali-luokkakaavio-1.png)
 
 Luokkakaavioon on nyt merkitty molempien luokkien oliomuuttujat sekä metodit.
 
@@ -325,7 +325,7 @@ Sovelluslogiikkaa hoitava olio tuntee kirjautuneen käyttäjän, mutta pääsee 
 
 Merkitään luokkakaavioon seuraavasti:
 
-![Luokkakaavio](./kuvat/materiaali-luokkakaavio-2)
+![Luokkakaavio](./kuvat/materiaali-luokkakaavio-2.png)
 
 Riippuvuuksien merkitseminen luokkakaavioihin ei ole välttämättä kovin oleellinen asia, niitä kannattaa merkitä jos ne tuovat esille tilanteen kannalta jotain oleellista.
 
