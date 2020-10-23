@@ -9,7 +9,7 @@ Koska haaraumakattavuus antaa tyypillisesti realistisemman kuvan testien kattavu
 Testikattavuuden kerääminen testien suorituksesta onnistuu [coverage](https://coverage.readthedocs.io/en/coverage-4.3.2/index.html)-työkalun avulla. Sen asentamisen projektin riippuvuudeksi onnistuu tuttuun tapaan komennolla:
 
 ```bash
-python -m pipenv install coverage
+python3 -m pipenv install coverage
 ```
 
 Testikattavuuden kerääminen `pytest`-komennolla suoritetuista testeistä onnistuu virtuaaliympäristössä komennolla:
@@ -63,7 +63,7 @@ Kuvan tilanteessa if-ehto ei koskaan saanut arvoa `True`, joten kyseistä haaraa
 
 ## Testikattavuusraportin generoimiselle omat skriptit
 
-[Pipenv-ohjeissa](./pipenv.md) ohjeistettiin, kuinka itse määriteltyä skriptejä voi suorittaa `python -m pipenv run`-komennolla. Tehdään testikattavuuden keräämiselle ja raportoinnin omat skript, `coverage` ja `coverage-report`. Tämä onnistuu määritellemällä ne _Pipfile_-tiedoston `[scripts]`-osiossa:
+[Pipenv-ohjeissa](./pipenv.md) ohjeistettiin, kuinka itse määriteltyä skriptejä voi suorittaa `python3 -m pipenv run`-komennolla. Tehdään testikattavuuden keräämiselle ja raportoinnin omat skript, `coverage` ja `coverage-report`. Tämä onnistuu määritellemällä ne _Pipfile_-tiedoston `[scripts]`-osiossa:
 
 ```
 [[source]]
@@ -81,6 +81,6 @@ coverage-report = "coverage html"
 Nyt testikattavuuden kerääminen ja raportin generointi pitäisi onnistua komennoilla:
 
 ```bash
-python -m pipenv run coverage
-python -m pipenv run coverage-report
+python3 -m pipenv run coverage
+python3 -m pipenv run coverage-report
 ```

@@ -400,7 +400,7 @@ initialize_database()
 Tai komentoriviltä:
 
 ```bash
-python src/initialize_database.py
+python3 src/initialize_database.py
 ```
 
 Etenkin tietokantaoperaatioita testaavien testien kanssa funktiokutsun avulla tapahtuva alustaminen on erittäin hyödyllinen. Ennen kuin testit suoritetaan `pytest`-komennolla, pytest tarkistaa, onko testihakemistossa _conftest.py_-tiedostoa. Jos kyseinen tiedosto löytyy, se kutsuu tiedostossa määriteltyä `pytest_configure`-funktiota ennen testien suorittamista. Tästä syystä funktion sisällä onkin hyödyllistä tehdä tietokannan alustus:
@@ -472,7 +472,7 @@ Testeille on usein käytössä eri konfiguraatio, kuin muulla koodilla. Esimerki
 Näiden ympäristömuuttujien lataaminen onnistuu pytestin [pytest-dotenv](https://pypi.org/project/pytest-dotenv/)-lisäosalla. Sen asentaminen onnistuu seuraavalla komennolla:
 
 ```bash
-python -m pipenv install pytest-dotenv
+python3 -m pipenv install pytest-dotenv
 ```
 
 Asentamisen lisäksi tulee projektin juurihakemistoon luoda _pytest.ini_-tiedosto, jossa kerrotaan, mistä tiedostosta ympäristömuuttujat ladataan. Tiedoston sisältö on seuraava:

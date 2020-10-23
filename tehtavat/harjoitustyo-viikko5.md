@@ -18,7 +18,7 @@ Palautuksesta on tarjolla 3 kurssipistettä.
 
 Arvostelussa kiinnitetään huomiota seuraaviin seikkoihin:
 
-- Ohjelmasta pystyy pystyy suorittamaan komentoriviltä komennolla `python -m pipenv run start` (0.5p)
+- Ohjelmasta pystyy pystyy suorittamaan komentoriviltä komennolla `python3 -m pipenv run start` (0.5p)
 - Projektista on tehty _GitHub release_ (0.25p)
   - Release sisältää ohjelman uusimman version lähdekoodin (GitHub-lisää tämän automaattisesti releasin tehdessä)
   - [Ohje](../materiaali/release.md) releasen tekemiseen
@@ -27,7 +27,7 @@ Arvostelussa kiinnitetään huomiota seuraaviin seikkoihin:
   - Ohjelman suoritettavissa oleva versio on kasvanut edellisestä viikosta _ja_ toteuttaa edellisen viikon versiota suuremman osan määrittelydokumentin toiminnallisuudesta eli jotain käyttäjälle näkyvää hyödyllistä toiminnallisuutta.
     Merkitse lisäksi tarkastusta varten määrittelydokumenttiin tällä viikolla tekemäsi toiminnallisuudet "tehty" merkinnällä.
 - Testaus on edennyt (0.5p)
-  -  Sovellukselle tulee pystyä keräämään testikattavuus komennolla `python -m pipenv run coverage` ja generoimaan testikattavuusraportti komennolla `python -m pipenv run coverage-report`
+  -  Sovellukselle tulee pystyä keräämään testikattavuus komennolla `python3 -m pipenv run coverage` ja generoimaan testikattavuusraportti komennolla `python3 -m pipenv run coverage-report`
   - Käyttöliittymään ja testeihin liittyvä koodi [jätetään pois](../materiaali/coverage.md#tiedostojen-jättäminen-raportin-ulkopuolelle) testikattavuusraportista
   - Sovelluksen testien rivikattavuuden tulee olla vähintään 40%
   - Testien tulee olla mielekkäitä, eli niiden on testattava jotain ohjelman kannalta merkityksellistä asiaa

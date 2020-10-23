@@ -14,7 +14,7 @@ Palautuksen deadline **ti 28.04. klo 23:59**.
 Arvostelussa kiinnitetään huomiota seuraaviin seikkoihin:
 
 - Ohjelma on kasvanut edellisestä viikosta (0.75p)
-  - Ohjelman pystyy suorittamaan komentoriviltä komennolla `python -m pipenv run start`
+  - Ohjelman pystyy suorittamaan komentoriviltä komennolla `python3 -m pipenv run start`
   - Ohjelman suoritettavissa oleva versio on kasvanut edellisestä viikosta _ja_ toteuttaa edellisen viikon versiota suuremman osan määrittelydokumentin toiminnallisuudesta eli jotain käyttäjälle näkyvää hyödyllistä toiminnallisuutta.
   - Merkitse lisäksi tarkastusta varten määrittelydokumenttiin tällä viikolla tekemäsi toiminnallisuudet "tehty" merkinnällä.
   - Ohjelman suoritettavissa olevasta versiosta on tehty uusi [GitHub-release](../materiaali/release.md), joka sisältää ohjelman uusimman version lähdekoodin (GitHub-lisää tämän automaattisesti releasin tehdessä)
@@ -24,7 +24,7 @@ Arvostelussa kiinnitetään huomiota seuraaviin seikkoihin:
     - Luokkien, metodien ja funktioiden tulee pyrkiä noudattamaan niin kutsuttua [single responsibility](https://en.wikipedia.org/wiki/Single-responsibility_principle) -periaatetta, eli yhden komponentin ei tulisi tehdä liian montaa asiaa
     - Liian suuret luokat, metodit ja funktiot tulee siis pilkkoa osiin
 - Testaus on edennyt (0.5p)
-  - Sovellukselle tulee pystyä keräämään testikattavuus komennolla `python -m pipenv run coverage` ja generoimaan testikattavuusraportti komennolla `python -m pipenv run coverage-report`
+  - Sovellukselle tulee pystyä keräämään testikattavuus komennolla `python3 -m pipenv run coverage` ja generoimaan testikattavuusraportti komennolla `python3 -m pipenv run coverage-report`
     - Käyttöliittymään ja testeihin liittyvä koodi [jätetään pois](../materiaali/coverage.md#tiedostojen-jättäminen-raportin-ulkopuolelle) testikattavuusraportista
   - Sovelluksen testien rivikattavuuden tulee olla vähintään 60%
   - Testien tulee testata järkevällä tavalla ohjelman toiminnallisuutta

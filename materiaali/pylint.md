@@ -9,12 +9,12 @@ Koodin testauksen lisäksi koodin luettavuuden ylläpitäminen on tärkeää. T�
 Pylint on helppo ottaa käyttöön pipenvillä alustetussa projektissa. Aloitetaan asentamalla pylint riippuvuutena haluamassamme projektissa:
 
 ```
-python -m pipenv install pylint
+python3 -m pipenv install pylint
 ```
 
 Pylintille tulee määritellä joukko tarkistettavia sääntöjä. Säännöt määritellään projektin juurihakemiston _.pylintrc_-tiedostossa. Luo kyseinen tiedosto ja kopioi sinne [tämän](../misc/.pylintrc) tiedoston sisältö.
 
-Pylintin laatutarkitukset voi suorittaa komentoriviltä siirtymällä ensin virtuaaliympäristöön komennolla `python -m pipenv shell` ja sen jälkeen suorittamalla komennon `pylint src`. Kyseinen komento suorittaa laatutarkitukset _src_ hakemistossa. Pylint antaa koodille "arvosanan" sen laadun mukaan, joka löytyy tulosteen lopusta:
+Pylintin laatutarkitukset voi suorittaa komentoriviltä siirtymällä ensin virtuaaliympäristöön komennolla `python3 -m pipenv shell` ja sen jälkeen suorittamalla komennon `pylint src`. Kyseinen komento suorittaa laatutarkitukset _src_ hakemistossa. Pylint antaa koodille "arvosanan" sen laadun mukaan, joka löytyy tulosteen lopusta:
 
 ```
 Your code has been rated at 10.00/10 (previous run: 10.00/10, +0.00)
@@ -58,7 +58,7 @@ Korjaa ohjelmastasi kaikki pylintin ilmoittavat virheet. Vain harvoissa poikkeus
 
 ## Laatutarkistuksille oma skripti
 
-[Pipenv-ohjeissa](./pipenv.md) ohjeistettiin, kuinka itse määriteltyä skriptejä voi suorittaa `python -m pipenv run`-komennolla. Tehdään laatutarkistuksien suorittamista varten oma skripti, `lint`. Tämä onnistuu määritellemällä se _Pipfile_-tiedoston `[scripts]`-osiossa:
+[Pipenv-ohjeissa](./pipenv.md) ohjeistettiin, kuinka itse määriteltyä skriptejä voi suorittaa `python3 -m pipenv run`-komennolla. Tehdään laatutarkistuksien suorittamista varten oma skripti, `lint`. Tämä onnistuu määritellemällä se _Pipfile_-tiedoston `[scripts]`-osiossa:
 
 ```
 [[source]]
@@ -75,7 +75,7 @@ lint = "pylint src"
 Nyt laatutarkituksien suorittaminen pitäisi onnistua komennolla:
 
 ```bash
-python -m pipenv run lint
+python3 -m pipenv run lint
 ```
 
 ## Integrointi editoriin
@@ -95,7 +95,7 @@ Jos integroinnin kanssa ilmenee ongelmia, tutustu Visual Studio Coden [ohjeisiin
 Tiettyjen laatukorjausten, kuten sisennysten ja liian pitkien koodirivien korjaaminen tuottaa välillä turhaa manuaalista työtä. Koodin automaattisessa formatoinnissa auttaa [autopep8](https://pypi.org/project/autopep8/)-kirjasto. Kirjasto formatoi koodin automaattisesti [PEP 8](https://www.python.org/dev/peps/pep-0008/)-tyyliohjeiden mukaisesti. Aloitetaan sen käyttö asentamalle se projektin riippuvuudeksi:
 
 ```bash
-python -m pipenv install autopep8
+python3 -m pipenv install autopep8
 ```
 
 Tämän jälkeen voimme virtuaaliympäristössä formatoida _src_ hakemiston koodin komennolla:
@@ -104,4 +104,4 @@ Tämän jälkeen voimme virtuaaliympäristössä formatoida _src_ hakemiston koo
 autopep8 --in-place --recursive src
 ```
 
-Komennolle voi myös tehdä oman skriptinsä, jolloin suoritus onnistuu esimerkiksi komennolla `python -m pipenv run format`.
+Komennolle voi myös tehdä oman skriptinsä, jolloin suoritus onnistuu esimerkiksi komennolla `python3 -m pipenv run format`.

@@ -16,13 +16,13 @@ Arvostelussa kiinnitetään huomiota seuraaviin seikkoihin:
 
 - Repositorion juuresta löytyy _src_-hakemisto projektin koodille
 - Projekti on alustettu [pipenv-ohjeiden](../materiaali/pipenv.md) mukaisesti. _Pipfile_-tiedossa _ei saa olla_ `[requires]`-osiota, joka määrittelee vaadittavan Python-version
-- Projektin koodin pystyy suorittamaan komentoriviltä komennolla `python -m pipenv run start`. Kertaa [pipenv-ohjeet](../materiaali/pipenv.md), jos tämä tuottaa hankaluuksia
+- Projektin koodin pystyy suorittamaan komentoriviltä komennolla `python3 -m pipenv run start`. Kertaa [pipenv-ohjeet](../materiaali/pipenv.md), jos tämä tuottaa hankaluuksia
 - Edellytys pisteille suoritettavissa oleva versio, joka toteuttaa ainakin osan jostain viikolla 2 tekemäsi määrittelydokumentin toiminnallisuudesta
   - Pelkät tyhjät luokat tai funktiot ilman toiminallisuutta eivät tuo pisteitä
-- Sovelluksella on oltava _vähintään yksi testi_ jonka voi suorittaa komennolla `python -m pipenv run test`. Kertaa [testauksen ohjeet](../materiaali/unittest.md), jos tämä tuottaa hankaluuksia
+- Sovelluksella on oltava _vähintään yksi testi_ jonka voi suorittaa komennolla `python3 -m pipenv run test`. Kertaa [testauksen ohjeet](../materiaali/unittest.md), jos tämä tuottaa hankaluuksia
   - Testin tulee olla mielekäs, eli sen on testattava jotain ohjelman kannalta merkityksellistä asiaa
   - Testin tulee mennä läpi
-- Sovellukselle tulee pystyä keräämään testikattavuus komennolla `python -m pipenv run coverage` ja generoimaan testikattavuusraportti komennolla `python -m pipenv run coverage-report`. Kertaa [testikattavuuden ohjeet](../materiaali/coverage.md), jos tämä tuottaa hankaluuksia
+- Sovellukselle tulee pystyä keräämään testikattavuus komennolla `python3 -m pipenv run coverage` ja generoimaan testikattavuusraportti komennolla `python3 -m pipenv run coverage-report`. Kertaa [testikattavuuden ohjeet](../materiaali/coverage.md), jos tämä tuottaa hankaluuksia
 - Tuntikirjanpito on ajantasalla
   - Tuntikirjanpitoon ei merkitä laskareihin käytettyä aikaa
 - Repositorion _README.md_-tiedosto kunnossa

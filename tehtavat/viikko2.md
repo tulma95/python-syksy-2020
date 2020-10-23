@@ -16,7 +16,7 @@ Huomaa, että tällä viikolla on myös harjoitustyöhön liittyviä [tavoitteit
 
 ## Alkutoimet
 
-Ennen tehtävien aloitusta, tutustu [pipenv-ohjeisiin](../materiaali/pipenv). Varmista, että pipenv on asennettuna ja osaat suorittaa `pipenv`-komentoja komentoriviltä. Ota tehtäviä tehdessäsi huomioon se, että jos tietokoneellasi `python`-komento suorittaa Python-versiota kaksi, käytä komennon sijaan komentoa `python3`.
+Ennen tehtävien aloitusta, tutustu [pipenv-ohjeisiin](../materiaali/pipenv). Varmista, että pipenv on asennettuna ja osaat suorittaa `pipenv`-komentoja komentoriviltä.
 
 ## 1
 
@@ -139,10 +139,10 @@ nothing to commit, working tree clean
 Siirry komentorivillä _unicafe_-hakemistoon ja asenna vaadittavat riippuvuudet komennolla:
 
 ```
-python -m pipenv install
+python3 -m pipenv install
 ```
 
-Testien suorittaminen komentoriviltä onnistuu siirtymällä virtuaaliympäristöön komennolla `python -m pipenv shell` ja sen jälkeen suorittamalla komennon `pytest`. Jos kaikki on hyvin, saat raportin läpimenneistä testeistä:
+Testien suorittaminen komentoriviltä onnistuu siirtymällä virtuaaliympäristöön komennolla `python3 -m pipenv shell` ja sen jälkeen suorittamalla komennon `pytest`. Jos kaikki on hyvin, saat raportin läpimenneistä testeistä:
 
 ```
 collected 1 item
@@ -239,7 +239,7 @@ Jotta `coverage`-komennon generoimat tiedostot eivät päättyisi versionhallint
 
 Visual Studio Codesta löytyy sisään rakennettu terminaali. Terminaalin saa avattua valitsemalla päävalikosta _Terminal_ ja aukeavasta alavalikosta _New Terminal_. editorin alalaitaan pitäisi ilmesty terminaali, jossa voit suorittaa komentorivikomentoja. 
 
-Terminaalin avaaminen saattaa automaattisesti avata komentorivin virtuaaliympäristössä. Jos olet virtuaaliympäristössä, on komentorivin syöterivin alussa projektin nimi suluissa, esimerkiksi `(unicafe)`. Jos et ole virtuaaliympäristössä pääset siihen tutulla `python -m pipenv shell` komennolla. Tämän jälkeen voit suorittaa komentoja suoraan Visual Studio Codessa:
+Terminaalin avaaminen saattaa automaattisesti avata komentorivin virtuaaliympäristössä. Jos olet virtuaaliympäristössä, on komentorivin syöterivin alussa projektin nimi suluissa, esimerkiksi `(unicafe)`. Jos et ole virtuaaliympäristössä pääset siihen tutulla `python3 -m pipenv shell` komennolla. Tämän jälkeen voit suorittaa komentoja suoraan Visual Studio Codessa:
 
 ![Visual Studio Code terminaali](../materiaali/kuvat/vscode-terminaali.png)
 

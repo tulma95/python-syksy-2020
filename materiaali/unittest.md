@@ -39,7 +39,7 @@ class Maksukortti:
 Luo Labtooliin rekisteröimäsi repositorion hakemistoon _laskarit/viikko2_ hakemisto _maksukortti_. Suorita komentoriviltä hakemiston sisällä tuttu, projektin alustamiseen vaadittava komento:
 
 ```bash
-python -m pipenv install
+python3 -m pipenv install
 ```
 
 Poista komennon suorittamisen jälkeen hakemiston _Pipfile_-tiedostosta `[requires]`-osio.
@@ -47,7 +47,7 @@ Poista komennon suorittamisen jälkeen hakemiston _Pipfile_-tiedostosta `[requir
 Asennetaan projektiin riippuvuutena [pytest](https://docs.pytest.org/en/stable/)-sovelluskehys, joka helpottaa testien suorittamista komentoriviltä. Riippuvuuden asentaminen onnistuu samassa hakemistossa komennolla:
 
 ```bash
-python -m pipenv install pytest
+python3 -m pipenv install pytest
 ```
 
 Seuraavaksi muodosta _maksukortti_-hakemistoon seuraava rakenne:
@@ -66,7 +66,7 @@ Lisää tiedostoon _src/maksukortti.py_ edellä esitelty `Maksukortti`-luokan ko
 
 ## Aloitetaan testien kirjoittaminen
 
-Yritetään seuraavaksi suorittaa testejä. Siirrytään virtuaaliympäristöön komennolla `python -m pipenv shell`, jonka jälkeen suoritetaan komento `pytest`. Komennon suorittaminen antaa ymmärtää, ettei yhtään testiä ole suoritettu. Syy on yksinkertaisesti siinä, ettemme ole vielä toteuttaneet yhtään testiä.
+Yritetään seuraavaksi suorittaa testejä. Siirrytään virtuaaliympäristöön komennolla `python3 -m pipenv shell`, jonka jälkeen suoritetaan komento `pytest`. Komennon suorittaminen antaa ymmärtää, ettei yhtään testiä ole suoritettu. Syy on yksinkertaisesti siinä, ettemme ole vielä toteuttaneet yhtään testiä.
 
 Toteutetaan _src/tests/maksukortti\_test.py_-tiedostoon projektimme ensimmäinen testi. Tiedoston sisältö tulee olla seuraava:
 
@@ -239,7 +239,7 @@ def test_kortin_saldo_ei_ylita_maksimiarvoa(self):
 
 ## Testien suorittamiselle oma skripti
 
-[Pipenv-ohjeissa](./pipenv.md) ohjeistettiin, kuinka itse määriteltyä skriptejä voi suorittaa `python -m pipenv run`-komennolla. Tehdään testien suorittamista varten oma skripti, `test`. Tämä onnistuu määritellemällä se _Pipfile_-tiedoston `[scripts]`-osiossa:
+[Pipenv-ohjeissa](./pipenv.md) ohjeistettiin, kuinka itse määriteltyä skriptejä voi suorittaa `python3 -m pipenv run`-komennolla. Tehdään testien suorittamista varten oma skripti, `test`. Tämä onnistuu määritellemällä se _Pipfile_-tiedoston `[scripts]`-osiossa:
 
 ```
 [[source]]
@@ -256,7 +256,7 @@ test = "pytest"
 Nyt testien suorittaminen pitäisi onnistua komennolla:
 
 ```bash
-python -m pipenv run test
+python3 -m pipenv run test
 ```
 
 ## Testit ovat toisistaan riippumattomia
