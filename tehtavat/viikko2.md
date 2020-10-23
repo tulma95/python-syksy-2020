@@ -30,7 +30,12 @@ Ennen tehtävien aloitusta, tutustu [pipenv-ohjeisiin](../materiaali/pipenv). Va
 
 **HUOM1** on suositeltavaa, että yksi testi testaa vain "yhtä asiaa" kerrallaan. Tee siis jokaisesta ylläolevasta oma testinsä.
 
-**HUOM2** Kirjoita assertEquals-komennot aina siten, että ensimmäisenä parametrina on odotettu tulos ja toisena parametrina testatun metodin antama tulos.
+**HUOM2** Kirjoita `assertEqual`-komennot aina siten, että ensimmäisenä parametrina saatu tulos
+ja toisena parametrina on odotettu tulos. Esimerkiksi:
+
+```python
+self.assertEqual(str(kortti), "Kortilla on rahaa 2 euroa")
+```
 
 ## 2 Maksukortti ja kassapääte: testit kortille
 

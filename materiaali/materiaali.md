@@ -228,7 +228,7 @@ Yleensä ei ole mielekästä kuvata luokkia tällä tarkkuudella, eli luokkakaav
 
 <img src="https://raw.githubusercontent.com/mluukkai/ohjelmistotekniikka-syksy-2020/main/web/images/l-4.png" width="350">
 
-Luokkien tarkemmat detaljit selviävät koodia katsomalla tai JavaDoc:ista.
+Luokkien tarkemmat detaljit selviävät koodia katsomalla tai docstring-dokumentoinnista.
 
 #### Riippuvuus
 
@@ -500,11 +500,11 @@ Ohjelmistojen suunnitteluun on aikojen saatossa muodostunut joukko periaatteita,
 
 ### DRY eli Don't repeat yourself
 
-Jo Ohjelmoinnin perusteissa aloittelevaa ohjelmoijaa varoitellaan copy pasten vaaroista. [DRY](https://en.wikipedia.org/wiki/Don%27t_repeat_yourself)-periaate ilmaisee asian seuraavasti
+Jo Ohjelmoinnin perusteissa aloittelevaa ohjelmoijaa varoitellaan copy-pasten vaaroista. [DRY](https://en.wikipedia.org/wiki/Don%27t_repeat_yourself)-periaate ilmaisee asian seuraavasti
 
 > Every piece of knowledge must have a single, unambiguous, authoritative representation within a system
 
-Periaate yleistää toisteettomuuden koskemaan koodin lisäksi muitakin ohjelmistoon liittyviä asioita, esim. dokumentaatiota. Luokkien dokumentoiminen JavaDoc:in avulla ilmentää osin tätä periaatetta.
+Periaate yleistää toisteettomuuden koskemaan koodin lisäksi muitakin ohjelmistoon liittyviä asioita, esim. dokumentaatiota. Luokkien dokumentoiminen docstring-kommenttien avulla ilmentää osin tätä periaatetta.
 
 ### Single responsibility principle
 
