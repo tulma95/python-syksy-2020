@@ -335,28 +335,26 @@ Luokkien [perintähierarkian](https://docs.python.org/3/tutorial/classes.html#in
 
 <img src="https://raw.githubusercontent.com/mluukkai/ohjelmistotekniikka-syksy-2020/main/web/images/l-9.png" width="350">
 
-<!-- TODO -->
 ### Pakkauskaavio
 
-Todo-sovelluksen koodi on sijoitettu _pakkauksiin_ seuraavasti:
+Todo-sovelluksen koodi on sijoitettu hakemistoihin seuraavasti:
 
-![](https://raw.githubusercontent.com/mluukkai/ohjelmistotekniikka-syksy-2020/main/web/images/l-10.png)
+![](./kuvat/materiaali-hakemistorakenne.png)
 
-Pakkausrakenne voidaan kuvata UML:ssä pakkauskaaviolla:
+Hakemistorakennetta voidaan kuvata UML:ssä _pakkauskaaviolla_:
 
-<img src="https://raw.githubusercontent.com/mluukkai/ohjelmistotekniikka-syksy-2020/main/web/images/l-11.png" width="160">
+![](./kuvat/materiaali-pakkaukset.png)
 
-Pakkausten välille on merkitty _riippuvuudet_ katkoviivalla. Pakkaus _todoapp.ui_ riippuu pakkauksesta _todoapp.domain_ sillä _ui_:n luokka _Main_ käyttää _domain_-pakkauksen luokkia _Todo_ ja _TodoService_.
+Pakkausten välille on merkitty _riippuvuudet_ katkoviivalla. Pakkaus _ui_ riippuu pakkauksesta _services_ sillä _ui_-pakkauksen luokat käyttävät _service_-pakkauksen luokkaa `TodoService`, joka vastaa sovelluksen sovelluslogiikasta. 
 
-Vastaavasti pakkaus _todoapp.domain_ riippuu pakkauksesta _todoapp.dao_ sillä domainin luokka _TodoService_ käyttää _dao_-pakkauksen rajapintoja _TodoDao_ ja UserDao.
+Vastaavasti pakkaus _services_ riippuu pakkauksesta _repositories_ sillä sen luokka `TodoService` käyttää _repositorios_-pakkauksen luokkia `TodoRepository` ja `UserRepository`.
 
 Pakkauskaavioihin on myös mahdollista merkitä pakkausten sisältönä olevia luokkia normaalin luokkakaaviosyntaksin mukaan:
 
-<img src="https://raw.githubusercontent.com/mluukkai/OtmTodoApp/master/dokumentaatio/kuvat/a-3c.png" width="500">
+![](./kuvat/materiaali-pakkaukset-luokat.png)
 
 Sovelluksen koodi on organisoitu _kerrosarkkitehtuurin_ periaatteiden mukaan. Asiasta lisää hieman myöhemmin tässä dokumentissa.
 
-<!-- TODO -->
 ### Sekvenssikaaviot
 
 Luokka- ja pakkauskaaviot kuvaavat ohjelman rakennetta. Ohjelman toiminta ei kuitenkaan tule niistä ilmi millään tavalla.
