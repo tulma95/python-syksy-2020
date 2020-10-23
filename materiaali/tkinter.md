@@ -14,7 +14,7 @@ window.title("TkInter example")
 window.mainloop()
 ```
 
-Kun koodi suoritetaan, pitäisi aueta ikkuna, jonka otsakkeena on,`title`-metodin kautta asetettu, "TkInter-esimerkki". `mainloop`-metodin kutsu käynnistää loputtoman silmukan, jonka aikana TkInter odottaa käyttöliittymään kohdistuvia tapahtumia, kuten painikkeiden painalluksia. Huomaa, että `mainloop`-metodin kutsun jälkeistä koodia ei enää suoriteta:
+Kun koodi suoritetaan, pitäisi aueta ikkuna, jonka otsakkeena on `title`-metodin kautta asetettu, "TkInter example". `mainloop`-metodin kutsu käynnistää loputtoman silmukan, jonka aikana TkInter odottaa käyttöliittymään kohdistuvia tapahtumia, kuten painikkeiden painalluksia. Huomaa, että `mainloop`-metodin kutsun jälkeistä koodia ei enää suoriteta:
 
 ```python
 # ...
@@ -26,7 +26,7 @@ Tulostusta ei tulosteta, koska koodin suoritus on siirtynyt ikuiseen silmukkaan.
 
 ## Graafiset komponentit
 
-TkInter tarjoaa käyttöömme monia graafisia komponentteja, kuten tekstiä, nappeja ja tekstikenttiä. Tekstin lisääminen onnistuu `Label`-komponentin avulla:
+TkInter tarjoaa käyttöömme monia graafisia komponentteja, kuten tekstiä, painikkeita ja tekstikenttiä. Tekstin lisääminen onnistuu `Label`-komponentin avulla:
 
 ```python
 from tkinter import Tk, ttk
@@ -100,7 +100,7 @@ class UI:
 # ...
 ```
 
-Komponenttien asettelussa `pack`-metodin käyttöä käytännöllisempää on käyttää `grid`-metodia. Gridissä on rivejä ja sarakkeita, joihin voimme sijottaa komponentteja:
+Komponenttien asettelussa `pack`-metodin käyttöä käytännöllisempää on käyttää `grid`-metodia. Gridissä on rivejä ja sarakkeita, joihin voimme sijottaa komponentteja kutsumalla `pack`-metodin sijaan `grid`-metodia:
 
 ```python
 def start(self):
@@ -345,7 +345,7 @@ class HelloView:
         self.frame.destroy()
 ```
 
-Luokan `initialize`-metodissa määritellään meille ennestään tuntematon, `Frame`-komponentti. `Frame`-komponentilla ei ole visuaalisesti mitään erityispiirteitä, mutta sitä on erittäin kätevä käyttää komponenttien ryhmittelyyn. Haluamme eristää näkymän komponentit muiden näkymien komponenteista, joten liitämme ne `master`-parametrin kautta `frame`-komponenttiin. Tämä mahdollistaa sen, että voimme näyttää kaikki näkymän komponentit kerralla lukan `pack`-metodin avulla. Lisäksi voimme tuhota kaikki näkymän komponentit luokan `destroy`-metodilla. Kun komponentti tuhotaan, myös sen lapsikomponentit, eli `master`-parametrin avulla liitetyt komponentit tuhotaan.
+Luokan `initialize`-metodissa määritellään meille ennestään tuntematon, `Frame`-komponentti. `Frame`-komponentilla ei ole visuaalisesti mitään erityispiirteitä, mutta se on erittäin kätevä esimerkiksi komponenttien ryhmittelyssä. Haluamme eristää näkymän komponentit muiden näkymien komponenteista, joten liitämme ne `master`-parametrin kautta `frame`-komponenttiin. Tämä mahdollistaa sen, että voimme näyttää kaikki näkymän komponentit kerralla luokan `pack`-metodin avulla. Lisäksi voimme tuhota kaikki näkymän komponentit luokan `destroy`-metodilla. Kun komponentti tuhotaan, myös sen lapsikomponentit, eli `master`-parametrin avulla liitetyt komponentit tuhotaan.
 
 Muokataan `UI`-luokkaa niin, että `HelloView`-näkymä näytetään, kun käyttöliittymä käynnistyy:
 
