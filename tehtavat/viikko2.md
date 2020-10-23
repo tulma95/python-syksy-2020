@@ -159,7 +159,7 @@ src/tests/maksukortti_test.py .                          [100%]
 
 ### .gitignore
 
-Kun testien jälkeen suoritat komennon `git status`, huomaat että projektin juureen on ilmestynyt uusi hakemisto _.pytest_cache_, joka ei ole gitin alaisuudessa
+Kun testien jälkeen suoritat komennon `git status`, huomaat että projektin juureen on ilmestynyt uusi hakemisto _.pytest\_cache_, joka ei ole gitin alaisuudessa
 
 ```bash
 On branch master
@@ -173,7 +173,7 @@ Untracked files:
 nothing added to commit but untracked files present (use "git add" to track)
 ```
 
-Hakemisto \_.pytest_cache., joka sisältää `pytest`-komentojen aikaansaannoksia on tyypillisesti sellainen, jota emme halua versionhallinnan pariin.
+Hakemisto _.pytest\_cache_., joka sisältää `pytest`-komentojen aikaansaannoksia on tyypillisesti sellainen, jota emme halua versionhallinnan pariin.
 
 git-repositorion juureen on mahdollista lisätä tiedosto [.gitignore](https://www.atlassian.com/git/tutorials/gitignore) jossa voidaan määritellä, mitä tiedostoja ja hakemistoja git jättää huomioimatta eli _ignoroi_.
 
@@ -196,7 +196,7 @@ Untracked files:
 	.gitignore
 ```
 
-Eli vaikka hakemistossa _/laskarit/viikko2/unicafe_ on alihakemisto _.pytest_cache_, ei git niitä huomioi
+Eli vaikka hakemistossa _/laskarit/viikko2/unicafe_ on alihakemisto  _.pytest\_cache_, ei git niitä huomioi
 
 ### Takaisin testeihin
 
@@ -252,7 +252,7 @@ Terminaalin avaaminen saattaa automaattisesti avata komentorivin virtuaaliympär
 
 Laajennetaan unicafe-projektin testaus kattamaan myös kassapääte.
 
-Tee testihakemistoon testitiedosto _kassapaate_test.py_ ja sinne testiluokka `TestKassapaate`. Tee testit jotka testaavat ainakin seuraavia asioita:
+Tee testihakemistoon testitiedosto _kassapaate\_test.py_ ja sinne testiluokka `TestKassapaate`. Tee testit jotka testaavat ainakin seuraavia asioita:
 
 - Luodun kassapäätteen rahamäärä ja myytyjen lounaiden määrä on oikea (rahaa 1000, lounaita myyty 0)
 - Käteisosto toimii sekä edullisten että maukkaiden lounaiden osalta
