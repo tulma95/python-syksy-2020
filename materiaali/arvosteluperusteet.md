@@ -63,13 +63,13 @@ Pisteet (yht 24) jakautuvat seuraavasti
 
 Täysien pisteiden (5p) edellytys:
 
-- Testattu kattavasti: rivi- ja haarautumakattavuus korkea (noin 70%)
+- Testattu kattavasti: haarautumakattavuus korkea (noin 70%)
   - Testien pitää testata hyödyllisiä asioita, pelkät testikattavuutta nostavat hyödyttömät (esim. assert-komentoja sisältämättömät) testit eivät tuo pisteitä
 - Testaus riittävää sekä yksikkö- että integraatiotasolla
   - Eli yksittäisten luokkien lisäksi on testattava myös monen luokan yhdistelmän tuottavaa toiminnallisuutta
 - Sovelluslogiikkaa testataan realistisilla skenaarioilla
 - Testit testaavat mielekkäitä asioita
-  - Jos testit on tehty ainoastaan testauskattavuuden kasvattamiseksi, ei pisteitä ole montaa odotettavissa
+  - Jos testit on tehty ainoastaan testikattavuuden kasvattamiseksi, ei pisteitä ole montaa odotettavissa
 - Riippuvuudet käsitelty järkevästi
   - Tietokantaa käyttävissä sovelluksissa testeissä käytössä "testitietokanta". Aiheesta löytyy ohjeita mm. [sovelluksen konfiguraatiot](./python.md#sovelluksen-konfiguraatiot)-osiossa
   - Myös valekomponentit ovat hyviä joissain tilanteissa. Niiden käytöstä on esimerkki [riippuvuuksien injektointi](./python.md#riippuvuuksien-injektointi)-osiossa

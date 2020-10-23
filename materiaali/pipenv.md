@@ -40,7 +40,7 @@ python -m pipenv install
 
 Komennon suorittaminen tekee projektille vaadittavat alustustoimenpiteet, kuten virtuaaliympäristön alustamisen. Jos projektille olisi määritelty riippuvuuksia, komennon suorittaminen asentaisi myös ne. Tämän vuoksi komento tulee suorittaa aina ennen kuin uutta projekti aletaan käyttämään.
 
-Hakemistoon pitäisi ilmestyä tiedostot _Pipfile_ ja _Pipfile.lock_. Tiedoston _Pipfile_ sisältö on kuta kuinkin seuraava:
+Hakemistoon pitäisi ilmestyä tiedostot _Pipfile_ ja _Pipfile.lock_. Tiedoston _Pipfile_ sisältö on kutakuinkin seuraava:
 
 ```
 [[source]]
