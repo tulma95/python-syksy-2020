@@ -12,8 +12,6 @@ Harjoitustyön tekeminen aloitetaan päättämällä aihe ja kuvaamalla se _alus
 
 Aihetta miettiessäsi kannattaa ehdottomasti lukea [ohjeet työn aloittamiseen](../materiaali/tyon-aloitus.md).
 
-- Huomaa, että harjoitustyön koodi tulee toteuttaa [maven](../materiaali/tyon-aloitus.md#maven-projektin-luominen)-muotoisena projektina
-
 Mikään ei tietenkään estä sitä, että aloitat jo ohjelmoinnin tai vaikkapa koodaat koko työn valmiiksi. Viikon 2 deadlinen pisteytyksessä ollaan kiinnostuneita ainoastaan määrittelydokumentista.
 
 **HUOM** jos aloitat jo ohjelmoinnin, muista että ohjelmakoodi tulee kirjoittaa englanniksi! Ohjelman käyttöliittymä ja dokumentaatio voivat olla suomeksi tai englanniksi. Ainoa sallittu ohjelmointikieli on Python.
