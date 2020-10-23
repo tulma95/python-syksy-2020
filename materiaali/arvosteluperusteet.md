@@ -9,7 +9,7 @@ Kurssilla jaossa 60 pistettä. Pisteet jakautuvat seuraavasti
   - Arkkitehtuuri
   - Käyttö/asennusohje
   - Testidokumentti
-  - JavaDoc
+  - Docstring-dokumentaatio
 - Testaus 5p
   - Testit
 - Lopullinen ohjelma 24p
@@ -22,7 +22,7 @@ Läpipääsyyn vaatimuksena on lisäksi vähintään 10 pistettä lopullisesta o
 
 ## Lopullisesta ohjelmasta annettavat pisteet
 
-Pisteet (yht 24) jakautuvat seuraavasti
+Pisteet (yhteensä 24) jakautuvat seuraavasti
 
 - Käyttöliittymä 4p
   - 0p yksinkertainen tekstikäyttöliittymä
@@ -51,9 +51,9 @@ Pisteet (yht 24) jakautuvat seuraavasti
 ### Laajuus ja sovellusogiikan kompleksisuus
 
 - Miten laaja on laaja?
-- Kurssin [referenssisovellus](https://github.com/ohjelmistotekniikka-hy/python-todo-app) olisi laajuudeltaan juuri ja juuri 2 pisteen arvoinen, sovelluslogiikaltaan se on aika suoraviivainen ja ansaitsisi vain yhden pisteen
-- Laajuutta ei voida määritellä tarkasti esim. luokkien tai metodien määrällä, laajuus on aina suhteellinen sovelluksen tyyppiin ja kompleksisuuteenkin
-- Eräs tapa laajentaa sovellusta ja lisätä sen kompleksisuutta on tehdä siitä _parametrein konfiguroitava ja laajennettava_, esim:
+- Kurssin [referenssisovellus](https://github.com/ohjelmistotekniikka-hy/python-todo-app) olisi laajuudeltaan 2 pisteen luokkaa, koska sovelluslogiikaltaan se on kohtalaisen suoraviivainen
+- Laajuutta ei voida määritellä tarkasti esimerkiksi luokkien, metodien, tai funktioiden määrällä, laajuus on aina suhteellinen sovelluksen tyyppiin ja kompleksisuuteenkin
+- Eräs tapa laajentaa sovellusta ja lisätä sen kompleksisuutta on tehdä siitä _parametrein konfiguroitava ja laajennettava_, esimeerkiksi:
   - Sovelluksen käyttämän tietokantatiedoston nimi ei ole kirjoitettu koodiin vaan on käyttäjän määriteltävissä
   - Pelissä eri vaikueustasojen pelimaailmat eivät ole määritelty koodissa vaan luodaan erillisten tiedostojen perusteella
   - Pacmanissa hirviöiden määrä ei ole ohjelmakoodiin kovakoodattu vakio vaan valittavissa käyttöliittymästä
@@ -79,20 +79,20 @@ Täysien pisteiden (5p) edellytys:
 Dokumentaatio tuo yhteensä maksimissaan 12 pistettä, jotka jakautuvat seuraavasti
 
 - Määrittelydokumentti 2p
-  - **päivitetty vastaamaan lopullisen ohjelman toiminnallisuutta**
-  - päivittämätön määrittelydokumentti tuo 0 pistettä
+  - **Päivitetty vastaamaan lopullisen ohjelman toiminnallisuutta**
+  - Päivittämätön määrittelydokumentti tuo 0 pistettä
 - Arkkitehtuurikuvaus 4p
 - Käyttö/asennusohje 1p
   - Arvostelijan tulee pystyä asentamaan ohjelma ja käyttämään sitä ohjeen avulla
 - Testausdokumentti 2p
-- JavaDoc 2p
-  - Suoraviivaisia gettereitä, settereitä ja konstruktoreja ei tarvitse dokumentoida
+- Docstring-dokumentaatio 2p
+  - Suurin osa luokista, metodeista ja funktioista on dokumentoitu docstring-kommenttien avulla
 - Repositorio ja README 1p
   - Repositorion ja README:n oletetaan olevan aiempien viikkojen vaatimusten mukainen
 
 [Referenssisovellus](https://github.com/ohjelmistotekniikka-hy/python-todo-app) toimii hyvänä esikuvana dokumentaation suhteen. Koodin dokumentointi tosin on sovelluksessa osittain puutteelista.
 
-**HUOM** älä copypastea referenssisovelluksen dokumentaation tekstiä omaan dokumentaatioosi, kirjoita teksti omin sanoin. Tekstin suora kopiointi johtaa hylkäämiseen.
+**HUOM** älä copy-pastea referenssisovelluksen dokumentaation tekstiä omaan dokumentaatioosi, kirjoita teksti omin sanoin. Tekstin suora kopiointi johtaa hylkäämiseen.
 
 ## Harjoitustyön toimivuus
 

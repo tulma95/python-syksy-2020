@@ -91,7 +91,7 @@ Palautuksen deadline pe 26.4. klo 23:59
 - Harjoitustyö (3p)
   - Release 2
   - Testikattavuus nousee 
-  - Docstring aloitettu 
+  - Docstring-dokumentaatio aloitettu 
   - Alustava versio arkkitehtuuridokumentista 
 - Tarkemmat ohjeet [täältä](./tehtavat/harjoitustyo-viikko6.md) 
 
