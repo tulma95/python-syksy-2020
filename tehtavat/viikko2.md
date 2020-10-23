@@ -1,6 +1,6 @@
 # Viikon 2 laskarit
 
-Tehtävät on tarkoitus tehdä joko pajassa tai omatoimisesti. Tehtävien palautuksen deadline on ti 24.03 klo 23:59
+Tehtävät on tarkoitus tehdä joko pajassa tai omatoimisesti. Tehtävien palautuksen deadline on ti 10.11. klo 23:59
 
 Tehtävät palautetaan GitHubin avulla Labtoolin rekisteröimääsi repositorioon.
 
@@ -159,7 +159,7 @@ src/tests/maksukortti_test.py .                          [100%]
 
 ### .gitignore
 
-Kun testien jälkeen suoritat komennon `git status`, huomaat että projektin juureen on ilmestynyt uusi hakemisto _.pytest\_cache_, joka ei ole gitin alaisuudessa
+Kun testien jälkeen suoritat komennon `git status`, huomaat että projektin juureen on ilmestynyt uusi hakemisto _.pytest_cache_, joka ei ole gitin alaisuudessa
 
 ```bash
 On branch master
@@ -173,7 +173,7 @@ Untracked files:
 nothing added to commit but untracked files present (use "git add" to track)
 ```
 
-Hakemisto _.pytest_cache., joka sisältää `pytest`-komentojen aikaansaannoksia on tyypillisesti sellainen, jota emme halua versionhallinnan pariin.
+Hakemisto \_.pytest_cache., joka sisältää `pytest`-komentojen aikaansaannoksia on tyypillisesti sellainen, jota emme halua versionhallinnan pariin.
 
 git-repositorion juureen on mahdollista lisätä tiedosto [.gitignore](https://www.atlassian.com/git/tutorials/gitignore) jossa voidaan määritellä, mitä tiedostoja ja hakemistoja git jättää huomioimatta eli _ignoroi_.
 
@@ -196,7 +196,7 @@ Untracked files:
 	.gitignore
 ```
 
-Eli vaikka hakemistossa _/laskarit/viikko2/unicafe_ on alihakemisto _.pytest\_cache_, ei git niitä huomioi
+Eli vaikka hakemistossa _/laskarit/viikko2/unicafe_ on alihakemisto _.pytest_cache_, ei git niitä huomioi
 
 ### Takaisin testeihin
 
@@ -242,7 +242,7 @@ Jotta `coverage`-komennon generoimat tiedostot eivät päättyisi versionhallint
 
 ## Komentojen suorittaminen Visual Studio Codessa
 
-Visual Studio Codesta löytyy sisään rakennettu terminaali. Terminaalin saa avattua valitsemalla päävalikosta _Terminal_ ja aukeavasta alavalikosta _New Terminal_. editorin alalaitaan pitäisi ilmesty terminaali, jossa voit suorittaa komentorivikomentoja. 
+Visual Studio Codesta löytyy sisään rakennettu terminaali. Terminaalin saa avattua valitsemalla päävalikosta _Terminal_ ja aukeavasta alavalikosta _New Terminal_. editorin alalaitaan pitäisi ilmesty terminaali, jossa voit suorittaa komentorivikomentoja.
 
 Terminaalin avaaminen saattaa automaattisesti avata komentorivin virtuaaliympäristössä. Jos olet virtuaaliympäristössä, on komentorivin syöterivin alussa projektin nimi suluissa, esimerkiksi `(unicafe)`. Jos et ole virtuaaliympäristössä pääset siihen tutulla `python3 -m pipenv shell` komennolla. Tämän jälkeen voit suorittaa komentoja suoraan Visual Studio Codessa:
 
@@ -252,7 +252,7 @@ Terminaalin avaaminen saattaa automaattisesti avata komentorivin virtuaaliympär
 
 Laajennetaan unicafe-projektin testaus kattamaan myös kassapääte.
 
-Tee testihakemistoon testitiedosto _kassapaate\_test.py_ ja sinne testiluokka `TestKassapaate`. Tee testit jotka testaavat ainakin seuraavia asioita:
+Tee testihakemistoon testitiedosto _kassapaate_test.py_ ja sinne testiluokka `TestKassapaate`. Tee testit jotka testaavat ainakin seuraavia asioita:
 
 - Luodun kassapäätteen rahamäärä ja myytyjen lounaiden määrä on oikea (rahaa 1000, lounaita myyty 0)
 - Käteisosto toimii sekä edullisten että maukkaiden lounaiden osalta

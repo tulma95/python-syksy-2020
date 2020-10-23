@@ -1,6 +1,6 @@
 # Viikon 3 laskarit
 
-Tehtävät on tarkoitus tehdä joko pajassa tai omatoimisesti. Tehtävien palautuksen deadline on _tiistaina 31.3. klo 23:59_
+Tehtävät on tarkoitus tehdä joko pajassa tai omatoimisesti. Tehtävien palautuksen deadline on _tiistaina 17.11. klo 23:59_
 
 Tehtävät palautetaan Githubin avulla Labtooliin rekisteröimääsi repositorioon.
 
@@ -88,7 +88,7 @@ class FuelTank:
 
     def fill(self, amount):
         self.fuel_contents = amount
-    
+
     def consume(self, amount):
         self.fuel_contents = self.fuel_contents + amount
 
@@ -98,10 +98,10 @@ class Engine:
 
     def start(self):
         self.fuel_tank.consume(5)
-    
+
     def is_running(self):
         return self.fuel_tank.fuel_contets > 0
-      
+
     def use_energy(self):
         self.fuel_tank.consume(10)
 ```
@@ -174,10 +174,10 @@ class HKLLaitehallinto:
     def __init__(self):
         self.lataajat = []
         self.lukijat = []
-    
+
     def lisaa_lataaja(self, lataaja):
         self.lataajat.append(lataaja)
-    
+
     def lisaa_lukija(self, lukija):
         self.lukijat.append(lukija)
 
