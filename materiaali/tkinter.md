@@ -204,6 +204,44 @@ Kaikki kolme komponenttia sijoittuvat siis, sekä itä- (E), että länsi-suunna
 
 `sticky`-parametrille mahdollisia arvoja ovat `constants.W` (vasen), `constants.E` (oikea), `constants.N` (ylä), `constants.S` (ala) ja näiden kombinaatit [tuplena](https://docs.python.org/3.3/library/stdtypes.html?highlight=tuple#tuple). Arvoista voi käyttää myös suoraan merkkijonoesitystä, kuten `"w"` vakion `constants.W` sijaan. Vakioiden käyttö on kuiten suotavaa.
 
+Huomaa, että `grid`-kutsuissa rivin ja sarakkeen määrittäminen ei ole aina tarpeen. Rivi on oletusarvoisesti seuraava vapaa rivi ja sarake on ensimmäinen sarake (eli 0). Äskeisen esimerkin `grid`-kutsut voisi siis kirjoittaa seuraavasti:
+
+```python
+heading_label.grid(columnspan=2, sticky=constants.W)
+username_label.grid()
+username_entry.grid(row=1, column=1, sticky=(constants.E, constants.W))
+password_label.grid()
+password_entry.grid(row=2, column= 1, sticky=(constants.E, constants.W))
+button.grid(columnspan=2, sticky=(constants.E, constants.W))
+```
+
+## Gridin hienosäätöä
+
+Edellisen esimerkin komponentit on aseteltu tällä hetkellä melko tiiviistii ja käyttöliittymä kaipaisi hieman väljyyttä. Voimme lisätä gridin soluille väliä leveys- ja pituussuunnassa käyttämällä `grid`-metodin `padx` ja `pady` metodeja. Kuten parametrien nimistä voi päätellä, `padx` lisää väliä leveys- `pady` pituussuunnassa:
+
+```python
+heading_label.grid(columnspan=2, sticky = constants.W, padx=5, pady=5)
+username_label.grid(padx=5, pady=5)
+username_entry.grid(row=1, column=1, sticky=(constants.E, constants.W), padx=5, pady=5)
+password_label.grid(padx=5, pady=5)
+password_entry.grid(row=2, column= 1, sticky=(constants.E, constants.W), padx=5, pady=5)
+button.grid(columnspan=2, sticky=(constants.E, constants.W), padx=5, pady=5)
+```
+
+Lopputulos näyttää seuraavalta:
+
+![TkInter](./kuvat/tkinter-4.png)
+
+Tällä hetkellä käyttöliittymän tekstikentät ovat hieman kapeita. Voimme leventää niitä konfiguroimalla niiden sarakkeen `minsize`-parametria. Tekstikentät ovat toisessa sarakkeessa, joten konfiguraatio onnistuu seuraavasti:
+
+```python
+self.root.grid_columnconfigure(1, weight=1, minsize=300)
+```
+
+Nyt tekstikenttät ovat automaattisesti leveämpiä, mutta myös levenevät, kun ikkunan leveyttä muutetaan:
+
+![TkInter](./kuvat/tkinter-5.png)
+
 ## Tapahtumankäsittelijät
 
 TkInter mahdollistaa erilaisten tapahtumien, kuten napin painamisen, käsittelyn. Käsittelyllä tässä yhteydessä tarkoitetaan, että voimme määrittää funktion, jota kutsutaan, kun esimerkiksi painiketta painetaan. Käytetään esimerkkinä seuraavaa koodia, jossa määritellään yksi tekstikenttä ja yksi painike:
