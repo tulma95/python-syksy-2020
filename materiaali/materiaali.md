@@ -345,7 +345,7 @@ Hakemistorakennetta voidaan kuvata UML:ssä _pakkauskaaviolla_:
 
 ![](./kuvat/materiaali-pakkaukset.png)
 
-Pakkausten välille on merkitty _riippuvuudet_ katkoviivalla. Pakkaus _ui_ riippuu pakkauksesta _services_ sillä _ui_-pakkauksen luokat käyttävät _service_-pakkauksen luokkaa `TodoService`, joka vastaa sovelluksen sovelluslogiikasta. 
+Pakkausten välille on merkitty _riippuvuudet_ katkoviivalla. Pakkaus _ui_ riippuu pakkauksesta _services_ sillä _ui_-pakkauksen luokat käyttävät _services_-pakkauksen luokkaa `TodoService`, joka vastaa sovelluksen sovelluslogiikasta. 
 
 Vastaavasti pakkaus _services_ riippuu pakkauksesta _repositories_ sillä sen luokka `TodoService` käyttää _repositorios_-pakkauksen luokkia `TodoRepository` ja `UserRepository`.
 

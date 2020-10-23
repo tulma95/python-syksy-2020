@@ -14,6 +14,16 @@ Komentoriville tulisi tulostua pipin versio.
 
 Kirjastojen asennus onnistuu pipin komennolla `pip install`. Jotta samalla tietokoneella olevien projektien riippuvuuksissa ei syntyisi ristiriitoja, on käytössä usein niin kutsuttaja projektikohtaisia _virtuaaliympäristöjä_. Näitä virtuaaliympäristöjä luodaan ja käytetään [venv](https://docs.python.org/3/library/venv.html) moduulin kautta. Jotta saisimme helposti käyttöömme pip:n ja virtuaaliympäristön tuomat edut, voimme käyttää [pipenv](https://pipenv.pypa.io/en/latest/) komentorivityökalua.
 
+## Huomoioita komennoista
+
+Monilla tietokoneilla Python-version kolme komennot suoritetaan `python3`- ja `pip3`-komennoilla komentojen `python` ja `pip` sijaan. Voit tarkistaa, mitä Python-versiota `python`-komento suorittaa komennolla:
+
+```bash
+python --version
+```
+
+Jos version ensimmäinen luku on kaksi, käytä `python3`- ja `pip3`-komentoja.
+
 ## Asennus
 
 Pipenv tarjoaa dokumentaatiossaan useita [asennusvaihtoehtoja](https://pipenv.pypa.io/en/latest/#install-pipenv-today). Tavoista ehkä helpoin on suorittaa asennus komentoriviltä pipin avulla:
