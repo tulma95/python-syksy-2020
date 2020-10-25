@@ -20,15 +20,7 @@ Jos huomaat tehtävissä tai muussa materiaalissa kirjoitusvirheitä, kirjaudu G
 
 ## Ajankohtaista
 
-- [Telegram](https://t.me/tktlotm) on whatsappin/messengerin tyylinen keskustelufoorumisovellus jota on mahdollista käyttää selaimella, mobiililaitteilla ja Windows/Linux/OSX-clienteillä
-  - Telegram-kanava on sillattu IRC-kanavaan #otm
-  - **Huom:** kaikki epäasialliset, halventavat ja jotain ihmisryhmää syrjivät kommentit kanavalla ovat kiellettyjä ja tälläisten kommenttien esittäjät poistetaan kanavalta
-
-## Linkkejä
-
-## Pajaohjauksen aikatauluja
-
-### Pajaohjauksen poikkeukset
+- Katso [täältä](https://github.com/ohjelmistotekniikka-hy/syksy-2020#ajankohtaista)
 
 ## Aikataulu
 
@@ -36,7 +28,7 @@ Jos huomaat tehtävissä tai muussa materiaalissa kirjoitusvirheitä, kirjaudu G
 
 Palautuksen deadline ti 03.11. klo 23:59
 
-- Maanantaina 11.3. klo 14-16 kurssin aloitustilaisuus salissa A111
+- Maanantaina 11.3. klo 14-16 kurssin aloitustilaisuus
 - Komentorivi- ja Git-harjoittelu (2p)
   - Pajassa tehtävät tai omatoimiset [tehtävät](./tehtavat/viikko1.md)
 - Tehtävien palautus tapahtuu tekemällä repositorio GitHubiin ja rekisteröitymällä Labtooliin
