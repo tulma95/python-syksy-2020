@@ -16,7 +16,7 @@ Huomaa, että tällä viikolla on myös harjoitustyöhön liittyviä [tavoitteit
 
 ## Alkutoimet
 
-Ennen tehtävien aloitusta, tutustu [pipenv-ohjeisiin](../materiaali/pipenv). Varmista, että pipenv on asennettuna ja osaat suorittaa `pipenv`-komentoja komentoriviltä.
+Ennen tehtävien aloitusta, tutustu [pipenv-ohjeisiin](../materiaali/pipenv.md). Varmista, että pipenv on asennettuna ja osaat suorittaa `pipenv`-komentoja komentoriviltä.
 
 ## 1
 
