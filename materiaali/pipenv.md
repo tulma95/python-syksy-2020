@@ -68,7 +68,7 @@ verify_ssl = true
 python_version = "3.9"
 ```
 
-Tiedostossa luetellaan mm. projektin _riippuvuudet_ `[packages]`-osion alla. Tiedoston `[requires]`-osion alla on määritelty vaadittava Python-version. Ongelmien välttämiseksi eri Python-versioiden kanssa, kannttaa `[requires]`-osio poistaa kokonaisuudessaan. Tiedoston sisältö on tämän jälkeen seuraava:
+Tiedostossa luetellaan mm. projektin _riippuvuudet_ `[packages]`-osion alla. Tiedoston `[requires]`-osion alla on määritelty vaadittava Python-version. Ongelmien välttämiseksi eri Python-versioiden kanssa, kannattaa `[requires]`-osio poistaa kokonaisuudessaan. Tiedoston sisältö on tämän jälkeen seuraava:
 
 ```bash
 [[source]]
