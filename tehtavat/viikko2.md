@@ -217,7 +217,7 @@ Suorita testit komentoriviltä virtuaaliympäristössä `pytest`-komennolla.
 
 Tutustu testikattavuuden mittaamiseen lukemalla materiaalin [testikattavuutta](../materiaali/coverage.md) käsittelevä osio.
 
-Projektiin on valmiiksi konfiguroitu käytettäväksi [coverage](https://coverage.readthedocs.io/en/coverage-5.3/)-työkalu, joka mittaa sekä lause- että haarautumakattavuuden. Testikattavuuden konfiguraatiossa käytettävä, _.coveragerc_-tiedoston sisältö on projektissa seuraava:
+Projektiin on valmiiksi konfiguroitu käytettäväksi [coverage](https://coverage.readthedocs.io/en/coverage-5.3/)-työkalu, joka mittaa testien haarautumakattavuuden. Testikattavuuden konfiguraatiossa käytettävä, _.coveragerc_-tiedoston sisältö on projektissa seuraava:
 
 ```
 [run]
@@ -229,7 +229,7 @@ Testikattavuuden kerääminen testeistä onnistuu virtuaaliympäristössä komen
 
 ![Testikattavuusraportti](../materiaali/kuvat/unicafe-coverage.png)
 
-Huomaa, että oma raporttisi tuskin näyttää täysin tältä (etenkin kattavuusprosenttien osalta) edellisen tehtävien testien toteutuksen jälkeen. Yksittäistä moduulia klikkaamalla näet punaisella korostuksella rivit, joita testit eivät vielä kata.
+Huomaa, että oma raporttisi tuskin näyttää täysin tältä (etenkin kattavuusprosenttien osalta) edellisen tehtävien testien toteutuksen jälkeen. Yksittäistä moduulia klikkaamalla näet punaisella korostuksella haarat, joita testit eivät kata vielä lainkaan ja keltaisella korostuksella haarat, joita testit kattavat vain osittain.
 
 **Jos maksukortin koodissa on vielä rivejä tai haarautumia (merkitty punaisella) joille ei ole testiä, kirjoita sopivat testit.**
 
@@ -271,7 +271,7 @@ Huomaat että kassapääte sisältää melkoisen määrän "copypastea". Nyt kun
 
 ## 5
 
-Varmista testikattavuuskomentojen avulla, että kassapäätteen testeillä on 100% lause- ja haarautumakattavuus. Suorita siis virtuaaliympäristössä komennot `coverage run --branch -m pytest` ja `coverage html`, jonka jälkeen avaa selaimessa _htmlcov/index.html_-tiedosto.
+Varmista testikattavuuskomentojen avulla, että kassapäätteen testeillä on 100% haarautumakattavuus. Suorita siis virtuaaliympäristössä komennot `coverage run --branch -m pytest` ja `coverage html`, jonka jälkeen avaa selaimessa _htmlcov/index.html_-tiedosto.
 
 ## 6
 
