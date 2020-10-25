@@ -3,11 +3,11 @@
 > “Code is more often read than written.”
 > — [Guido van Rossum](https://fi.wikipedia.org/wiki/Guido_van_Rossum)
 
-Uutta projekti kuumeisesti koodatessa saattaa sortua ajatukseen, että toteutun koodipätkän pariin ei enää koskaan palata. Tosiassa jonkin koodipätkän elinikä saattaa hyvinkin olla vuosia, jonka aikana sitä saatetaan lukea lukuisia kertoja. Selkeä koodi on itsessään jo kohtalainen dokumentaatio, mutta sen dokumentointiin löytyy myös muita tapoja.
+Uutta projekti kuumeisesti koodatessa saattaa sortua ajatukseen, että toteutun koodipätkän pariin ei enää koskaan palata. Tosiasiassa jonkin koodipätkän elinikä saattaa hyvinkin olla vuosia, jonka aikana sitä saatetaan lukea lukuisia kertoja. Selkeä koodi on itsessään jo kohtalainen dokumentaatio, mutta sen dokumentointiin löytyy myös muita tapoja.
 
 ## Dokumentointi kommenteilla
 
-Kommentien käyttö koodin dokumentoinnissa on erittäin hyödyllinen dokumentaation muote. Siitä huolimatta väärin käytettynä kommentteja pidetään niin kutsuttuina "koodihajuina", eli merkkinä huonolaatuisesta koodista. Esimerkiksi seuraavanlainen kommentointi ei paranna koodin luettavuutta:
+Kommentien käyttö koodin dokumentoinnissa on erittäin hyödyllinen dokumentaation muoto. Siitä huolimatta väärin käytettynä kommentteja pidetään niin kutsuttuina "koodihajuina", eli merkkinä huonolaatuisesta koodista. Esimerkiksi seuraavanlainen kommentointi ei paranna koodin luettavuutta:
 
 ```python
 class Machine:

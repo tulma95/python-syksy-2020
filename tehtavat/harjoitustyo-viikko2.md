@@ -8,7 +8,7 @@ Muista pushata tehtävät GitHubiin ennen viikkodeadlinea. Myöhässä tehty pal
 
 ## Alustava määrittelydokumentti
 
-Harjoitustyön tekeminen aloitetaan päättämällä aihe ja kuvaamalla se _alustavassa määrittelydokumentissa_, eli työlle tehdään [vaatimusmäärittely](../materiaali#vaatimusmäärittely).
+Harjoitustyön tekeminen aloitetaan päättämällä aihe ja kuvaamalla se _alustavassa määrittelydokumentissa_, eli työlle tehdään [vaatimusmäärittely](../materiaali/materiaali.md#vaatimusmäärittely).
 
 Aihetta miettiessäsi kannattaa ehdottomasti lukea [ohjeet työn aloittamiseen](../materiaali/tyon-aloitus.md).
 

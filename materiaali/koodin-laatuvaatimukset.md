@@ -13,7 +13,7 @@ Alla luetellaan Clean Code -periaatteita noudattavan koodin laatuvaatimukset. Oh
 - Metodit, attribuutit, parametrit ja muuttujat aina _snake\_case_-formaatissa
 - Muuttujat, joilla on iso käyttöalue, tulee olla erittäin selkeästi nimettyjä
 - Lyhyen metodin sisäisille muuttujille riittää yleensä lyhyempi nimi
-- Jos metodia käytetään vähän, tulee nimen olla mahdollisimman kuvaav.
+- Jos metodia käytetään vähän, tulee nimen olla mahdollisimman kuvaava.
 - Tee nimentä englanniksi
 
 ### 2. Ei pitkiä metodeja tai funktioita

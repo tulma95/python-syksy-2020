@@ -208,7 +208,7 @@ numerotiedustelu = Numerotiedustelu(input, print, palvelu)
 numerotiedustelu.kaynnista()
 ```
 
-Riippuvuuksien injenktointi osoittaa myös erittäin hyödylliseksi testaamisessa. Pythonin `input`- ja `output`-funktioiden käyttö tekee testaamisesta erittäin hankalaa. Koska injektoimme riippuvuudet, voimme toteuttaa niille toteutukset, jotka ovat käyttökelpoisia testeissä:
+Riippuvuuksien injektointi osoittaa myös erittäin hyödylliseksi testaamisessa. Pythonin `input`- ja `output`-funktioiden käyttö tekee testaamisesta erittäin hankalaa. Koska injektoimme riippuvuudet, voimme toteuttaa niille toteutukset, jotka ovat käyttökelpoisia testeissä:
 
 ```python
 import unittest
