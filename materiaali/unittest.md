@@ -96,7 +96,7 @@ Huomaa, että testien hakemistossa tulee olla tyhjä _\_\_init\_\_.py_-tiedosto,
 ModuleNotFoundError: No module named 'maksukortti'
 ```
 
-Jos testien hakemistossa on alahakemistoja, myös näissä tulee olla tyhjä _\_\_init\_\_.py_-tiedosto.
+Jos testien hakemistossa on alihakemistoja, myös näissä tulee olla tyhjä _\_\_init\_\_.py_-tiedosto.
 
 Tehdään seuraavaksi ensimmäinen järkevä testi, joka testaa, että `Maksukortti`-luokan konstruktori asettaa saldon oikein:
 
