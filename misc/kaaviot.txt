@@ -13,22 +13,22 @@ Luokkakaaviot
 [<interface> ToDoDao] ^-[SQLToDoDao]
 [<interface> ToDoDao] ^-[FakeToDoDao]
 
-main->*arto: new Henkilo("Hellas", 1500, "1234-12345")
+main->*arto: Henkilo("Hellas", 1500, "1234-12345")
 main->rekisteri: lisaa(arto)
-main->*sasu: new Henkilo("Tarkoma", 6500, "4455-123123")
+main->*sasu: Henkilo("Tarkoma", 6500, "4455-123123")
 main->rekisteri: lisaa(sasu)
-main->+rekisteri: asetaPalkka("Hellas", 3500)  
-rekisteri->arto: setPalkka(3500)
+main->+rekisteri: aseta_palkka("Hellas", 3500)  
+rekisteri->arto: palkka(3500)
 rekisteri-->-main:
-main->+rekisteri: suoritaPalkanmaksu()
-rekisteri->+arto: getPalkka()
+main->+rekisteri: suorita_palkanmaksu()
+rekisteri->+arto: palkka()
 arto-->-rekisteri: 3500
-rekisteri->+arto: getTili()
-arto-->-rekisteri: 1234-12345
-rekisteri->pankki: maksaPalkka(3500, 1234-12345)
-rekisteri->+sasu: getPalkka()
+rekisteri->+arto: tilinumero()
+arto-->-rekisteri: "1234-12345"
+rekisteri->pankki: maksa_palkka(3500, "1234-12345")
+rekisteri->+sasu: palkka()
 sasu-->-rekisteri: 6500
-rekisteri->+sasu: getTili()
-sasu-->-rekisteri: 4455-123123
-rekisteri->pankki: maksaPalkka(6500, 4455-123123)
+rekisteri->+sasu: tilinumero()
+sasu-->-rekisteri: "4455-123123"
+rekisteri->pankki: maksa_palkka(6500, "4455-123123")
 rekisteri-->-main:
