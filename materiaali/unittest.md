@@ -269,7 +269,7 @@ Jokainen testi siis alkaa tilanteesta jossa kortti on juuri luotu. Tämän jälk
 
 ## Onko jo testattu tarpeeksi?
 
-Olemme tyytyväisiä, uskomme että testitapauksia on nyt tarpeeksi. Onko tosiaan näin? Onneksi on olemassa työkaluja, joilla voidaan tarkastaa testien _rivikattavuus_, eli se mitä koodirivejä testien suorittaminen on tutkinut. Tutustumme testien rivikattavuuden mittaamiseen [testikattavuutta](./coverage.md) käsittelevässä osiossa.
+Olemme tyytyväisiä, uskomme että testitapauksia on nyt tarpeeksi. Onko tosiaan näin? Onneksi on olemassa työkaluja, joilla voidaan tarkastaa testien _haarautumakattavuus_, eli se mitä suoritushaaroja testien suorittaminen on tutkinut. Tutustumme testien haarautumakattavuuden mittaamiseen [testikattavuutta](./coverage.md) käsittelevässä osiossa.
 
 Testikattavuuden mittaus paljastaa että koodi on melko kattavasti testattu. Ainoa testien tutkimatta jättämä asia on tilanne, jossa kortille yritetään ladata negatiivinen saldo.
 

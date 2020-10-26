@@ -26,9 +26,9 @@ Arvostelussa kiinnitetään huomiota seuraaviin seikkoihin:
 - Testaus on edennyt (0.5p)
   - Sovellukselle tulee pystyä keräämään testikattavuus komennolla `python3 -m pipenv run coverage` ja generoimaan testikattavuusraportti komennolla `python3 -m pipenv run coverage-report`
     - Käyttöliittymään ja testeihin liittyvä koodi [jätetään pois](../materiaali/coverage.md#tiedostojen-jättäminen-raportin-ulkopuolelle) testikattavuusraportista
-  - Sovelluksen testien rivikattavuuden tulee olla vähintään 60%
+  - Sovelluksen testien haarautumakattavuuden tulee olla vähintään 60%
   - Testien tulee testata järkevällä tavalla ohjelman toiminnallisuutta
-    - Jos testit on tehty pelkästään rivikattavuuden saavuttamiseksi, ei testeistä saa pisteitä
+    - Jos testit on tehty pelkästään haarautumakattavuuden saavuttamiseksi, ei testeistä saa pisteitä
 - Docstring-dokumentointi aloitettu (0.5p)
   - Ainakin osalle ohjelman luokista, metodeista ja funktioista on tehty docstring-dokumentaatio
     - Edellytyksenä pisteille on, että suurin piirtein puolella luokista, metodeista ja funktioista on docstring-dokumentaatio

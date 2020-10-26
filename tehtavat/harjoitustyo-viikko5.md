@@ -29,7 +29,7 @@ Arvostelussa kiinnitetään huomiota seuraaviin seikkoihin:
 - Testaus on edennyt (0.5p)
   - Sovellukselle tulee pystyä keräämään testikattavuus komennolla `python3 -m pipenv run coverage` ja generoimaan testikattavuusraportti komennolla `python3 -m pipenv run coverage-report`
   - Käyttöliittymään ja testeihin liittyvä koodi [jätetään pois](../materiaali/coverage.md#tiedostojen-jättäminen-raportin-ulkopuolelle) testikattavuusraportista
-  - Sovelluksen testien rivikattavuuden tulee olla vähintään 40%
+  - Sovelluksen testien haarautumakattavuuden tulee olla vähintään 40%
   - Testien tulee olla mielekkäitä, eli niiden on testattava jotain ohjelman kannalta merkityksellistä asiaa
 - Koodin laatu (0.5p)
   - Sovelluslogiikka on riittävissä määrin eriytetty käyttöliittymästä
