@@ -1,4 +1,4 @@
-# Koodin dokumentointi
+# Docstring ja koodin dokumentointi
 
 > “Code is more often read than written.”
 > — [Guido van Rossum](https://fi.wikipedia.org/wiki/Guido_van_Rossum)

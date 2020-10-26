@@ -169,11 +169,13 @@ Unittestiin tutustumme viikon 2 [tehtävissä](../tehtavat/viikko2.md).
 
 ## Docstring
 
-Osa ohjelmiston dokumentointia on lähdekoodin API:n eli käytännössä luokkien, metodien ja fuktioiden kuvaamista. Pythonissa lähdekoodi dokumentoidaan käyttäen docstring-kommentteja. Dokumentointi tapahtuu kirjoittamalla koodin yhteyteen sopivasti muotoiltuja kommentteja.
+Osa ohjelmiston dokumentointia on lähdekoodin API:n eli käytännössä luokkien, metodien ja fuktioiden kuvaamista. Pythonissa lähdekoodi dokumentoidaan käyttäen [docstring](https://google.github.io/styleguide/pyguide.html#381-docstrings)-kommentteja. Dokumentointi tapahtuu kirjoittamalla koodin yhteyteen sopivasti muotoiltuja kommentteja.
 
 Visual Studio Code näyttää ohjelmoidessa koodiin määritellyn docstringin seuraavasti:
 
 ![Docstring](./kuvat/docstring.png)
+
+Ohje docstring-kommenttien käyttöön löytyy [täältä](./docstring.md)
 
 ## Pylint
 

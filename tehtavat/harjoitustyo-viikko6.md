@@ -32,7 +32,7 @@ Arvostelussa kiinnitetään huomiota seuraaviin seikkoihin:
 - Docstring-dokumentointi aloitettu (0.5p)
   - Ainakin osalle ohjelman luokista, metodeista ja funktioista on tehty docstring-dokumentaatio
     - Edellytyksenä pisteille on, että suurin piirtein puolella luokista, metodeista ja funktioista on docstring-dokumentaatio
-  - [Ohje](../materiaali/koodin-dokumentointi.md) docstring-dokumentointiin
+  - [Ohje](../materiaali/docstring.md) docstring-dokumentointiin
 - Alustava arkkitehtuurikuvaus (0.5p)
   - Dokumentti sisältää sovelluksen korkean tason (esim. hakemistojen tasolla) rakenteen kuvauksen, sekä alustavan kuvauksen sovelluslogiikasta
   - Dokumentissa voi hyödyntää edellisten viikkojen luokka- ja sekvenssikaavioita
