@@ -469,24 +469,21 @@ Voit halutessasi lukea lisää sekvenssikaavioista kurssin vanhan version [mater
 
 Katsotaan seuraavassa muutamia sovelluksen suunnittelussa noudatettuja periaatteita.
 
-<!-- TODO -->
 ## Kerrosarkkitehtuuri
 
-Kuten jo mainittiin, todo-sovellus noudattaa kerrosarkkitehtuuria. Koodin tasolla kerrosrakenne näkyy siinä, miten sovelluksen koodi jakautuu pakkauksiin
+Kuten jo mainittiin, todo-sovellus noudattaa kerrosarkkitehtuuria. Koodin tasolla kerrosrakenne näkyy siinä, miten sovelluksen koodi jakautuu hakemistoihin:
 
-![](https://raw.githubusercontent.com/mluukkai/ohjelmistotekniikka-syksy-2020/main/web/images/l-10.png)
+![](./kuvat/materiaali-hakemistorakenne.png)
 
-ja minkälaisia riippuvuuksia pakkausten välisillä luokilla on.
+Ja minkälaisia riippuvuuksia hakemistojen välisillä luokilla on. Riippuvuudet kuvaava pakkauskaavio havainnollistaa koodin rakenteen kerroksellisuuden:
 
-Riippuvuudet kuvaava pakkauskaavio havainnollistaa koodin rakenteen kerroksellisuuden
-
-<img src="https://raw.githubusercontent.com/mluukkai/ohjelmistotekniikka-syksy-2020/main/web/images/l-12.png" width="400">
+![](./kuvat/materiaali-pakkaukset-luokat.png)
 
 Kerrosarkkitehtuurissa ylimpänä on _käyttöliittymästä_ vastaava kerros. Käyttöliittymäkerroksen vastuulla on muodostaa sovelluksen käyttöliittymä ja reagoida käyttäjän syötteisiin.
 
-Sovelluslogiikka, eli esim. käyttäjän kirjautumisesta huolehtiminen, todojen luominen ja niiden tehdyksi merkkaaminen on käyttöliittymän alapuolella olevan _sovelluslogiikkakerroksen_ vastuulla. Sovelluslogiikkakerroksen koodi on pakkauksessa nimeltään _todoapp.doman_.
+Sovelluslogiikka, eli esim. käyttäjän kirjautumisesta huolehtiminen, todojen luominen ja niiden tehdyksi merkkaaminen on käyttöliittymän alapuolella olevan _sovelluslogiikkakerroksen_ vastuulla. Sovelluslogiikkakerroksen koodi on hakemistossa nimeltään _services_.
 
-Sovelluslogiikan alapuolella on _datan tallennuksesta vastaava kerros_, jonka käytännössä muodostavat DAO-suunnittelumallin (ks. Tietokantojen perusteiden [Dao-suunnittelumalli](https://tietokantojen-perusteet-19.mooc.fi/osa-6/2-data-access-object)) inspiroimana muodostetut rajapintojen _TodoDao_ ja _UserDao_ toteuttamat luokat.
+Sovelluslogiikan alapuolella on _datan tallennuksesta vastaava kerros_, jonka käytännössä muodostavat [Repository](https://docs.microsoft.com/en-us/dotnet/architecture/microservices/microservice-ddd-cqrs-patterns/infrastructure-persistence-layer-design)-suunnittelumallin inspiroimana toteutetut luokat `TodoRepository` ja `UserRepository`.
 
 [Kerrosarkkitehtuuri](https://en.wikipedia.org/wiki/Multitier_architecture) (engl. layered architecture tai multitier architecture) on ehkä eniten käytetty ohjelmistojen [arkkitehtuurimalli](https://en.wikipedia.org/wiki/Software_Architecture_styles_and_patterns), eli yleisesti käytetty tapa ohjelmiston rakenteen strukturointiin. Käytännössä lähes jokainen ohjelmisto noudattaa ainakin jossain määrin kerroksellisuuden periaatetta. On olemassa lukuisia arkkitehtuurimalleja, joihin tutustutaan tarkemmin kursseilla Ohjelmistotuotanto ja Ohjelmistoarkkitehtuurit.
 
