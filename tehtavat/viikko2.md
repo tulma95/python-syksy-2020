@@ -12,7 +12,7 @@ Tee palautuksia varten repositorion sisällä olevaan hakemistoon _laskarit_ uus
 
 Viikon palautuksista on tarjolla 2 pistettä. Pisteytys arvioidaan palautuksen laadun perusteella.
 
-Huomaa, että tällä viikolla on myös harjoitustyöhön liittyviä [tavoitteita](./harjoitustyo_viikko2.md)
+Huomaa, että tällä viikolla on myös harjoitustyöhön liittyviä [tavoitteita](./harjoitustyo-viikko2.md)
 
 ## Alkutoimet
 
