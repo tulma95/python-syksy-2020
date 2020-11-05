@@ -149,7 +149,7 @@ Kun projektia kehitetään aktiivisesti ja komentoja suoritetaan komentoriviltä
 python3 -m poetry shell
 ```
 
-Virtuaaliympäristön sisällä voimme suorittaa komennon "normaalisti":
+Virtuaaliympäristön sisällä voimme suorittaa komennon "normaalisti", eli ilman `run`-komentoa:
 
 ```bash
 python3 src/index.py
