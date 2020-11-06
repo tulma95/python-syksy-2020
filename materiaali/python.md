@@ -141,7 +141,7 @@ def kaynnista(self):
             break
 
         komento_olio = self.komennot[komento]
-        komento.olio.suorita()
+        komento_olio.suorita()
 ```
 
 ### Graafinen käyttöliittymä
