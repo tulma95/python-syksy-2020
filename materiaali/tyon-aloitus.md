@@ -38,6 +38,29 @@ Harjoitustyön tavoitteena on tuottaa ohjelma, joka voitaisiin antaa toiselle op
 
 Toivottava dokumentaation taso käy ilmi [referenssiprojektissa](https://github.com/ohjelmistotekniikka-hy/python-todo-app).
 
+## Projektin hakemistorakenne
+
+Projektin hakemistorakenteesta voi ottaa mallia [referenssiprojektista](https://github.com/ohjelmistotekniikka-hy/python-todo-app), jossa hakemistorakenne on seuraavanlainen:
+
+```
+data/
+  .gitkeep
+  ...
+dokumentaatio/
+  ...
+src/
+  tests/
+    __init__.py
+    ...
+  ...
+Pipfile
+Pipfile.lock
+README.md
+...
+```
+
+Hakemistossa _data_ on projektin käyttämät data-tiedostot, kuten CSV-tiedostot ja SQLite-tietokannan tiedostot. Tyhjä _.gitkeep_-tiedosto mahdollistaa hakemiston lisäämisen versionhallintaan tyhjänä. Hakemistossa _dokumentaatio_ on projektin dokumentaatio. Itse sovelluksen koodi löytyy _src_-hakemistosta, jonka sisällä on _tests_-hakemisto sovelluksen testejä varten. Hakemiston _src_ sisällä on myös muita alihakemistoja rakenteen selkeyttämiseksi. Projektin juurihakemistossa on _README.md_-tiedosto ja erilaisia konfiguraatiotiedostoja.
+
 ## Esimerkkejä aiheista
 
 ### Hyvän aiheen ominaisuudet
