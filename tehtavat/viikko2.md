@@ -28,7 +28,7 @@ Ennen tehtävien aloitusta, tutustu [pipenv-ohjeisiin](../materiaali/pipenv.md).
   - Kortilla pystyy ostamaan edullisen lounaan, kun kortilla rahaa vain edullisen lounaan verran (eli 2.5e)
   - Kortilla pystyy ostamaan maukkaan lounaan, kun kortilla rahaa vain maukkaan lounaan verran (eli 4e)
 
-**HUOM1** on suositeltavaa, että yksi testi testaa vain "yhtä asiaa" kerrallaan. Tee siis jokaisesta ylläolevasta oma testinsä.
+**HUOM1** On suositeltavaa, että yksi testi testaa vain "yhtä asiaa" kerrallaan. Tee siis jokaisesta ylläolevasta oma testinsä.
 
 **HUOM2** Kirjoita `assertEqual`-komennot aina siten, että ensimmäisenä parametrina saatu tulos
 ja toisena parametrina on odotettu tulos. Esimerkiksi:
@@ -36,6 +36,8 @@ ja toisena parametrina on odotettu tulos. Esimerkiksi:
 ```python
 self.assertEqual(str(kortti), "Kortilla on rahaa 2 euroa")
 ```
+
+**HUOM3** Jos riippuvuuksien asennuksen jälkeen ilmenee ongelmia (esim. `ModuleNotFoundError`-virheitä), poista virtuaaliympäristö projektin juurihakemistossa komennolla `python3 -m pipenv --rm` ja asenna riippuvuudet uudestaan komennolla `python3 -m pipenv install --skip-lock`. 
 
 ## 2 Maksukortti ja kassapääte: testit kortille
 
