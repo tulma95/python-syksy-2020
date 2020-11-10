@@ -1,6 +1,8 @@
 # TkInter ja graafisen käyttöliittymän toteutus
 
-Python-sovellusten graafisten käyttöliittymien toteutuksessa on jo standardiksi muodostonut [TkInter](https://wiki.python.org/moin/TkInter)-kirjaston käyttö. TkInter on Pythonin omia moduuleja, joten sitä ei tarvitse erikseen asentaa. Tutustutaan tässä osiossa, miten sen avulla voi toteuttaa graafisia käyttöliittymiä.
+Python-sovellusten graafisten käyttöliittymien toteutuksessa on jo standardiksi muodostonut [TkInter](https://wiki.python.org/moin/TkInter)-kirjaston käyttö. Tutustutaan tässä osiossa, miten sen avulla voi toteuttaa graafisia käyttöliittymiä.
+
+TkInter on Pythonin omia moduuleja ja siihen liittyvät käyttöjärjestelmäkohtaiset kirjastot tulevat useimmiten Python-asennuksien mukana. Ennen ohjelmoimisen aloittamista on kuitenkin hyvä tarkistaa, että asennus on kunnossa. Käynnistä [REPL](https://en.wikipedia.org/wiki/Read%E2%80%93eval%E2%80%93print_loop) komennolla `python3` (komentoa ei tarvitse suorittaa virtuaaliympäristön sisällä, koska emme käytä ulkoisia riippuvuuksia). Syötä komentoriville `import tkinter` ja paina Enter-painiketta. Jos lopputuloksena ei ole virhettä, asennus on kunnossa. Jos näin ei ole, asenna tietokoneellesi uusin Python-versio [täältä](https://www.python.org/downloads/) ja yritä uudelleen. Voit sulkea komentorivin syöttämällä `exit()` ja painamalla Enter-painiketta.
 
 ## Ikkunan avaaminen
 
