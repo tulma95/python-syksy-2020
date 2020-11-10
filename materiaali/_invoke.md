@@ -9,7 +9,7 @@ Tehtäviin liittyvien komentojen kirjoittaminen käsin muodostuu helposti hankal
 Invoken asennus projektiin onnistuu komennolla:
 
 ```bash
-python3 -m poetry add invoke
+poetry add invoke
 ```
 
 ## Tehtävien määritteleminen
@@ -27,10 +27,10 @@ def foo():
 Tämän erittäin hyödyllisen tehtävän voi suorittaa komentoriviltä komennolla:
 
 ```bash
-python3 -m poetry run invoke foo
+poetry run invoke foo
 ```
 
-Komennon suorittamisen pitäisi tulostaa komentoriville teksti "bar". Tehtävät voi siis suorittaa komentoriltä komennolla, joka on muotoa `python3 -m poetry run invoke <tehtävä>`. Huomaa, että `python3 -m poetry run`-komennon ansiosta tehtävät suoritetaan virtuaaliympäristössä.
+Komennon suorittamisen pitäisi tulostaa komentoriville teksti "bar". Tehtävät voi siis suorittaa komentoriltä komennolla, joka on muotoa `poetry run invoke <tehtävä>`. Huomaa, että `poetry run`-komennon ansiosta tehtävät suoritetaan virtuaaliympäristössä.
 
 Toteutetaan seuraavaksi _foo_-tehtävän lisäksi tehtävä, josta on oikeasti hyötyä. Tarvitsemme tehtävän, joka suorittaa sovelluksemme komennolla `python3 src/index.py`. Annetaan tälle tehtävälle nimeksi _start_:
 
@@ -46,12 +46,12 @@ def start(ctx):
     ctx.run("python3 src/index.py")
 ```
 
-Voimme suorittaa tehtävässä komentorivikomennon käyttämällä parametrina saadun [Context](http://docs.pyinvoke.org/en/stable/api/context.html#module-invoke.context)-olion metodia [run](http://docs.pyinvoke.org/en/stable/api/context.html#invoke.context.Context.run). Tehtävän suorittaminen onnistuu komennolla `python3 -m poetry run invoke start`.
+Voimme suorittaa tehtävässä komentorivikomennon käyttämällä parametrina saadun [Context](http://docs.pyinvoke.org/en/stable/api/context.html#module-invoke.context)-olion metodia [run](http://docs.pyinvoke.org/en/stable/api/context.html#invoke.context.Context.run). Tehtävän suorittaminen onnistuu komennolla `poetry run invoke start`.
 
 Voimme listata kaikki projektissa käytössä olevat tehtävät komennolla:
 
 ```bash
-python3 -m poetry run invoke --list
+poetry run invoke --list
 ```
 
 ## Huomioita tehtävien nimeämisestä
@@ -66,7 +66,7 @@ def lorem_ipsum():
     print("Lorem ipsum")
 ```
 
-Suoritettaisiin komennolla `python3 -m poetry run invoke lorem-ipsum`. Jos olet epävarma käytössä olevien tehtävien nimistä, voit aina listata ne komennolla `python3 -m poetry run invoke --list`.
+Suoritettaisiin komennolla `poetry run invoke lorem-ipsum`. Jos olet epävarma käytössä olevien tehtävien nimistä, voit aina listata ne komennolla `poetry run invoke --list`.
 
 ## Toisistaan riippuvaiset tehtävät
 
@@ -89,7 +89,7 @@ def coverage_report(ctx):
 Jos suoritamme tehtävän _coverage-report_ ennen _coverage_-tehtävän suorittamista, raportti sisältää joko vanhat testikattavuustiedot, tai kohtaamme virheen, joka valittaa testikattavuustietojen puutosta. Voisimme suorittaa komennot peräkkäin komennolla:
 
 ```bash
-python3 -m poetry run invoke coverage coverage-report
+poetry run invoke coverage coverage-report
 ```
 
 Helpompaa on kuitenkin määritellä _coverage-report_-tehtävän riippuvuus _coverage_-tehtävästä sen määrityksessä. Tämä onnistuu antamalla `@task`-dekoraattorille argumentiksi _coverage_-tehtävän funktio:
@@ -106,4 +106,4 @@ def coverage_report(ctx):
     ctx.run("coverage html")
 ```
 
-Nyt komento `python3 -m poetry run invoke coverage-report` suorittaa ensin tehtävän _coverage_, jonka jälkeen suoritetaan itse tehtävä _coverage-report_.
+Nyt komento `poetry run invoke coverage-report` suorittaa ensin tehtävän _coverage_, jonka jälkeen suoritetaan itse tehtävä _coverage-report_.

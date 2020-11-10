@@ -26,28 +26,26 @@ Jos version on alle `3.6.0`, asenna tietokoneellesi [uusin Python-versio](https:
 
 ## Asennus
 
-Poetry tarjoaa dokumentaatiossaan useita [asennusvaihtoehtoja](https://python-poetry.org/docs/#installation). Tavoista ehkä helpoin on suorittaa asennus komentoriviltä pipin avulla:
+Poetry tarjoaa dokumentaatiossaan useita [asennusvaihtoehtoja](https://python-poetry.org/docs/#installation). Valitse vaihtoehdoista käyttöjärjestelmällesi sopiva asennustapa ja asenna Poetry. Kun olet suorittanut asennuksen, tarkista vielä asennuksen onnistuminen komennolla:
+
+```
+poetry --version
+```
+
+Jos mikään esitetyistä asennusvaihtoehdoista ei onnistu, on asentaminen pipin avulla myös käyttökelpoinen vaihtoehto:
 
 ```bash
 pip3 install --user poetry
 ```
 
-Jos `pip3`-komentoa ei löydy, kokeile komentoa `python3 -m pip install --user poetry`.
-
-Voimme varmistaa asennuksen onnistumisen suorittamalla komennon:
-
-```bash
-python3 -m poetry --version
-```
-
-Jos haluat suorittaa Poetryn komentoja suoraan, ilman `python3 -m`-komennon suorittamista (esimerkiksi `poetry --version`), tutustu [tarkempiin asennusohjeisiin](https://python-poetry.org/docs/#installation).
+Huomaa, että tämän asennustavan kanssa `poetry`-komento ei välttämättä ole suoritettavissa. Jos näin on, voit sen sijaan käyttää komentoa `python3 -m poetry`. Tämä tarkoittaa sitä, että kaikki materiaalin `poetry`-komennot tulee suorittaa muodossa `python3 -m poetry <komento>` (esimerkiksi `python3 -m poetry init`).
 
 ## Projektin alustaminen
 
 Harjoitellaan Poetryn käyttöä tekemällä pieni esimerkkiprojekti. Luo hakemisto _poetry-testi_ haluamaasi hakemistoon. Hakemiston ei tarvitse löytyä Labtooliin rekisteröimästäsi repositoriosta. Avaa hakemisto komentoriviltä ja suorita siellä komento:
 
 ```bash
-python3 -m poetry init
+poetry init
 ```
 
 Komennon suorittaminen alkaa kysymään kysymyksiä. Voit vastata kysymyksiin haluamallasi tavalla ja kaikkien kohtien vastauksia voi myös muokata myöhemmin. Tämän vuoksi kysymysten ohittaminen Enter-painikketta painamalla on ihan hyvä vaihtoehto.
@@ -76,7 +74,7 @@ Tiedoston `[tool.poetry]`-osio sisältää projektiin liittyviä yleistietoja, k
 Kun _pyproject.toml_-tiedosto on tullut tutuksi, viimeistellään projektin alustaminen suorittamalla komento:
 
 ```bash
-python3 -m poetry install
+poetry install
 ```
 
 Komennon suorittaminen tekee projektille vaadittavat alustustoimenpiteet, kuten virtuaaliympäristön alustamisen. Jos projektille olisi määritelty riippuvuuksia, komennon suorittaminen asentaisi myös ne. Tämän vuoksi _komento tulee suorittaa aina ennen kuin uutta projekti aletaan käyttämään_.
@@ -88,10 +86,10 @@ Komennon suorittamisen seurauksena hakemistoon pitäisi ilmestyä tiedosto _poet
 Asennetaan seuraavaksi esimerkkiprojektimme ensimmäisen riippuvuus. Riippuvuuksien löytäminen onnistuu helpoiten Googlettamalla ja etsimällä hakutuloksista sopivia GitHub-repositorioita, tai PyPI-sivuja. Asennetaan esimerkkinä projektiimme erittäin hyödyllinen [cowsay](https://pypi.org/project/cowsay/)-kirjasto. Tämä onnistuu komennolla:
 
 ```bash
-python3 -m poetry add cowsay
+poetry add cowsay
 ```
 
-Asennuksen komento on siis muotoa `python3 -m poetry add <kirjasto>`. Komennon suorittamisen jälkeen huomaamme, että _pyproject.toml_-tiedoston `[tool.poetry.dependencies]`-osion alla on uutta sisältöä:
+Asennuksen komento on siis muotoa `poetry add <kirjasto>`. Komennon suorittamisen jälkeen huomaamme, että _pyproject.toml_-tiedoston `[tool.poetry.dependencies]`-osion alla on uutta sisältöä:
 
 ```
 [tool.poetry.dependencies]
@@ -108,7 +106,7 @@ python -m poetry add cowsay@1.0
 Jos haluaisimme poistaa kirjaston projektimme riippuvuuksien joukosta, se onnistuisi komennolla:
 
 ```bash
-python3 -m poetry remove cowsay
+poetry remove cowsay
 ```
 
 Pidetään kuitenkin cowsay-kirjasto toistaiseksi asennettuna.
@@ -138,15 +136,15 @@ ModuleNotFoundError: No module named 'cowsay'
 Tämä johtuu siitä, että emme ole projektin virtuaaliympäristön sisällä, eli Python ei löydä projektimme riippuvuuksia. Asia korjaantuu käyttämällä [run](https://python-poetry.org/docs/cli/#run) komentoa:
 
 ```bash
-python3 -m poetry run python3 src/index.py
+poetry run python3 src/index.py
 ```
 
-`python3 -m poetry run`-komento siis suorittaa annetun komennon virtuaaliympäristössä, jonka sisällä Python löytää riippuvuutumme.
+`poetry run`-komento siis suorittaa annetun komennon virtuaaliympäristössä, jonka sisällä Python löytää riippuvuutumme.
 
 Kun projektia kehitetään aktiivisesti ja komentoja suoritetaan komentoriviltä jatkuvasti, on kätevintä olla koko ajan virtuaaliympäristön sisällä. Voimme siirtyä virtuaaliympäristön sisään kommennolla [shell](https://python-poetry.org/docs/cli/#shell):
 
 ```bash
-python3 -m poetry shell
+poetry shell
 ```
 
 Virtuaaliympäristön sisällä voimme suorittaa komennon "normaalisti", eli ilman `run`-komentoa:
@@ -164,7 +162,7 @@ Jos olit tarkkana, huomasit, että _pyproject.toml_-tiedostosta löytyy `[tool.p
 Kehityksen aikaisten riippuvuuksien asentaminen onnistuu antamalla `add`-komennolle `--dev`-flagi. Esimerkiksi pian tutuksi tulevan [pytest](https://pytest.org/)-kirjaston voi asentaa kehityksen aikaiseksi riippuvuudeksi seuraavalla komennolla:
 
 ```bash
-python3 -m poetry add pytest --dev
+poetry add pytest --dev
 ```
 
 Komennon suorittaminen lisää pytest-kirjaston riippuvuudeksi `[tool.poetry.dev-dependencies]`-osion alle:
@@ -174,4 +172,4 @@ Komennon suorittaminen lisää pytest-kirjaston riippuvuudeksi `[tool.poetry.dev
 pytest = "^6.1.2"
 ```
 
-Kehityksen aikaisten riippuvuuksien määritteleminen on kätevää, koska se vähentää asennettavien riippuvuuksien määrää tapauksessa, jossa haluamme vain käynnistää sovelluksen. Tässä tilanteessa riippuvuuksien asentamisen voi tehdä komennolla `python3 -m poetry install --no-dev`.
+Kehityksen aikaisten riippuvuuksien määritteleminen on kätevää, koska se vähentää asennettavien riippuvuuksien määrää tapauksessa, jossa haluamme vain käynnistää sovelluksen. Tässä tilanteessa riippuvuuksien asentamisen voi tehdä komennolla `poetry install --no-dev`.
