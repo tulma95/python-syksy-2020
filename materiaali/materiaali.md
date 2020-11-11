@@ -547,8 +547,8 @@ from repositories.user_repository import (
 class TodoService:
     def __init__(
         self,
-        todo_repository = default_todo_repository,
-        user_repository = default_user_repository
+        todo_repository=default_todo_repository,
+        user_repository=default_user_repository
     ):
         self.todo_repository = todo_repository
         self.user_repository = user_repository
@@ -557,7 +557,7 @@ class TodoService:
 Riippuvuuksien injektointi onnistuu luokkien lisäksi myös esimerkiksi funktioilla:
 
 ```python
-def calculate_sum(get_input = input):
+def calculate_sum(get_input=input):
     a = get_input()
     b = get_input()
 
