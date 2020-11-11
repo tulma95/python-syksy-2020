@@ -38,7 +38,7 @@ class UI:
         self.root = root
 
     def start(self):
-        label = ttk.Label(master = self.root, text = "Hello world!")
+        label = ttk.Label(master=self.root, text="Hello world!")
 
         label.pack()
 
@@ -57,11 +57,11 @@ Huomaa, ettei komponettia näytetä ennen `pack`-metodin kutsua. Tutustumme meto
 
 ```python
 def start(self):
-    label = ttk.Label(master = self.root, text = "Hello world!")
-    button = ttk.Button(master = self.root, text = "Button")
-    entry = ttk.Entry(master = self.root)
-    checkbutton = ttk.Checkbutton(master = self.root, text = "Check button")
-    radiobutton = ttk.Radiobutton(master = self.root, text = "Radio button")
+    label = ttk.Label(master=self.root, text="Hello world!")
+    button = ttk.Button(master=self.root, text="Button")
+    entry = ttk.Entry(master=self.root)
+    checkbutton = ttk.Checkbutton(master=self.root, text="Check button")
+    radiobutton = ttk.Radiobutton(master=self.root, text="Radio button")
 
     label.pack()
     button.pack()
@@ -182,15 +182,15 @@ def start(self):
     button = ttk.Button(master=self.root, text="Button")
 
     # vasempaan laitaan
-    heading_label.grid(row=0, column=0, columnspan=2, sticky = constants.W)
+    heading_label.grid(row=0, column=0, columnspan=2, sticky=constants.W)
 
     username_label.grid(row=1, column=0)
     # vasempaan ja oikeaan laitaan
     username_entry.grid(row=1, column=1, sticky=(constants.E, constants.W))
 
-    password_label.grid(row=2, column= 0)
+    password_label.grid(row=2, column=0)
     # vasempaan ja oikeaan laitaan
-    password_entry.grid(row=2, column= 1, sticky=(constants.E, constants.W))
+    password_entry.grid(row=2, column=1, sticky=(constants.E, constants.W))
 
     # vasempaan ja oikeaan laitaan
     button.grid(row=3, column=0, columnspan=2, sticky=(constants.E, constants.W))
@@ -213,7 +213,7 @@ heading_label.grid(columnspan=2, sticky=constants.W)
 username_label.grid()
 username_entry.grid(row=1, column=1, sticky=(constants.E, constants.W))
 password_label.grid()
-password_entry.grid(row=2, column= 1, sticky=(constants.E, constants.W))
+password_entry.grid(row=2, column=1, sticky=(constants.E, constants.W))
 button.grid(columnspan=2, sticky=(constants.E, constants.W))
 ```
 
@@ -222,11 +222,11 @@ button.grid(columnspan=2, sticky=(constants.E, constants.W))
 Edellisen esimerkin komponentit on aseteltu tällä hetkellä melko tiiviistii ja käyttöliittymä kaipaisi hieman väljyyttä. Voimme lisätä gridin soluille väliä leveys- ja pituussuunnassa käyttämällä `grid`-metodin `padx` ja `pady` metodeja. Kuten parametrien nimistä voi päätellä, `padx` lisää väliä leveys- `pady` pituussuunnassa:
 
 ```python
-heading_label.grid(columnspan=2, sticky = constants.W, padx=5, pady=5)
+heading_label.grid(columnspan=2, sticky=constants.W, padx=5, pady=5)
 username_label.grid(padx=5, pady=5)
 username_entry.grid(row=1, column=1, sticky=(constants.E, constants.W), padx=5, pady=5)
 password_label.grid(padx=5, pady=5)
-password_entry.grid(row=2, column= 1, sticky=(constants.E, constants.W), padx=5, pady=5)
+password_entry.grid(row=2, column=1, sticky=(constants.E, constants.W), padx=5, pady=5)
 button.grid(columnspan=2, sticky=(constants.E, constants.W), padx=5, pady=5)
 ```
 
