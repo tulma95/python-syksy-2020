@@ -70,20 +70,20 @@ Muista, että sekvenssikaaviossa tulee tulla ilmi kaikki mainin suorituksen aika
 
 ```python
 class Machine:
-    def __init__():
+    def __init__(self):
         self.tank = FuelTank()
         self.tank.fill(40)
-        self.engine = Engine(tank)
+        self.engine = Engine(self.tank)
 
     def drive(self):
-        self.egine.start()
-        running = self.engine.engine_is_running()
+        self.engine.start()
+        running = self.engine.is_running()
 
         if running:
           self.engine.use_energy()
 
 class FuelTank:
-    def __init__():
+    def __init__(self):
         self.fuel_contents = 0
 
     def fill(self, amount):
@@ -93,14 +93,14 @@ class FuelTank:
         self.fuel_contents = self.fuel_contents + amount
 
 class Engine:
-    def __init__(tank):
+    def __init__(self, tank):
         self.fuel_tank = tank
 
     def start(self):
         self.fuel_tank.consume(5)
 
     def is_running(self):
-        return self.fuel_tank.fuel_contets > 0
+        return self.fuel_tank.fuel_contents > 0
 
     def use_energy(self):
         self.fuel_tank.consume(10)
