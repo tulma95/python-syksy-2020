@@ -153,7 +153,7 @@ HKL = 2.1
 SEUTU = 3.5
 
 class Lukijalaite:
-    def osta_lippu(kortti, tyyppi):
+    def osta_lippu(self, kortti, tyyppi):
         hinta = 0
 
         if tyyppi == 0:
@@ -193,12 +193,12 @@ def main():
     laitehallinto.lisaa_lukija(bussi244)
 
     lippu_luukku = Kioski()
-    kallen_kortti = lippu_luukku.osta_matkakortti("Kalle");
+    kallen_kortti = lippu_luukku.osta_matkakortti("Kalle")
 
-    rautatietori.lataa_arvoa(kallen_kortti, 3);
+    rautatietori.lataa_arvoa(kallen_kortti, 3)
 
-    ratikka6.osta_lippu(kallen_kortti, 0);
-    bussi244.osta_lippu(kallen_kortti, 2);
+    ratikka6.osta_lippu(kallen_kortti, 0)
+    bussi244.osta_lippu(kallen_kortti, 2)
 
 if __name__ == '__main__':
     main()
