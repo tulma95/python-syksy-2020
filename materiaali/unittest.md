@@ -84,7 +84,7 @@ class TestMaksukortti(unittest.TestCase):
 
 Suoritetaan virtuaaliympäristössä komento `pytest` uudestaan ja huomaamme, että yksi testi on suoritettu onnistuneesti.
 
-Jotta pytest tietää, mitä testejä tulisi suorittaa, **tulee nimeämisessä noudattaa oikeita käytenteitä**. Nämä käytänteet ovat:
+Komento `pytest` etsii suoritettavia testejä hakemistosta, jossa komento suoritetaan, sekä rekursiivisesti kaikista sen alahakemistoista. Jotta pytest tietää, mitä testejä tulisi suorittaa, **tulee nimeämisessä noudattaa oikeita käytenteitä**. Nämä käytänteet ovat:
 
 - Testien tiedostojen nimen tulee päättyä _\_test_-päätteeseen, esim. _maksukortti\_test.py_
 - Testattavan luokan nimen tulee alkaa _Test_-etuliitteellä, esim. `TestMaksukortti`
